@@ -10,15 +10,12 @@ loop do
   if echo_queue.empty?
     next
   else
-    i = 0
     Dir.chdir("../../echo/build")
-    while i < echo_queue.length do
       command = "boot --with-solo5-hvt echo; exit"
       r = IO.popen("bash","r+")
       r.write "#{command}\n"
       while line = r.gets do
         puts line
-      end
     end
   end
 end
