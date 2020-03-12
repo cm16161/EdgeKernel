@@ -1,0 +1,8 @@
+/home/chetan/Documents/Unikernel-Serverless/echo/build/CMakeFiles/rebuild_cache.dir
+/home/chetan/Documents/Unikernel-Serverless/echo/build/CMakeFiles/edit_cache.dir
+/home/chetan/Documents/Unikernel-Serverless/echo/build/CMakeFiles/echo.dir
+/home/chetan/Documents/Unikernel-Serverless/echo/build/CMakeFiles/echo.elf.bin.dir
+/home/chetan/Documents/Unikernel-Serverless/echo/build/CMakeFiles/config_json_echo.elf.bin.dir
+/home/chetan/Documents/Unikernel-Serverless/echo/build/CMakeFiles/echo_disccontent.dir
+/home/chetan/Documents/Unikernel-Serverless/echo/build/CMakeFiles/echo_diskbuilder.dir
+/home/chetan/Documents/Unikernel-Serverless/echo/build/CMakeFiles/echo_memdisk.dir
