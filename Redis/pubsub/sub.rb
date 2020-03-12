@@ -11,7 +11,7 @@ loop do
     next
   else
     i = 0
-    Dir.chdir("/home/chetan/Documents/Unikernel-Serverless/echo/build")
+    Dir.chdir("../../echo/build")
     while i < echo_queue.length do
       command = "boot --with-solo5-hvt echo; exit"
       r = IO.popen("bash","r+")

@@ -4,7 +4,6 @@
 
 #include "json.hpp"
 #include <net/http/client.hpp>
-#include <regex>
 #include <service>
 
 using namespace std::literals::string_literals;
@@ -26,12 +25,13 @@ static void begin_http(net::Inet &inet)
 			}
 			else
 			{
+
 				const auto url{ "http://127.0.0.1:7379/LPOP/echo"s };
 				basic.get(url, {}, [url](Error err, Response_ptr res, Connection &) {
 					if (not err)
 					{
 						json j = json::parse(res->Message::body());
-						std::cout<<j["LPOP"]<<std::endl;
+						std::cout << j["LPOP"] << std::endl;
 						exit(EXIT_SUCCESS);
 					}
 					else
