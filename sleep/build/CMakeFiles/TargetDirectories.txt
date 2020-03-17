@@ -1,5 +1,0 @@
-/home/chetan/Documents/Dissertation/sleep/build/CMakeFiles/rebuild_cache.dir
-/home/chetan/Documents/Dissertation/sleep/build/CMakeFiles/edit_cache.dir
-/home/chetan/Documents/Dissertation/sleep/build/CMakeFiles/config_json_sleep.elf.bin.dir
-/home/chetan/Documents/Dissertation/sleep/build/CMakeFiles/sleep.elf.bin.dir
-/home/chetan/Documents/Dissertation/sleep/build/CMakeFiles/sleep.dir

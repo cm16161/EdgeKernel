@@ -1,2 +1,0 @@
-/usr/bin/ar qc lib/libconfig_json_tcp_service.elf.bin.a  config.json.o
-/usr/bin/ranlib lib/libconfig_json_tcp_service.elf.bin.a
