@@ -1,0 +1,7 @@
+{
+    "name" : "test",
+    "directory" : "/test",
+    "queue" : ["echo","echo_server","test"],
+    "ofile" : "test.output"
+
+}

@@ -1,0 +1,6 @@
+{
+    "name" : "echo_server",
+    "directory" : "/home/chetan/Documents/Unikernel-Serverless/echo_server/build",
+    "queue" : ["echo_server"],
+    "ofile" : "echo_server.output"
+}
