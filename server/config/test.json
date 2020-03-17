@@ -1,6 +1,6 @@
 {
     "name" : "hello",
-    "directory" : "/home/chetan/Documents/Unikernel-Serverless/Kernels/hello_world/build",
+    "directory" : "/home/chetan/Documents/Unikernel-Serverless/Kernels/bin",
     "queue" : ["echo","echo_server","test"],
     "ofile" : "test.output"
 

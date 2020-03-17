@@ -1,6 +1,6 @@
 {
-    "name" : "echo_server",
-    "directory" : "/home/chetan/Documents/Unikernel-Serverless/Kernels/echo_server/build",
+    "name" : "tcp_service",
+    "directory" : "/home/chetan/Documents/Unikernel-Serverless/Kernels/bin",
     "queue" : ["echo_server"],
     "ofile" : "echo_server.output"
 }

@@ -2,6 +2,34 @@ require 'rubygems'
 require 'redis'
 require 'json'
 require 'redis-queue'
+require 'net/http'
+
+
+def check_webdis()
+  uri = URI('http://127.0.0.1:7379/GET/hello')
+  response = Net::HTTP.get_response(uri)
+  if response.code != '200' then
+    fork{
+      exec("echo test;cd ../webdis; ./webdis")
+    }
+    return false
+  end
+  return true
+end
+
+active = check_webdis()
+while !active do
+  active = check_webdis()
+end
+
+def load_kernels_to_memory()
+  fork{
+    exec("vmtouch -vtdl ../Kernels/bin")
+  }
+end
+
+load_kernels_to_memory()
+
 
 # Map between queues and which unikernels to boot when data is recieved on that queue
 $queues = Hash.new([])

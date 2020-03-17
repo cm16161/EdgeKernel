@@ -1,3 +1,6 @@
 [submodule "webdis"]
 	path = webdis
 	url = https://github.com/nicolasff/webdis.git
+[submodule "vmtouch"]
+	path = vmtouch
+	url = https://github.com/hoytech/vmtouch.git
