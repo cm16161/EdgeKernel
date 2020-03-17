@@ -1,0 +1,789 @@
+Looking for chainloader: 
+Found /home/chetan/.conan/data/chainloader/0.15.1-5/includeos/latest/package/5ab84d6acfe1f23c4fae0ab88f26e3a396351ac9/bin/chainloader Type:  /home/chetan/.conan/data/chainloader/0.15.1-5/includeos/latest/package/5ab84d6acfe1f23c4fae0ab88f26e3a396351ac9/bin/chainloader: ELF 32-bit LSB executable, Intel 80386, version 1 (SYSV), statically linked, stripped
+
+[33;1m[ WARNING ] Running with sudo[0m
+* Multiboot begin: 0x9500
+* Multiboot cmdline @ 0x22e018: /home/chetan/.conan/data/chainloader/0.15.1-5/includeos/latest/package/5ab84d6acfe1f23c4fae0ab88f26e3a396351ac9/bin/chainloader ""
+* Multiboot end: 0x22e09b
+* Module list @ 0x22e000
+	 * Module @ 0x22f000
+	 * Args: echo ""
+ 	 * End: 0x4f72b8
+ * Multiboot end: 0x4f72b8
+<Multiboot>Booted with multiboot
+	* Boot flags: 0x24f
+	* Valid memory (130559 Kib):
+	  0x00000000 - 0x0009fbff (639 Kib)
+	  0x00100000 - 0x07fdffff (129920 Kib)
+
+	* Booted with parameters @ 0x22e018: /home/chetan/.conan/data/chainloader/0.15.1-5/includeos/latest/package/5ab84d6acfe1f23c4fae0ab88f26e3a396351ac9/bin/chainloader ""
+	* Multiboot provided memory map  (7 entries @ 0x9000)
+	  0x0000000000 - 0x000009fbff FREE (639 Kb.)
+	  0x000009fc00 - 0x000009ffff RESERVED (1 Kb.)
+	  0x00000f0000 - 0x00000fffff RESERVED (64 Kb.)
+	  0x0000100000 - 0x0007fdffff FREE (129920 Kb.)
+	  0x0007fe0000 - 0x0007ffffff RESERVED (128 Kb.)
+	  0x00feffc000 - 0x00feffffff RESERVED (16 Kb.)
+	  0x00fffc0000 - 0x00ffffffff RESERVED (256 Kb.)
+
+<Multiboot>OS loaded with 1 modules
+	* echo "" @ 0x22f000 - 0x4f72b8, size: 2917048b
+* Multiboot begin: 0x9500
+* Multiboot end: 0x4454e0
+[x86_64 PC] constructor
+[ Machine ] Initializing heap
+[ Machine ] Main memory detected as 128978752 b
+[ Machine ] Reserving 1048576 b for machine use
+================================================================================
+
+                           #include<os> // Literally
+
+================================================================================
+     [ Kernel ] Stack: 0x1ffc28
+     [ Kernel ] Boot magic: 0x2badb002, addr: 0x9500
+     [ x86_64 ] Initializing paging
+                * Supported page sizes: 4.000_KiB, 2.000_MiB
+                * Adding 512 1GiB entries @ 0x0 -> 0x8000000000
+                * Identity mapping 0 -> 0, size 16.000_GiB, flags 0x83 (8192 pages á 2.000_MiB)
+                * Marking page 0 as not present
+                * Allowing execute on 0x201000 -> 0x3697e0
+                * Passing page tables to CPU
+<Multiboot>Booted with multiboot
+	* Boot flags: 0x24f
+	* Valid memory (130559 Kib):
+	  0x00000000 - 0x0009fbff (639 Kib)
+	  0x00100000 - 0x07fdffff (129920 Kib)
+
+	* Booted with parameters @ 0x8000: echo ""
+	* Multiboot provided memory map  (7 entries @ 0x9000)
+	  0x0000000000 - 0x000009fbff FREE (639 Kb.)
+	  0x000009fc00 - 0x000009ffff RESERVED (1 Kb.)
+	  0x00000f0000 - 0x00000fffff RESERVED (64 Kb.)
+	  0x0000100000 - 0x0007fdffff FREE (129920 Kb.)
+	  0x0007fe0000 - 0x0007ffffff RESERVED (128 Kb.)
+	  0x00feffc000 - 0x00feffffff RESERVED (16 Kb.)
+	  0x00fffc0000 - 0x00ffffffff RESERVED (256 Kb.)
+
+     [ Kernel ] Total memory detected as 96.062_MiB
+                Assigning fixed memory ranges (Memory map)
+                * Protecting syms 0x446000 to 0x4df000 (size 0x99000)
+                * Assigning heap 0x4e0000 -> 0x600ffff
+     [ Kernel ] Virtual memory map
+                0x0000001000 - 0x0000007fff,  28.000_KiB (100.0 %) Page tables
+                0x0000010000 - 0x000009d3ff, 565.000_KiB (100.0 %) Stack
+                0x000009fc00 - 0x000009ffff,   1.000_KiB (100.0 %) Reserved (Multiboot)
+                0x00000f0000 - 0x00000fffff,  64.000_KiB (100.0 %) Reserved (Multiboot)
+                0x0000201000 - 0x0000369fff,   1.410_MiB (100.0 %) ELF .text
+                0x0000446000 - 0x00004defff, 612.000_KiB (100.0 %) Symbols & strings
+                0x00004e0000 - 0x000600ffff,  91.188_MiB (0.326 %) Dynamic memory
+                0x0007fe0000 - 0x0007ffffff, 128.000_KiB (100.0 %) Reserved (Multiboot)
+                0x00feffc000 - 0x00feffffff,  16.000_KiB (100.0 %) Reserved (Multiboot)
+                0x00fffc0000 - 0x00ffffffff, 256.000_KiB (100.0 %) Reserved (Multiboot)
+       [ ACPI ] Reading headers
+                OEM: BOCHS  Rev. 0
+       [ ACPI ] Reading APIC information
+                LAPIC base: 0xfee00000  (flags: 0x1)
+                I/O APIC 0   ADDR 0xfec00000  INTR 0x0
+                IRQ redirect for bus 0 from IRQ 0 to VEC 2
+                IRQ redirect for bus 0 from IRQ 5 to VEC 5
+                IRQ redirect for bus 0 from IRQ 9 to VEC 9
+                IRQ redirect for bus 0 from IRQ 10 to VEC 10
+                IRQ redirect for bus 0 from IRQ 11 to VEC 11
+        [ SMP ] Found 1 APs
+     [ SMBIOS ] Version 2.8
+                BIOS vendor: 1.10.2-1ubuntu1
+                BIOS version: 04/01/2014
+                Manufacturer: Standard PC (i440FX + PIIX, 1996)
+                Product name: pc-i440fx-bionic
+                System UUID: 00000000000000000000000000000000
+                Physical memory array with 128 MB capacity
+        [ x86 ] Setting up GDT, TLS, IST
+        [ x86 ] Initializing CPU 0
+   [ I/O APIC ] Initializing ID=0
+                Addr: 0xfec00000  Version: 0x11  Intr: 0  Entries: 24
+     [ x2APIC ] Enabling x2APIC @ 0xfee00900
+                APIC id: 0  ver: 50014
+        [ x86 ] Enabling interrupts
+        [ x86 ] Setting up kernel clock sources
+        [ x86 ] KVM PV clocks initialized
+                +--> 2207.998000 MHz
+       [ APIC ] Measuring APIC timer...
+                Enabled redirected entry 2 ioapic 0 -> 0 on apic 0
+                Initializing drivers
+[ PCI Manager ] Probing PCI bus
+                |
+                +--[ Bridge device, Intel (0x1237) ]
+                +--[ Bridge device, Intel (0x7000) ]
+                +--[ Storage controller, Intel (0x7010) ]
+                +--[ Bridge device, Intel (0x7113) ]
+                +--[ Display controller, Unknown vendor (0x1111) ]
+                +--[ Network controller, VirtIO (0x1000) ]
+                o
+                |- Initializing Storage controller
+                |--[ Storage controller, Intel (0x8086:0x7010) ]
+                |  +-x Driver not found
+                o
+                |- Initializing Network controller
+                |--[ Network controller, VirtIO, Ethernet (0x1af4:0x1000) ]
+                |
+     [ Virtio ] Attaching to  PCI addr 0x18
+                [x] Vendor ID is VIRTIO
+                [x] Device ID 0x1000 is in a valid range (Virtio LEGACY)
+                [x] Device Revision ID (0x0) supported
+                |  |- BAR0 I/O @ 0xc000, size 32
+                |  |- BAR1 Mem @ 0xfebf1000, size 4096
+                |  |- BAR4 Mem @ 0xfe000000, size 16384
+                [x] Unit has valid I/O base (0xc000)
+                [*] Reset device
+                [x] Device has 3 MSI-X vectors
+                MSI-X vector 0 pointing to cpu 0 intr 66
+                MSI-X vector 1 pointing to cpu 0 intr 67
+                MSI-X vector 2 pointing to cpu 0 intr 68
+     [ Virtio ] Initialization complete
+  [ VirtioNet ] Driver initializing
+                [x] Negotiated needed features
+                [x] Negotiated wanted features
+                [ ] Device handles packets w. partial checksum
+                [ ] Guest handles packets w. partial checksum
+                [x] There's a control queue
+                [x] Queue can handle any header/data layout
+                [x] We can use indirect descriptors
+                [x] There's a Ring Event Index to use
+                [ ] There are multiple queue pairs
+                [x] Merge RX buffers
+                [x] RX queue (256) assigned (0x561000) to device
+                [x] TX queue (256) assigned (0x565000) to device
+                [x] CTRL queue (64) assigned (0x569000) to device
+  [ VirtioNet ] Adding 128 receive buffers of size 2048
+                [x] Valid Mac address: 52:54:00:12:34:56
+                [x] Signalled driver OK
+                [x] Link up
+                o
+    [ Machine ] Listing registered devices
+                |
+                +--+ NIC eth0
+                |
+                o
+  [ SystemLog ] Initializing System Log
+                Created @ 0x1fffffff0000 (63 kB)
+                Data @ 0x1fffffff0028 (65496 bytes)
+     [ Kernel ] Initializing RNG
+     [ Kernel ] Initializing plugins
+     [ Kernel ] Registering plugin Autoconf plugin
+                * Initializing Autoconf plugin
+   [ Autoconf ] Running auto configure
+    [ Netconf ] Configuring network
+    [ Network ] Creating stack for VirtioNet on eth0 (MTU=1500)
+       [ Inet ] Bringing up eth0 on CPU 0
+       [ Inet ] Negotiating DHCP (10.0s timeout)...
+    [ Netconf ] Configuration complete
+   [ Autoconf ] Finished
+     [ Kernel ] Running service constructors
+--------------------------------------------------------------------------------
+================================================================================
+ IncludeOS 0.15.1-5 (x86_64 / 64-bit)
+ +--> Running [ Echo Kernel- OS included ]
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+       [ Inet ] Network configured (52:54:00:12:34:56)
+                IP: 		10.0.2.15
+                Netmask: 	255.255.255.0
+                Gateway: 	10.0.2.2
+                DNS Server: 	10.0.2.3
+     [ DHCPv4 ] Configuration complete (eth0)
+"test"
+     [ Kernel ] Service exiting with status 0
+
+[92m[ SUCCESS ] process exited[0m
+
+Looking for chainloader: 
+Found /home/chetan/.conan/data/chainloader/0.15.1-5/includeos/latest/package/5ab84d6acfe1f23c4fae0ab88f26e3a396351ac9/bin/chainloader Type:  /home/chetan/.conan/data/chainloader/0.15.1-5/includeos/latest/package/5ab84d6acfe1f23c4fae0ab88f26e3a396351ac9/bin/chainloader: ELF 32-bit LSB executable, Intel 80386, version 1 (SYSV), statically linked, stripped
+
+[33;1m[ WARNING ] Running with sudo[0m
+* Multiboot begin: 0x9500
+* Multiboot cmdline @ 0x22e018: /home/chetan/.conan/data/chainloader/0.15.1-5/includeos/latest/package/5ab84d6acfe1f23c4fae0ab88f26e3a396351ac9/bin/chainloader ""
+* Multiboot end: 0x22e09b
+* Module list @ 0x22e000
+	 * Module @ 0x22f000
+	 * Args: echo ""
+ 	 * End: 0x4f72b8
+ * Multiboot end: 0x4f72b8
+<Multiboot>Booted with multiboot
+	* Boot flags: 0x24f
+	* Valid memory (130559 Kib):
+	  0x00000000 - 0x0009fbff (639 Kib)
+	  0x00100000 - 0x07fdffff (129920 Kib)
+
+	* Booted with parameters @ 0x22e018: /home/chetan/.conan/data/chainloader/0.15.1-5/includeos/latest/package/5ab84d6acfe1f23c4fae0ab88f26e3a396351ac9/bin/chainloader ""
+	* Multiboot provided memory map  (7 entries @ 0x9000)
+	  0x0000000000 - 0x000009fbff FREE (639 Kb.)
+	  0x000009fc00 - 0x000009ffff RESERVED (1 Kb.)
+	  0x00000f0000 - 0x00000fffff RESERVED (64 Kb.)
+	  0x0000100000 - 0x0007fdffff FREE (129920 Kb.)
+	  0x0007fe0000 - 0x0007ffffff RESERVED (128 Kb.)
+	  0x00feffc000 - 0x00feffffff RESERVED (16 Kb.)
+	  0x00fffc0000 - 0x00ffffffff RESERVED (256 Kb.)
+
+<Multiboot>OS loaded with 1 modules
+	* echo "" @ 0x22f000 - 0x4f72b8, size: 2917048b
+* Multiboot begin: 0x9500
+* Multiboot end: 0x4454e0
+[x86_64 PC] constructor
+[ Machine ] Initializing heap
+[ Machine ] Main memory detected as 128978752 b
+[ Machine ] Reserving 1048576 b for machine use
+================================================================================
+
+                           #include<os> // Literally
+
+================================================================================
+     [ Kernel ] Stack: 0x1ffc28
+     [ Kernel ] Boot magic: 0x2badb002, addr: 0x9500
+     [ x86_64 ] Initializing paging
+                * Supported page sizes: 4.000_KiB, 2.000_MiB
+                * Adding 512 1GiB entries @ 0x0 -> 0x8000000000
+                * Identity mapping 0 -> 0, size 16.000_GiB, flags 0x83 (8192 pages á 2.000_MiB)
+                * Marking page 0 as not present
+                * Allowing execute on 0x201000 -> 0x3697e0
+                * Passing page tables to CPU
+<Multiboot>Booted with multiboot
+	* Boot flags: 0x24f
+	* Valid memory (130559 Kib):
+	  0x00000000 - 0x0009fbff (639 Kib)
+	  0x00100000 - 0x07fdffff (129920 Kib)
+
+	* Booted with parameters @ 0x8000: echo ""
+	* Multiboot provided memory map  (7 entries @ 0x9000)
+	  0x0000000000 - 0x000009fbff FREE (639 Kb.)
+	  0x000009fc00 - 0x000009ffff RESERVED (1 Kb.)
+	  0x00000f0000 - 0x00000fffff RESERVED (64 Kb.)
+	  0x0000100000 - 0x0007fdffff FREE (129920 Kb.)
+	  0x0007fe0000 - 0x0007ffffff RESERVED (128 Kb.)
+	  0x00feffc000 - 0x00feffffff RESERVED (16 Kb.)
+	  0x00fffc0000 - 0x00ffffffff RESERVED (256 Kb.)
+
+     [ Kernel ] Total memory detected as 96.062_MiB
+                Assigning fixed memory ranges (Memory map)
+                * Protecting syms 0x446000 to 0x4df000 (size 0x99000)
+                * Assigning heap 0x4e0000 -> 0x600ffff
+     [ Kernel ] Virtual memory map
+                0x0000001000 - 0x0000007fff,  28.000_KiB (100.0 %) Page tables
+                0x0000010000 - 0x000009d3ff, 565.000_KiB (100.0 %) Stack
+                0x000009fc00 - 0x000009ffff,   1.000_KiB (100.0 %) Reserved (Multiboot)
+                0x00000f0000 - 0x00000fffff,  64.000_KiB (100.0 %) Reserved (Multiboot)
+                0x0000201000 - 0x0000369fff,   1.410_MiB (100.0 %) ELF .text
+                0x0000446000 - 0x00004defff, 612.000_KiB (100.0 %) Symbols & strings
+                0x00004e0000 - 0x000600ffff,  91.188_MiB (0.326 %) Dynamic memory
+                0x0007fe0000 - 0x0007ffffff, 128.000_KiB (100.0 %) Reserved (Multiboot)
+                0x00feffc000 - 0x00feffffff,  16.000_KiB (100.0 %) Reserved (Multiboot)
+                0x00fffc0000 - 0x00ffffffff, 256.000_KiB (100.0 %) Reserved (Multiboot)
+       [ ACPI ] Reading headers
+                OEM: BOCHS  Rev. 0
+       [ ACPI ] Reading APIC information
+                LAPIC base: 0xfee00000  (flags: 0x1)
+                I/O APIC 0   ADDR 0xfec00000  INTR 0x0
+                IRQ redirect for bus 0 from IRQ 0 to VEC 2
+                IRQ redirect for bus 0 from IRQ 5 to VEC 5
+                IRQ redirect for bus 0 from IRQ 9 to VEC 9
+                IRQ redirect for bus 0 from IRQ 10 to VEC 10
+                IRQ redirect for bus 0 from IRQ 11 to VEC 11
+        [ SMP ] Found 1 APs
+     [ SMBIOS ] Version 2.8
+                BIOS vendor: 1.10.2-1ubuntu1
+                BIOS version: 04/01/2014
+                Manufacturer: Standard PC (i440FX + PIIX, 1996)
+                Product name: pc-i440fx-bionic
+                System UUID: 00000000000000000000000000000000
+                Physical memory array with 128 MB capacity
+        [ x86 ] Setting up GDT, TLS, IST
+        [ x86 ] Initializing CPU 0
+   [ I/O APIC ] Initializing ID=0
+                Addr: 0xfec00000  Version: 0x11  Intr: 0  Entries: 24
+     [ x2APIC ] Enabling x2APIC @ 0xfee00900
+                APIC id: 0  ver: 50014
+        [ x86 ] Enabling interrupts
+        [ x86 ] Setting up kernel clock sources
+        [ x86 ] KVM PV clocks initialized
+                +--> 2207.998000 MHz
+       [ APIC ] Measuring APIC timer...
+                Enabled redirected entry 2 ioapic 0 -> 0 on apic 0
+                Initializing drivers
+[ PCI Manager ] Probing PCI bus
+                |
+                +--[ Bridge device, Intel (0x1237) ]
+                +--[ Bridge device, Intel (0x7000) ]
+                +--[ Storage controller, Intel (0x7010) ]
+                +--[ Bridge device, Intel (0x7113) ]
+                +--[ Display controller, Unknown vendor (0x1111) ]
+                +--[ Network controller, VirtIO (0x1000) ]
+                o
+                |- Initializing Storage controller
+                |--[ Storage controller, Intel (0x8086:0x7010) ]
+                |  +-x Driver not found
+                o
+                |- Initializing Network controller
+                |--[ Network controller, VirtIO, Ethernet (0x1af4:0x1000) ]
+                |
+     [ Virtio ] Attaching to  PCI addr 0x18
+                [x] Vendor ID is VIRTIO
+                [x] Device ID 0x1000 is in a valid range (Virtio LEGACY)
+                [x] Device Revision ID (0x0) supported
+                |  |- BAR0 I/O @ 0xc000, size 32
+                |  |- BAR1 Mem @ 0xfebf1000, size 4096
+                |  |- BAR4 Mem @ 0xfe000000, size 16384
+                [x] Unit has valid I/O base (0xc000)
+                [*] Reset device
+                [x] Device has 3 MSI-X vectors
+                MSI-X vector 0 pointing to cpu 0 intr 66
+                MSI-X vector 1 pointing to cpu 0 intr 67
+                MSI-X vector 2 pointing to cpu 0 intr 68
+     [ Virtio ] Initialization complete
+  [ VirtioNet ] Driver initializing
+                [x] Negotiated needed features
+                [x] Negotiated wanted features
+                [ ] Device handles packets w. partial checksum
+                [ ] Guest handles packets w. partial checksum
+                [x] There's a control queue
+                [x] Queue can handle any header/data layout
+                [x] We can use indirect descriptors
+                [x] There's a Ring Event Index to use
+                [ ] There are multiple queue pairs
+                [x] Merge RX buffers
+                [x] RX queue (256) assigned (0x561000) to device
+                [x] TX queue (256) assigned (0x565000) to device
+                [x] CTRL queue (64) assigned (0x569000) to device
+  [ VirtioNet ] Adding 128 receive buffers of size 2048
+                [x] Valid Mac address: 52:54:00:12:34:56
+                [x] Signalled driver OK
+                [x] Link up
+                o
+    [ Machine ] Listing registered devices
+                |
+                +--+ NIC eth0
+                |
+                o
+  [ SystemLog ] Initializing System Log
+                Created @ 0x1fffffff0000 (63 kB)
+                Data @ 0x1fffffff0028 (65496 bytes)
+     [ Kernel ] Initializing RNG
+     [ Kernel ] Initializing plugins
+     [ Kernel ] Registering plugin Autoconf plugin
+                * Initializing Autoconf plugin
+   [ Autoconf ] Running auto configure
+    [ Netconf ] Configuring network
+    [ Network ] Creating stack for VirtioNet on eth0 (MTU=1500)
+       [ Inet ] Bringing up eth0 on CPU 0
+       [ Inet ] Negotiating DHCP (10.0s timeout)...
+    [ Netconf ] Configuration complete
+   [ Autoconf ] Finished
+     [ Kernel ] Running service constructors
+--------------------------------------------------------------------------------
+================================================================================
+ IncludeOS 0.15.1-5 (x86_64 / 64-bit)
+ +--> Running [ Echo Kernel- OS included ]
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+       [ Inet ] Network configured (52:54:00:12:34:56)
+                IP: 		10.0.2.15
+                Netmask: 	255.255.255.0
+                Gateway: 	10.0.2.2
+                DNS Server: 	10.0.2.3
+     [ DHCPv4 ] Configuration complete (eth0)
+"someting"
+     [ Kernel ] Service exiting with status 0
+
+[92m[ SUCCESS ] process exited[0m
+
+Looking for chainloader: 
+Found /home/chetan/.conan/data/chainloader/0.15.1-5/includeos/latest/package/5ab84d6acfe1f23c4fae0ab88f26e3a396351ac9/bin/chainloader Type:  /home/chetan/.conan/data/chainloader/0.15.1-5/includeos/latest/package/5ab84d6acfe1f23c4fae0ab88f26e3a396351ac9/bin/chainloader: ELF 32-bit LSB executable, Intel 80386, version 1 (SYSV), statically linked, stripped
+
+[33;1m[ WARNING ] Running with sudo[0m
+* Multiboot begin: 0x9500
+* Multiboot cmdline @ 0x22e018: /home/chetan/.conan/data/chainloader/0.15.1-5/includeos/latest/package/5ab84d6acfe1f23c4fae0ab88f26e3a396351ac9/bin/chainloader ""
+* Multiboot end: 0x22e09b
+* Module list @ 0x22e000
+	 * Module @ 0x22f000
+	 * Args: echo ""
+ 	 * End: 0x4f72b8
+ * Multiboot end: 0x4f72b8
+<Multiboot>Booted with multiboot
+	* Boot flags: 0x24f
+	* Valid memory (130559 Kib):
+	  0x00000000 - 0x0009fbff (639 Kib)
+	  0x00100000 - 0x07fdffff (129920 Kib)
+
+	* Booted with parameters @ 0x22e018: /home/chetan/.conan/data/chainloader/0.15.1-5/includeos/latest/package/5ab84d6acfe1f23c4fae0ab88f26e3a396351ac9/bin/chainloader ""
+	* Multiboot provided memory map  (7 entries @ 0x9000)
+	  0x0000000000 - 0x000009fbff FREE (639 Kb.)
+	  0x000009fc00 - 0x000009ffff RESERVED (1 Kb.)
+	  0x00000f0000 - 0x00000fffff RESERVED (64 Kb.)
+	  0x0000100000 - 0x0007fdffff FREE (129920 Kb.)
+	  0x0007fe0000 - 0x0007ffffff RESERVED (128 Kb.)
+	  0x00feffc000 - 0x00feffffff RESERVED (16 Kb.)
+	  0x00fffc0000 - 0x00ffffffff RESERVED (256 Kb.)
+
+<Multiboot>OS loaded with 1 modules
+	* echo "" @ 0x22f000 - 0x4f72b8, size: 2917048b
+* Multiboot begin: 0x9500
+* Multiboot end: 0x4454e0
+[x86_64 PC] constructor
+[ Machine ] Initializing heap
+[ Machine ] Main memory detected as 128978752 b
+[ Machine ] Reserving 1048576 b for machine use
+================================================================================
+
+                           #include<os> // Literally
+
+================================================================================
+     [ Kernel ] Stack: 0x1ffc28
+     [ Kernel ] Boot magic: 0x2badb002, addr: 0x9500
+     [ x86_64 ] Initializing paging
+                * Supported page sizes: 4.000_KiB, 2.000_MiB
+                * Adding 512 1GiB entries @ 0x0 -> 0x8000000000
+                * Identity mapping 0 -> 0, size 16.000_GiB, flags 0x83 (8192 pages á 2.000_MiB)
+                * Marking page 0 as not present
+                * Allowing execute on 0x201000 -> 0x3697e0
+                * Passing page tables to CPU
+<Multiboot>Booted with multiboot
+	* Boot flags: 0x24f
+	* Valid memory (130559 Kib):
+	  0x00000000 - 0x0009fbff (639 Kib)
+	  0x00100000 - 0x07fdffff (129920 Kib)
+
+	* Booted with parameters @ 0x8000: echo ""
+	* Multiboot provided memory map  (7 entries @ 0x9000)
+	  0x0000000000 - 0x000009fbff FREE (639 Kb.)
+	  0x000009fc00 - 0x000009ffff RESERVED (1 Kb.)
+	  0x00000f0000 - 0x00000fffff RESERVED (64 Kb.)
+	  0x0000100000 - 0x0007fdffff FREE (129920 Kb.)
+	  0x0007fe0000 - 0x0007ffffff RESERVED (128 Kb.)
+	  0x00feffc000 - 0x00feffffff RESERVED (16 Kb.)
+	  0x00fffc0000 - 0x00ffffffff RESERVED (256 Kb.)
+
+     [ Kernel ] Total memory detected as 96.062_MiB
+                Assigning fixed memory ranges (Memory map)
+                * Protecting syms 0x446000 to 0x4df000 (size 0x99000)
+                * Assigning heap 0x4e0000 -> 0x600ffff
+     [ Kernel ] Virtual memory map
+                0x0000001000 - 0x0000007fff,  28.000_KiB (100.0 %) Page tables
+                0x0000010000 - 0x000009d3ff, 565.000_KiB (100.0 %) Stack
+                0x000009fc00 - 0x000009ffff,   1.000_KiB (100.0 %) Reserved (Multiboot)
+                0x00000f0000 - 0x00000fffff,  64.000_KiB (100.0 %) Reserved (Multiboot)
+                0x0000201000 - 0x0000369fff,   1.410_MiB (100.0 %) ELF .text
+                0x0000446000 - 0x00004defff, 612.000_KiB (100.0 %) Symbols & strings
+                0x00004e0000 - 0x000600ffff,  91.188_MiB (0.326 %) Dynamic memory
+                0x0007fe0000 - 0x0007ffffff, 128.000_KiB (100.0 %) Reserved (Multiboot)
+                0x00feffc000 - 0x00feffffff,  16.000_KiB (100.0 %) Reserved (Multiboot)
+                0x00fffc0000 - 0x00ffffffff, 256.000_KiB (100.0 %) Reserved (Multiboot)
+       [ ACPI ] Reading headers
+                OEM: BOCHS  Rev. 0
+       [ ACPI ] Reading APIC information
+                LAPIC base: 0xfee00000  (flags: 0x1)
+                I/O APIC 0   ADDR 0xfec00000  INTR 0x0
+                IRQ redirect for bus 0 from IRQ 0 to VEC 2
+                IRQ redirect for bus 0 from IRQ 5 to VEC 5
+                IRQ redirect for bus 0 from IRQ 9 to VEC 9
+                IRQ redirect for bus 0 from IRQ 10 to VEC 10
+                IRQ redirect for bus 0 from IRQ 11 to VEC 11
+        [ SMP ] Found 1 APs
+     [ SMBIOS ] Version 2.8
+                BIOS vendor: 1.10.2-1ubuntu1
+                BIOS version: 04/01/2014
+                Manufacturer: Standard PC (i440FX + PIIX, 1996)
+                Product name: pc-i440fx-bionic
+                System UUID: 00000000000000000000000000000000
+                Physical memory array with 128 MB capacity
+        [ x86 ] Setting up GDT, TLS, IST
+        [ x86 ] Initializing CPU 0
+   [ I/O APIC ] Initializing ID=0
+                Addr: 0xfec00000  Version: 0x11  Intr: 0  Entries: 24
+     [ x2APIC ] Enabling x2APIC @ 0xfee00900
+                APIC id: 0  ver: 50014
+        [ x86 ] Enabling interrupts
+        [ x86 ] Setting up kernel clock sources
+        [ x86 ] KVM PV clocks initialized
+                +--> 2207.998000 MHz
+       [ APIC ] Measuring APIC timer...
+                Enabled redirected entry 2 ioapic 0 -> 0 on apic 0
+                Initializing drivers
+[ PCI Manager ] Probing PCI bus
+                |
+                +--[ Bridge device, Intel (0x1237) ]
+                +--[ Bridge device, Intel (0x7000) ]
+                +--[ Storage controller, Intel (0x7010) ]
+                +--[ Bridge device, Intel (0x7113) ]
+                +--[ Display controller, Unknown vendor (0x1111) ]
+                +--[ Network controller, VirtIO (0x1000) ]
+                o
+                |- Initializing Storage controller
+                |--[ Storage controller, Intel (0x8086:0x7010) ]
+                |  +-x Driver not found
+                o
+                |- Initializing Network controller
+                |--[ Network controller, VirtIO, Ethernet (0x1af4:0x1000) ]
+                |
+     [ Virtio ] Attaching to  PCI addr 0x18
+                [x] Vendor ID is VIRTIO
+                [x] Device ID 0x1000 is in a valid range (Virtio LEGACY)
+                [x] Device Revision ID (0x0) supported
+                |  |- BAR0 I/O @ 0xc000, size 32
+                |  |- BAR1 Mem @ 0xfebf1000, size 4096
+                |  |- BAR4 Mem @ 0xfe000000, size 16384
+                [x] Unit has valid I/O base (0xc000)
+                [*] Reset device
+                [x] Device has 3 MSI-X vectors
+                MSI-X vector 0 pointing to cpu 0 intr 66
+                MSI-X vector 1 pointing to cpu 0 intr 67
+                MSI-X vector 2 pointing to cpu 0 intr 68
+     [ Virtio ] Initialization complete
+  [ VirtioNet ] Driver initializing
+                [x] Negotiated needed features
+                [x] Negotiated wanted features
+                [ ] Device handles packets w. partial checksum
+                [ ] Guest handles packets w. partial checksum
+                [x] There's a control queue
+                [x] Queue can handle any header/data layout
+                [x] We can use indirect descriptors
+                [x] There's a Ring Event Index to use
+                [ ] There are multiple queue pairs
+                [x] Merge RX buffers
+                [x] RX queue (256) assigned (0x561000) to device
+                [x] TX queue (256) assigned (0x565000) to device
+                [x] CTRL queue (64) assigned (0x569000) to device
+  [ VirtioNet ] Adding 128 receive buffers of size 2048
+                [x] Valid Mac address: 52:54:00:12:34:56
+                [x] Signalled driver OK
+                [x] Link up
+                o
+    [ Machine ] Listing registered devices
+                |
+                +--+ NIC eth0
+                |
+                o
+  [ SystemLog ] Initializing System Log
+                Created @ 0x1fffffff0000 (63 kB)
+                Data @ 0x1fffffff0028 (65496 bytes)
+     [ Kernel ] Initializing RNG
+     [ Kernel ] Initializing plugins
+     [ Kernel ] Registering plugin Autoconf plugin
+                * Initializing Autoconf plugin
+   [ Autoconf ] Running auto configure
+    [ Netconf ] Configuring network
+    [ Network ] Creating stack for VirtioNet on eth0 (MTU=1500)
+       [ Inet ] Bringing up eth0 on CPU 0
+       [ Inet ] Negotiating DHCP (10.0s timeout)...
+    [ Netconf ] Configuration complete
+   [ Autoconf ] Finished
+     [ Kernel ] Running service constructors
+--------------------------------------------------------------------------------
+================================================================================
+ IncludeOS 0.15.1-5 (x86_64 / 64-bit)
+ +--> Running [ Echo Kernel- OS included ]
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+       [ Inet ] Network configured (52:54:00:12:34:56)
+                IP: 		10.0.2.15
+                Netmask: 	255.255.255.0
+                Gateway: 	10.0.2.2
+                DNS Server: 	10.0.2.3
+     [ DHCPv4 ] Configuration complete (eth0)
+"someting"
+     [ Kernel ] Service exiting with status 0
+
+[92m[ SUCCESS ] process exited[0m
+
+Looking for chainloader: 
+Found /home/chetan/.conan/data/chainloader/0.15.1-5/includeos/latest/package/5ab84d6acfe1f23c4fae0ab88f26e3a396351ac9/bin/chainloader Type:  /home/chetan/.conan/data/chainloader/0.15.1-5/includeos/latest/package/5ab84d6acfe1f23c4fae0ab88f26e3a396351ac9/bin/chainloader: ELF 32-bit LSB executable, Intel 80386, version 1 (SYSV), statically linked, stripped
+
+[33;1m[ WARNING ] Running with sudo[0m
+* Multiboot begin: 0x9500
+* Multiboot cmdline @ 0x22e018: /home/chetan/.conan/data/chainloader/0.15.1-5/includeos/latest/package/5ab84d6acfe1f23c4fae0ab88f26e3a396351ac9/bin/chainloader ""
+* Multiboot end: 0x22e09b
+* Module list @ 0x22e000
+	 * Module @ 0x22f000
+	 * Args: echo ""
+ 	 * End: 0x4f72b8
+ * Multiboot end: 0x4f72b8
+<Multiboot>Booted with multiboot
+	* Boot flags: 0x24f
+	* Valid memory (130559 Kib):
+	  0x00000000 - 0x0009fbff (639 Kib)
+	  0x00100000 - 0x07fdffff (129920 Kib)
+
+	* Booted with parameters @ 0x22e018: /home/chetan/.conan/data/chainloader/0.15.1-5/includeos/latest/package/5ab84d6acfe1f23c4fae0ab88f26e3a396351ac9/bin/chainloader ""
+	* Multiboot provided memory map  (7 entries @ 0x9000)
+	  0x0000000000 - 0x000009fbff FREE (639 Kb.)
+	  0x000009fc00 - 0x000009ffff RESERVED (1 Kb.)
+	  0x00000f0000 - 0x00000fffff RESERVED (64 Kb.)
+	  0x0000100000 - 0x0007fdffff FREE (129920 Kb.)
+	  0x0007fe0000 - 0x0007ffffff RESERVED (128 Kb.)
+	  0x00feffc000 - 0x00feffffff RESERVED (16 Kb.)
+	  0x00fffc0000 - 0x00ffffffff RESERVED (256 Kb.)
+
+<Multiboot>OS loaded with 1 modules
+	* echo "" @ 0x22f000 - 0x4f72b8, size: 2917048b
+* Multiboot begin: 0x9500
+* Multiboot end: 0x4454e0
+[x86_64 PC] constructor
+[ Machine ] Initializing heap
+[ Machine ] Main memory detected as 128978752 b
+[ Machine ] Reserving 1048576 b for machine use
+================================================================================
+
+                           #include<os> // Literally
+
+================================================================================
+     [ Kernel ] Stack: 0x1ffc28
+     [ Kernel ] Boot magic: 0x2badb002, addr: 0x9500
+     [ x86_64 ] Initializing paging
+                * Supported page sizes: 4.000_KiB, 2.000_MiB
+                * Adding 512 1GiB entries @ 0x0 -> 0x8000000000
+                * Identity mapping 0 -> 0, size 16.000_GiB, flags 0x83 (8192 pages á 2.000_MiB)
+                * Marking page 0 as not present
+                * Allowing execute on 0x201000 -> 0x3697e0
+                * Passing page tables to CPU
+<Multiboot>Booted with multiboot
+	* Boot flags: 0x24f
+	* Valid memory (130559 Kib):
+	  0x00000000 - 0x0009fbff (639 Kib)
+	  0x00100000 - 0x07fdffff (129920 Kib)
+
+	* Booted with parameters @ 0x8000: echo ""
+	* Multiboot provided memory map  (7 entries @ 0x9000)
+	  0x0000000000 - 0x000009fbff FREE (639 Kb.)
+	  0x000009fc00 - 0x000009ffff RESERVED (1 Kb.)
+	  0x00000f0000 - 0x00000fffff RESERVED (64 Kb.)
+	  0x0000100000 - 0x0007fdffff FREE (129920 Kb.)
+	  0x0007fe0000 - 0x0007ffffff RESERVED (128 Kb.)
+	  0x00feffc000 - 0x00feffffff RESERVED (16 Kb.)
+	  0x00fffc0000 - 0x00ffffffff RESERVED (256 Kb.)
+
+     [ Kernel ] Total memory detected as 96.062_MiB
+                Assigning fixed memory ranges (Memory map)
+                * Protecting syms 0x446000 to 0x4df000 (size 0x99000)
+                * Assigning heap 0x4e0000 -> 0x600ffff
+     [ Kernel ] Virtual memory map
+                0x0000001000 - 0x0000007fff,  28.000_KiB (100.0 %) Page tables
+                0x0000010000 - 0x000009d3ff, 565.000_KiB (100.0 %) Stack
+                0x000009fc00 - 0x000009ffff,   1.000_KiB (100.0 %) Reserved (Multiboot)
+                0x00000f0000 - 0x00000fffff,  64.000_KiB (100.0 %) Reserved (Multiboot)
+                0x0000201000 - 0x0000369fff,   1.410_MiB (100.0 %) ELF .text
+                0x0000446000 - 0x00004defff, 612.000_KiB (100.0 %) Symbols & strings
+                0x00004e0000 - 0x000600ffff,  91.188_MiB (0.326 %) Dynamic memory
+                0x0007fe0000 - 0x0007ffffff, 128.000_KiB (100.0 %) Reserved (Multiboot)
+                0x00feffc000 - 0x00feffffff,  16.000_KiB (100.0 %) Reserved (Multiboot)
+                0x00fffc0000 - 0x00ffffffff, 256.000_KiB (100.0 %) Reserved (Multiboot)
+       [ ACPI ] Reading headers
+                OEM: BOCHS  Rev. 0
+       [ ACPI ] Reading APIC information
+                LAPIC base: 0xfee00000  (flags: 0x1)
+                I/O APIC 0   ADDR 0xfec00000  INTR 0x0
+                IRQ redirect for bus 0 from IRQ 0 to VEC 2
+                IRQ redirect for bus 0 from IRQ 5 to VEC 5
+                IRQ redirect for bus 0 from IRQ 9 to VEC 9
+                IRQ redirect for bus 0 from IRQ 10 to VEC 10
+                IRQ redirect for bus 0 from IRQ 11 to VEC 11
+        [ SMP ] Found 1 APs
+     [ SMBIOS ] Version 2.8
+                BIOS vendor: 1.10.2-1ubuntu1
+                BIOS version: 04/01/2014
+                Manufacturer: Standard PC (i440FX + PIIX, 1996)
+                Product name: pc-i440fx-bionic
+                System UUID: 00000000000000000000000000000000
+                Physical memory array with 128 MB capacity
+        [ x86 ] Setting up GDT, TLS, IST
+        [ x86 ] Initializing CPU 0
+   [ I/O APIC ] Initializing ID=0
+                Addr: 0xfec00000  Version: 0x11  Intr: 0  Entries: 24
+     [ x2APIC ] Enabling x2APIC @ 0xfee00900
+                APIC id: 0  ver: 50014
+        [ x86 ] Enabling interrupts
+        [ x86 ] Setting up kernel clock sources
+        [ x86 ] KVM PV clocks initialized
+                +--> 2207.998000 MHz
+       [ APIC ] Measuring APIC timer...
+                Enabled redirected entry 2 ioapic 0 -> 0 on apic 0
+                Initializing drivers
+[ PCI Manager ] Probing PCI bus
+                |
+                +--[ Bridge device, Intel (0x1237) ]
+                +--[ Bridge device, Intel (0x7000) ]
+                +--[ Storage controller, Intel (0x7010) ]
+                +--[ Bridge device, Intel (0x7113) ]
+                +--[ Display controller, Unknown vendor (0x1111) ]
+                +--[ Network controller, VirtIO (0x1000) ]
+                o
+                |- Initializing Storage controller
+                |--[ Storage controller, Intel (0x8086:0x7010) ]
+                |  +-x Driver not found
+                o
+                |- Initializing Network controller
+                |--[ Network controller, VirtIO, Ethernet (0x1af4:0x1000) ]
+                |
+     [ Virtio ] Attaching to  PCI addr 0x18
+                [x] Vendor ID is VIRTIO
+                [x] Device ID 0x1000 is in a valid range (Virtio LEGACY)
+                [x] Device Revision ID (0x0) supported
+                |  |- BAR0 I/O @ 0xc000, size 32
+                |  |- BAR1 Mem @ 0xfebf1000, size 4096
+                |  |- BAR4 Mem @ 0xfe000000, size 16384
+                [x] Unit has valid I/O base (0xc000)
+                [*] Reset device
+                [x] Device has 3 MSI-X vectors
+                MSI-X vector 0 pointing to cpu 0 intr 66
+                MSI-X vector 1 pointing to cpu 0 intr 67
+                MSI-X vector 2 pointing to cpu 0 intr 68
+     [ Virtio ] Initialization complete
+  [ VirtioNet ] Driver initializing
+                [x] Negotiated needed features
+                [x] Negotiated wanted features
+                [ ] Device handles packets w. partial checksum
+                [ ] Guest handles packets w. partial checksum
+                [x] There's a control queue
+                [x] Queue can handle any header/data layout
+                [x] We can use indirect descriptors
+                [x] There's a Ring Event Index to use
+                [ ] There are multiple queue pairs
+                [x] Merge RX buffers
+                [x] RX queue (256) assigned (0x561000) to device
+                [x] TX queue (256) assigned (0x565000) to device
+                [x] CTRL queue (64) assigned (0x569000) to device
+  [ VirtioNet ] Adding 128 receive buffers of size 2048
+                [x] Valid Mac address: 52:54:00:12:34:56
+                [x] Signalled driver OK
+                [x] Link up
+                o
+    [ Machine ] Listing registered devices
+                |
+                +--+ NIC eth0
+                |
+                o
+  [ SystemLog ] Initializing System Log
+                Created @ 0x1fffffff0000 (63 kB)
+                Data @ 0x1fffffff0028 (65496 bytes)
+     [ Kernel ] Initializing RNG
+     [ Kernel ] Initializing plugins
+     [ Kernel ] Registering plugin Autoconf plugin
+                * Initializing Autoconf plugin
+   [ Autoconf ] Running auto configure
+    [ Netconf ] Configuring network
+    [ Network ] Creating stack for VirtioNet on eth0 (MTU=1500)
+       [ Inet ] Bringing up eth0 on CPU 0
+       [ Inet ] Negotiating DHCP (10.0s timeout)...
+    [ Netconf ] Configuration complete
+   [ Autoconf ] Finished
+     [ Kernel ] Running service constructors
+--------------------------------------------------------------------------------
+================================================================================
+ IncludeOS 0.15.1-5 (x86_64 / 64-bit)
+ +--> Running [ Echo Kernel- OS included ]
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+       [ Inet ] Network configured (52:54:00:12:34:56)
+                IP: 		10.0.2.15
+                Netmask: 	255.255.255.0
+                Gateway: 	10.0.2.2
+                DNS Server: 	10.0.2.3
+     [ DHCPv4 ] Configuration complete (eth0)
+"someting"
+"someting"
+     [ Kernel ] Service exiting with status 0
+
+[92m[ SUCCESS ] process exited[0m
+

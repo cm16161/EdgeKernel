@@ -1,0 +1,41 @@
+<domain type='kvm' xmlns:qemu='http://libvirt.org/schemas/domain/qemu/1.0'>
+  <name>server</name>
+  <uuid>b20b8b3d-262d-4d27-9e2e-e2cf242e0a03</uuid>
+  <memory unit='KiB'>131072</memory>
+  <currentMemory unit='KiB'>131072</currentMemory>
+  <vcpu placement='static'>1</vcpu>
+  <os>
+    <type arch='x86_64' machine='pc-i440fx-bionic'>hvm</type>
+    <kernel>/home/chetan/.conan/data/chainloader/0.15.1-5/includeos/latest/package/5ab84d6acfe1f23c4fae0ab88f26e3a396351ac9/bin/chainloader</kernel>
+    <initrd>/home/chetan/Documents/echo_server/build/tcp_service</initrd>
+  </os>
+  <features>
+    <acpi/>
+  </features>
+  <cpu mode='custom' match='exact' check='partial'>
+    <model fallback='allow'>kvm64</model>
+    <feature policy='require' name='rdrand'/>
+    <feature policy='require' name='rdseed'/>
+  </cpu>
+  <clock offset='utc'/>
+  <on_poweroff>destroy</on_poweroff>
+  <on_reboot>restart</on_reboot>
+  <on_crash>destroy</on_crash>
+  <devices>
+    <emulator>/usr/bin/qemu-system-x86_64</emulator>
+    <controller type='usb' index='0' model='piix3-uhci'>
+      <address type='pci' domain='0x0000' bus='0x00' slot='0x01' function='0x2'/>
+    </controller>
+    <controller type='pci' index='0' model='pci-root'/>
+    <input type='mouse' bus='ps2'/>
+    <input type='keyboard' bus='ps2'/>
+    <memballoon model='none'/>
+  </devices>
+  <qemu:commandline>
+    <qemu:arg value='-device'/>
+    <qemu:arg value='virtio-net,netdev=net0,mac=c0:01:0a:00:00:2a,romfile='/>
+    <qemu:arg value='-net'/>
+    <qemu:arg value='tap,ifname=tap4,script=no,downscript=no'/>
+  </qemu:commandline>
+</domain>
+

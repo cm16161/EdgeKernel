@@ -1,0 +1,113 @@
+Serverless functions accessed via API Gateways
+Stateless
+Often Event-driven
+
+Client Interface
+Webserver/Storage of static content
+API Gateway - AWL Lambda? Determine which functions/services to run
+Security Token Service - Provide credentials for user <- TLS connection?
+User Authentication <- TLS?
+Database
+
+Apache OpenWhisk
+Execute functions *(actions)* in response to events
+
+Events can originate from multiple sources:
+ + timers
+ + databases
+ + message queues
+ + websites - Slack, Github
+
+Delivers services through the web to multiple consumers: website,
+mobile apps, services based on REST APIs
+[[file:/home/chetan/Downloads/popenwhisk_architecture.png]]
+
+Can chain actions together into sequences
+
+
+Nginx
+
+Everything starts when an action is invoked. There are different ways to invoke an action:
+
+    From the web, when the action is exposed as a web action
+
+    When another action invokes it through the API
+
+    When a trigger is activated and there is a rule to invoke the action
+
+    From the CLI
+
+
+REST request handled by Nginx
+
+Controller
+
+Before executing the action, the controller checks whether it can execute the action and initialize it correctly:
+
+    It needs to be sure it can execute the action, so it must authenticate the request.
+
+    Once the origin of the request has been identified, it needs to be authorized, verifying that the subject has the appropriate permissions.
+
+    The request must be enriched with some additional parameters that, as we will see, are provided as part of action configuration.
+    
+Controller consults scalable (NoSQL) database 
+
+Load Balancer
+The load balancer keeps an eye on the available instances of the action runtime, reuses the existing ones if they are available, or creates new ones if they are needed.
+Invoker may be busy serving another action. 
+
+Kafka to buffer invocations
+Pub/Sub messaging
+
+Can be blocking or non-blocking
+Invoker executes the process <- Pulls/Compiles and runs the Unikernel
+Action stores result in database
+
+Action returns to user ActionID <- Index in database for result
+Synchronous does the same but client blocks and gets result immediately <- Live connection to kernel? Or just connection to server
+
+Execution Limitations?
+    + Code size
+    + Runtime
+    + Log/Output size
+    + Parameters
+    + Concurrency
+    + Frequency
+
+Each function must have 1 input and 1 output
+Input is JSON string
+
+No Local State <- everything is ephemeral 
+Actions are not ordered 
+
+
+AWS:
+https://aws.amazon.com/lambda/
+Make request to API Gateway
+Trigger Lambda Function
+Send Status update
+
+Amazon Kinesis:
+Data stream
+Can forward to Lambda Function
+
+
+Most output/storage goes to DynamoDB
+
+AWS Step Functions:
+https://aws.amazon.com/step-functions/use-cases/
+Coordinates tasks and lambda function invocation
+
+Observations:
+Some datastore/user input
+Goes to Functions via API gateway/event trigger
+Output is stored in another database <- Firestore/DynamoDB/etc.
+
+Azure:
+https://azure.microsoft.com/en-gb/solutions/serverless/
+https://docs.microsoft.com/en-gb/azure/azure-functions/durable/durable-functions-overview?tabs=csharp
+Event Trigger
+Input and Output binding
+Function chaining -> output of one function is input to next
+Asynchronous processing by having intermediate service which polls status
+

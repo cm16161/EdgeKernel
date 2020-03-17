@@ -1,0 +1,7 @@
+{
+    "name" : "hello",
+    "directory" : "/home/chetan/Documents/Unikernel-Serverless/Kernels/hello_world/build",
+    "queue" : ["echo","echo_server","test"],
+    "ofile" : "test.output"
+
+}
