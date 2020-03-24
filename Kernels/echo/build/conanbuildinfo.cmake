@@ -67,6 +67,80 @@ set(CONAN_LIBS_BINUTILS ${CONAN_PKG_LIBS_BINUTILS} ${CONAN_SYSTEM_LIBS_BINUTILS}
 set(CONAN_LIBS_FRAMEWORKS_BINUTILS ${CONAN_PKG_LIBS_BINUTILS} ${CONAN_FRAMEWORKS_FOUND_BINUTILS})
 
 
+set(CONAN_VMRUNNER_ROOT "/home/chetan/.conan/data/vmrunner/0.16.1-5/includeos/latest/package/5ab84d6acfe1f23c4fae0ab88f26e3a396351ac9")
+set(CONAN_INCLUDE_DIRS_VMRUNNER )
+set(CONAN_LIB_DIRS_VMRUNNER )
+set(CONAN_BIN_DIRS_VMRUNNER "/home/chetan/.conan/data/vmrunner/0.16.1-5/includeos/latest/package/5ab84d6acfe1f23c4fae0ab88f26e3a396351ac9/bin")
+set(CONAN_RES_DIRS_VMRUNNER )
+set(CONAN_SRC_DIRS_VMRUNNER )
+set(CONAN_BUILD_DIRS_VMRUNNER "/home/chetan/.conan/data/vmrunner/0.16.1-5/includeos/latest/package/5ab84d6acfe1f23c4fae0ab88f26e3a396351ac9/")
+set(CONAN_FRAMEWORK_DIRS_VMRUNNER )
+set(CONAN_LIBS_VMRUNNER )
+set(CONAN_PKG_LIBS_VMRUNNER )
+set(CONAN_SYSTEM_LIBS_VMRUNNER )
+set(CONAN_FRAMEWORKS_VMRUNNER )
+set(CONAN_FRAMEWORKS_FOUND_VMRUNNER "")  # Will be filled later
+set(CONAN_DEFINES_VMRUNNER )
+set(CONAN_BUILD_MODULES_PATHS_VMRUNNER )
+# COMPILE_DEFINITIONS are equal to CONAN_DEFINES without -D, for targets
+set(CONAN_COMPILE_DEFINITIONS_VMRUNNER )
+
+set(CONAN_C_FLAGS_VMRUNNER "")
+set(CONAN_CXX_FLAGS_VMRUNNER "")
+set(CONAN_SHARED_LINKER_FLAGS_VMRUNNER "")
+set(CONAN_EXE_LINKER_FLAGS_VMRUNNER "")
+
+# For modern cmake targets we use the list variables (separated with ;)
+set(CONAN_C_FLAGS_VMRUNNER_LIST "")
+set(CONAN_CXX_FLAGS_VMRUNNER_LIST "")
+set(CONAN_SHARED_LINKER_FLAGS_VMRUNNER_LIST "")
+set(CONAN_EXE_LINKER_FLAGS_VMRUNNER_LIST "")
+
+# Apple Frameworks
+conan_find_apple_frameworks(CONAN_FRAMEWORKS_FOUND_VMRUNNER "${CONAN_FRAMEWORKS_VMRUNNER}")
+# Append to aggregated values variable
+set(CONAN_LIBS_VMRUNNER ${CONAN_PKG_LIBS_VMRUNNER} ${CONAN_SYSTEM_LIBS_VMRUNNER} ${CONAN_FRAMEWORKS_FOUND_VMRUNNER})
+# Aggregate package libs and frameworks for conan_package_library_targets()
+set(CONAN_LIBS_FRAMEWORKS_VMRUNNER ${CONAN_PKG_LIBS_VMRUNNER} ${CONAN_FRAMEWORKS_FOUND_VMRUNNER})
+
+
+set(CONAN_VMBUILD_ROOT "/home/chetan/.conan/data/vmbuild/0.15.1-15/includeos/latest/package/44fcf6b9a7fb86b2586303e3db40189d3b511830")
+set(CONAN_INCLUDE_DIRS_VMBUILD )
+set(CONAN_LIB_DIRS_VMBUILD )
+set(CONAN_BIN_DIRS_VMBUILD "/home/chetan/.conan/data/vmbuild/0.15.1-15/includeos/latest/package/44fcf6b9a7fb86b2586303e3db40189d3b511830/bin")
+set(CONAN_RES_DIRS_VMBUILD )
+set(CONAN_SRC_DIRS_VMBUILD )
+set(CONAN_BUILD_DIRS_VMBUILD "/home/chetan/.conan/data/vmbuild/0.15.1-15/includeos/latest/package/44fcf6b9a7fb86b2586303e3db40189d3b511830/")
+set(CONAN_FRAMEWORK_DIRS_VMBUILD )
+set(CONAN_LIBS_VMBUILD )
+set(CONAN_PKG_LIBS_VMBUILD )
+set(CONAN_SYSTEM_LIBS_VMBUILD )
+set(CONAN_FRAMEWORKS_VMBUILD )
+set(CONAN_FRAMEWORKS_FOUND_VMBUILD "")  # Will be filled later
+set(CONAN_DEFINES_VMBUILD )
+set(CONAN_BUILD_MODULES_PATHS_VMBUILD )
+# COMPILE_DEFINITIONS are equal to CONAN_DEFINES without -D, for targets
+set(CONAN_COMPILE_DEFINITIONS_VMBUILD )
+
+set(CONAN_C_FLAGS_VMBUILD "")
+set(CONAN_CXX_FLAGS_VMBUILD "")
+set(CONAN_SHARED_LINKER_FLAGS_VMBUILD "")
+set(CONAN_EXE_LINKER_FLAGS_VMBUILD "")
+
+# For modern cmake targets we use the list variables (separated with ;)
+set(CONAN_C_FLAGS_VMBUILD_LIST "")
+set(CONAN_CXX_FLAGS_VMBUILD_LIST "")
+set(CONAN_SHARED_LINKER_FLAGS_VMBUILD_LIST "")
+set(CONAN_EXE_LINKER_FLAGS_VMBUILD_LIST "")
+
+# Apple Frameworks
+conan_find_apple_frameworks(CONAN_FRAMEWORKS_FOUND_VMBUILD "${CONAN_FRAMEWORKS_VMBUILD}")
+# Append to aggregated values variable
+set(CONAN_LIBS_VMBUILD ${CONAN_PKG_LIBS_VMBUILD} ${CONAN_SYSTEM_LIBS_VMBUILD} ${CONAN_FRAMEWORKS_FOUND_VMBUILD})
+# Aggregate package libs and frameworks for conan_package_library_targets()
+set(CONAN_LIBS_FRAMEWORKS_VMBUILD ${CONAN_PKG_LIBS_VMBUILD} ${CONAN_FRAMEWORKS_FOUND_VMBUILD})
+
+
 set(CONAN_CHAINLOADER_ROOT "/home/chetan/.conan/data/chainloader/0.15.1-5/includeos/latest/package/5ab84d6acfe1f23c4fae0ab88f26e3a396351ac9")
 set(CONAN_INCLUDE_DIRS_CHAINLOADER )
 set(CONAN_LIB_DIRS_CHAINLOADER )
@@ -104,78 +178,41 @@ set(CONAN_LIBS_CHAINLOADER ${CONAN_PKG_LIBS_CHAINLOADER} ${CONAN_SYSTEM_LIBS_CHA
 set(CONAN_LIBS_FRAMEWORKS_CHAINLOADER ${CONAN_PKG_LIBS_CHAINLOADER} ${CONAN_FRAMEWORKS_FOUND_CHAINLOADER})
 
 
-set(CONAN_VMRUNNER_ROOT "/home/chetan/.conan/data/vmrunner/0.16.0/includeos/stable/package/5ab84d6acfe1f23c4fae0ab88f26e3a396351ac9")
-set(CONAN_INCLUDE_DIRS_VMRUNNER )
-set(CONAN_LIB_DIRS_VMRUNNER )
-set(CONAN_BIN_DIRS_VMRUNNER "/home/chetan/.conan/data/vmrunner/0.16.0/includeos/stable/package/5ab84d6acfe1f23c4fae0ab88f26e3a396351ac9/bin")
-set(CONAN_RES_DIRS_VMRUNNER )
-set(CONAN_SRC_DIRS_VMRUNNER )
-set(CONAN_BUILD_DIRS_VMRUNNER "/home/chetan/.conan/data/vmrunner/0.16.0/includeos/stable/package/5ab84d6acfe1f23c4fae0ab88f26e3a396351ac9/")
-set(CONAN_FRAMEWORK_DIRS_VMRUNNER )
-set(CONAN_LIBS_VMRUNNER )
-set(CONAN_PKG_LIBS_VMRUNNER )
-set(CONAN_SYSTEM_LIBS_VMRUNNER )
-set(CONAN_FRAMEWORKS_VMRUNNER )
-set(CONAN_FRAMEWORKS_FOUND_VMRUNNER "")  # Will be filled later
-set(CONAN_DEFINES_VMRUNNER )
-set(CONAN_BUILD_MODULES_PATHS_VMRUNNER )
+set(CONAN_DISKBUILDER_ROOT "/home/chetan/.conan/data/diskbuilder/0.15.1-14/includeos/latest/package/44fcf6b9a7fb86b2586303e3db40189d3b511830")
+set(CONAN_INCLUDE_DIRS_DISKBUILDER )
+set(CONAN_LIB_DIRS_DISKBUILDER )
+set(CONAN_BIN_DIRS_DISKBUILDER "/home/chetan/.conan/data/diskbuilder/0.15.1-14/includeos/latest/package/44fcf6b9a7fb86b2586303e3db40189d3b511830/bin")
+set(CONAN_RES_DIRS_DISKBUILDER )
+set(CONAN_SRC_DIRS_DISKBUILDER )
+set(CONAN_BUILD_DIRS_DISKBUILDER "/home/chetan/.conan/data/diskbuilder/0.15.1-14/includeos/latest/package/44fcf6b9a7fb86b2586303e3db40189d3b511830/")
+set(CONAN_FRAMEWORK_DIRS_DISKBUILDER )
+set(CONAN_LIBS_DISKBUILDER )
+set(CONAN_PKG_LIBS_DISKBUILDER )
+set(CONAN_SYSTEM_LIBS_DISKBUILDER )
+set(CONAN_FRAMEWORKS_DISKBUILDER )
+set(CONAN_FRAMEWORKS_FOUND_DISKBUILDER "")  # Will be filled later
+set(CONAN_DEFINES_DISKBUILDER )
+set(CONAN_BUILD_MODULES_PATHS_DISKBUILDER )
 # COMPILE_DEFINITIONS are equal to CONAN_DEFINES without -D, for targets
-set(CONAN_COMPILE_DEFINITIONS_VMRUNNER )
+set(CONAN_COMPILE_DEFINITIONS_DISKBUILDER )
 
-set(CONAN_C_FLAGS_VMRUNNER "")
-set(CONAN_CXX_FLAGS_VMRUNNER "")
-set(CONAN_SHARED_LINKER_FLAGS_VMRUNNER "")
-set(CONAN_EXE_LINKER_FLAGS_VMRUNNER "")
+set(CONAN_C_FLAGS_DISKBUILDER "")
+set(CONAN_CXX_FLAGS_DISKBUILDER "")
+set(CONAN_SHARED_LINKER_FLAGS_DISKBUILDER "")
+set(CONAN_EXE_LINKER_FLAGS_DISKBUILDER "")
 
 # For modern cmake targets we use the list variables (separated with ;)
-set(CONAN_C_FLAGS_VMRUNNER_LIST "")
-set(CONAN_CXX_FLAGS_VMRUNNER_LIST "")
-set(CONAN_SHARED_LINKER_FLAGS_VMRUNNER_LIST "")
-set(CONAN_EXE_LINKER_FLAGS_VMRUNNER_LIST "")
+set(CONAN_C_FLAGS_DISKBUILDER_LIST "")
+set(CONAN_CXX_FLAGS_DISKBUILDER_LIST "")
+set(CONAN_SHARED_LINKER_FLAGS_DISKBUILDER_LIST "")
+set(CONAN_EXE_LINKER_FLAGS_DISKBUILDER_LIST "")
 
 # Apple Frameworks
-conan_find_apple_frameworks(CONAN_FRAMEWORKS_FOUND_VMRUNNER "${CONAN_FRAMEWORKS_VMRUNNER}")
+conan_find_apple_frameworks(CONAN_FRAMEWORKS_FOUND_DISKBUILDER "${CONAN_FRAMEWORKS_DISKBUILDER}")
 # Append to aggregated values variable
-set(CONAN_LIBS_VMRUNNER ${CONAN_PKG_LIBS_VMRUNNER} ${CONAN_SYSTEM_LIBS_VMRUNNER} ${CONAN_FRAMEWORKS_FOUND_VMRUNNER})
+set(CONAN_LIBS_DISKBUILDER ${CONAN_PKG_LIBS_DISKBUILDER} ${CONAN_SYSTEM_LIBS_DISKBUILDER} ${CONAN_FRAMEWORKS_FOUND_DISKBUILDER})
 # Aggregate package libs and frameworks for conan_package_library_targets()
-set(CONAN_LIBS_FRAMEWORKS_VMRUNNER ${CONAN_PKG_LIBS_VMRUNNER} ${CONAN_FRAMEWORKS_FOUND_VMRUNNER})
-
-
-set(CONAN_VMBUILD_ROOT "/home/chetan/.conan/data/vmbuild/0.15.0/includeos/stable/package/44fcf6b9a7fb86b2586303e3db40189d3b511830")
-set(CONAN_INCLUDE_DIRS_VMBUILD )
-set(CONAN_LIB_DIRS_VMBUILD )
-set(CONAN_BIN_DIRS_VMBUILD "/home/chetan/.conan/data/vmbuild/0.15.0/includeos/stable/package/44fcf6b9a7fb86b2586303e3db40189d3b511830/bin")
-set(CONAN_RES_DIRS_VMBUILD )
-set(CONAN_SRC_DIRS_VMBUILD )
-set(CONAN_BUILD_DIRS_VMBUILD "/home/chetan/.conan/data/vmbuild/0.15.0/includeos/stable/package/44fcf6b9a7fb86b2586303e3db40189d3b511830/")
-set(CONAN_FRAMEWORK_DIRS_VMBUILD )
-set(CONAN_LIBS_VMBUILD )
-set(CONAN_PKG_LIBS_VMBUILD )
-set(CONAN_SYSTEM_LIBS_VMBUILD )
-set(CONAN_FRAMEWORKS_VMBUILD )
-set(CONAN_FRAMEWORKS_FOUND_VMBUILD "")  # Will be filled later
-set(CONAN_DEFINES_VMBUILD )
-set(CONAN_BUILD_MODULES_PATHS_VMBUILD )
-# COMPILE_DEFINITIONS are equal to CONAN_DEFINES without -D, for targets
-set(CONAN_COMPILE_DEFINITIONS_VMBUILD )
-
-set(CONAN_C_FLAGS_VMBUILD "")
-set(CONAN_CXX_FLAGS_VMBUILD "")
-set(CONAN_SHARED_LINKER_FLAGS_VMBUILD "")
-set(CONAN_EXE_LINKER_FLAGS_VMBUILD "")
-
-# For modern cmake targets we use the list variables (separated with ;)
-set(CONAN_C_FLAGS_VMBUILD_LIST "")
-set(CONAN_CXX_FLAGS_VMBUILD_LIST "")
-set(CONAN_SHARED_LINKER_FLAGS_VMBUILD_LIST "")
-set(CONAN_EXE_LINKER_FLAGS_VMBUILD_LIST "")
-
-# Apple Frameworks
-conan_find_apple_frameworks(CONAN_FRAMEWORKS_FOUND_VMBUILD "${CONAN_FRAMEWORKS_VMBUILD}")
-# Append to aggregated values variable
-set(CONAN_LIBS_VMBUILD ${CONAN_PKG_LIBS_VMBUILD} ${CONAN_SYSTEM_LIBS_VMBUILD} ${CONAN_FRAMEWORKS_FOUND_VMBUILD})
-# Aggregate package libs and frameworks for conan_package_library_targets()
-set(CONAN_LIBS_FRAMEWORKS_VMBUILD ${CONAN_PKG_LIBS_VMBUILD} ${CONAN_FRAMEWORKS_FOUND_VMBUILD})
+set(CONAN_LIBS_FRAMEWORKS_DISKBUILDER ${CONAN_PKG_LIBS_DISKBUILDER} ${CONAN_FRAMEWORKS_FOUND_DISKBUILDER})
 
 
 set(CONAN_INCLUDEOS_ROOT "/home/chetan/.conan/data/includeos/0.15.1-5/includeos/latest/package/e70c8745fe4aa8eea40e3372373944d2a5e7f7e2")
@@ -676,7 +713,7 @@ set(CONAN_SETTINGS_CPPSTD "17")
 set(CONAN_SETTINGS_OS "Linux")
 set(CONAN_SETTINGS_OS_BUILD "Linux")
 
-set(CONAN_DEPENDENCIES binutils chainloader vmrunner vmbuild includeos GSL libgcc rapidjson http-parser uzlib botan s2n openssl libcxx musl libunwind libcxxabi)
+set(CONAN_DEPENDENCIES binutils vmrunner vmbuild chainloader diskbuilder includeos GSL libgcc rapidjson http-parser uzlib botan s2n openssl libcxx musl libunwind libcxxabi)
 # Storing original command line args (CMake helper) flags
 set(CONAN_CMD_CXX_FLAGS ${CONAN_CXX_FLAGS})
 
@@ -711,9 +748,10 @@ set(CONAN_LIB_DIRS "/home/chetan/.conan/data/binutils/2.31/includeos/toolchain/p
 			"/home/chetan/.conan/data/libunwind/7.0.1/includeos/stable/package/c78b30f867758f14db30f570224a7f03bf7ddfab/lib"
 			"/home/chetan/.conan/data/libcxxabi/7.0.1/includeos/stable/package/5d88dc4b26402479b7aa0fcb29ca9b9c28da4c9f/lib" ${CONAN_LIB_DIRS})
 set(CONAN_BIN_DIRS "/home/chetan/.conan/data/binutils/2.31/includeos/toolchain/package/0b18460aeb1058d7174e2cd4df4095ee9cfb1cb6/bin"
+			"/home/chetan/.conan/data/vmrunner/0.16.1-5/includeos/latest/package/5ab84d6acfe1f23c4fae0ab88f26e3a396351ac9/bin"
+			"/home/chetan/.conan/data/vmbuild/0.15.1-15/includeos/latest/package/44fcf6b9a7fb86b2586303e3db40189d3b511830/bin"
 			"/home/chetan/.conan/data/chainloader/0.15.1-5/includeos/latest/package/5ab84d6acfe1f23c4fae0ab88f26e3a396351ac9/bin"
-			"/home/chetan/.conan/data/vmrunner/0.16.0/includeos/stable/package/5ab84d6acfe1f23c4fae0ab88f26e3a396351ac9/bin"
-			"/home/chetan/.conan/data/vmbuild/0.15.0/includeos/stable/package/44fcf6b9a7fb86b2586303e3db40189d3b511830/bin" ${CONAN_BIN_DIRS})
+			"/home/chetan/.conan/data/diskbuilder/0.15.1-14/includeos/latest/package/44fcf6b9a7fb86b2586303e3db40189d3b511830/bin" ${CONAN_BIN_DIRS})
 set(CONAN_RES_DIRS "/home/chetan/.conan/data/includeos/0.15.1-5/includeos/latest/package/e70c8745fe4aa8eea40e3372373944d2a5e7f7e2" ${CONAN_RES_DIRS})
 set(CONAN_FRAMEWORK_DIRS  ${CONAN_FRAMEWORK_DIRS})
 set(CONAN_LIBS os arch musl_syscalls x86_64_pc compiler http-parser tinf s2n crypto ssl c++ c++experimental c crypt m rt dl pthread resolv util xnet unwind c++abi ${CONAN_LIBS})
@@ -724,9 +762,10 @@ set(CONAN_FRAMEWORKS_FOUND "")  # Will be filled later
 set(CONAN_DEFINES  ${CONAN_DEFINES})
 set(CONAN_BUILD_MODULES_PATHS  ${CONAN_BUILD_MODULES_PATHS})
 set(CONAN_CMAKE_MODULE_PATH "/home/chetan/.conan/data/binutils/2.31/includeos/toolchain/package/0b18460aeb1058d7174e2cd4df4095ee9cfb1cb6/"
+			"/home/chetan/.conan/data/vmrunner/0.16.1-5/includeos/latest/package/5ab84d6acfe1f23c4fae0ab88f26e3a396351ac9/"
+			"/home/chetan/.conan/data/vmbuild/0.15.1-15/includeos/latest/package/44fcf6b9a7fb86b2586303e3db40189d3b511830/"
 			"/home/chetan/.conan/data/chainloader/0.15.1-5/includeos/latest/package/5ab84d6acfe1f23c4fae0ab88f26e3a396351ac9/"
-			"/home/chetan/.conan/data/vmrunner/0.16.0/includeos/stable/package/5ab84d6acfe1f23c4fae0ab88f26e3a396351ac9/"
-			"/home/chetan/.conan/data/vmbuild/0.15.0/includeos/stable/package/44fcf6b9a7fb86b2586303e3db40189d3b511830/"
+			"/home/chetan/.conan/data/diskbuilder/0.15.1-14/includeos/latest/package/44fcf6b9a7fb86b2586303e3db40189d3b511830/"
 			"/home/chetan/.conan/data/includeos/0.15.1-5/includeos/latest/package/e70c8745fe4aa8eea40e3372373944d2a5e7f7e2/cmake"
 			"/home/chetan/.conan/data/GSL/2.0.0/includeos/stable/package/5ab84d6acfe1f23c4fae0ab88f26e3a396351ac9/"
 			"/home/chetan/.conan/data/libgcc/1.0/includeos/stable/package/5d88dc4b26402479b7aa0fcb29ca9b9c28da4c9f/"
@@ -803,48 +842,6 @@ macro(conan_define_targets)
                                                                   $<$<CONFIG:RelWithDebInfo>:${CONAN_C_FLAGS_BINUTILS_RELWITHDEBINFO_LIST} ${CONAN_CXX_FLAGS_BINUTILS_RELWITHDEBINFO_LIST}>
                                                                   $<$<CONFIG:MinSizeRel>:${CONAN_C_FLAGS_BINUTILS_MINSIZEREL_LIST} ${CONAN_CXX_FLAGS_BINUTILS_MINSIZEREL_LIST}>
                                                                   $<$<CONFIG:Debug>:${CONAN_C_FLAGS_BINUTILS_DEBUG_LIST}  ${CONAN_CXX_FLAGS_BINUTILS_DEBUG_LIST}>)
-
-
-    conan_package_library_targets("${CONAN_LIBS_FRAMEWORKS_CHAINLOADER}" "${CONAN_LIB_DIRS_CHAINLOADER}"
-                                  CONAN_PACKAGE_TARGETS_CHAINLOADER "${CONAN_SYSTEM_LIBS_CHAINLOADER} "
-                                  "" chainloader)
-    conan_package_library_targets("${CONAN_LIBS_FRAMEWORKS_CHAINLOADER_DEBUG}" "${CONAN_LIB_DIRS_CHAINLOADER_DEBUG}"
-                                  CONAN_PACKAGE_TARGETS_CHAINLOADER_DEBUG "${CONAN_SYSTEM_LIBS_CHAINLOADER_DEBUG} "
-                                  "debug" chainloader)
-    conan_package_library_targets("${CONAN_LIBS_FRAMEWORKS_CHAINLOADER_RELEASE}" "${CONAN_LIB_DIRS_CHAINLOADER_RELEASE}"
-                                  CONAN_PACKAGE_TARGETS_CHAINLOADER_RELEASE "${CONAN_SYSTEM_LIBS_CHAINLOADER_RELEASE} "
-                                  "release" chainloader)
-    conan_package_library_targets("${CONAN_LIBS_FRAMEWORKS_CHAINLOADER_RELWITHDEBINFO}" "${CONAN_LIB_DIRS_CHAINLOADER_RELWITHDEBINFO}"
-                                  CONAN_PACKAGE_TARGETS_CHAINLOADER_RELWITHDEBINFO "${CONAN_SYSTEM_LIBS_CHAINLOADER_RELWITHDEBINFO} "
-                                  "relwithdebinfo" chainloader)
-    conan_package_library_targets("${CONAN_LIBS_FRAMEWORKS_CHAINLOADER_MINSIZEREL}" "${CONAN_LIB_DIRS_CHAINLOADER_MINSIZEREL}"
-                                  CONAN_PACKAGE_TARGETS_CHAINLOADER_MINSIZEREL "${CONAN_SYSTEM_LIBS_CHAINLOADER_MINSIZEREL} "
-                                  "minsizerel" chainloader)
-
-    add_library(CONAN_PKG::chainloader INTERFACE IMPORTED)
-
-    # Property INTERFACE_LINK_FLAGS do not work, necessary to add to INTERFACE_LINK_LIBRARIES
-    set_property(TARGET CONAN_PKG::chainloader PROPERTY INTERFACE_LINK_LIBRARIES ${CONAN_PACKAGE_TARGETS_CHAINLOADER} ${CONAN_SHARED_LINKER_FLAGS_CHAINLOADER_LIST} ${CONAN_EXE_LINKER_FLAGS_CHAINLOADER_LIST}
-                                                                 $<$<CONFIG:Release>:${CONAN_PACKAGE_TARGETS_CHAINLOADER_RELEASE} ${CONAN_SHARED_LINKER_FLAGS_CHAINLOADER_RELEASE_LIST} ${CONAN_EXE_LINKER_FLAGS_CHAINLOADER_RELEASE_LIST}>
-                                                                 $<$<CONFIG:RelWithDebInfo>:${CONAN_PACKAGE_TARGETS_CHAINLOADER_RELWITHDEBINFO} ${CONAN_SHARED_LINKER_FLAGS_CHAINLOADER_RELWITHDEBINFO_LIST} ${CONAN_EXE_LINKER_FLAGS_CHAINLOADER_RELWITHDEBINFO_LIST}>
-                                                                 $<$<CONFIG:MinSizeRel>:${CONAN_PACKAGE_TARGETS_CHAINLOADER_MINSIZEREL} ${CONAN_SHARED_LINKER_FLAGS_CHAINLOADER_MINSIZEREL_LIST} ${CONAN_EXE_LINKER_FLAGS_CHAINLOADER_MINSIZEREL_LIST}>
-                                                                 $<$<CONFIG:Debug>:${CONAN_PACKAGE_TARGETS_CHAINLOADER_DEBUG} ${CONAN_SHARED_LINKER_FLAGS_CHAINLOADER_DEBUG_LIST} ${CONAN_EXE_LINKER_FLAGS_CHAINLOADER_DEBUG_LIST}>
-                                                                 )
-    set_property(TARGET CONAN_PKG::chainloader PROPERTY INTERFACE_INCLUDE_DIRECTORIES ${CONAN_INCLUDE_DIRS_CHAINLOADER}
-                                                                      $<$<CONFIG:Release>:${CONAN_INCLUDE_DIRS_CHAINLOADER_RELEASE}>
-                                                                      $<$<CONFIG:RelWithDebInfo>:${CONAN_INCLUDE_DIRS_CHAINLOADER_RELWITHDEBINFO}>
-                                                                      $<$<CONFIG:MinSizeRel>:${CONAN_INCLUDE_DIRS_CHAINLOADER_MINSIZEREL}>
-                                                                      $<$<CONFIG:Debug>:${CONAN_INCLUDE_DIRS_CHAINLOADER_DEBUG}>)
-    set_property(TARGET CONAN_PKG::chainloader PROPERTY INTERFACE_COMPILE_DEFINITIONS ${CONAN_COMPILE_DEFINITIONS_CHAINLOADER}
-                                                                      $<$<CONFIG:Release>:${CONAN_COMPILE_DEFINITIONS_CHAINLOADER_RELEASE}>
-                                                                      $<$<CONFIG:RelWithDebInfo>:${CONAN_COMPILE_DEFINITIONS_CHAINLOADER_RELWITHDEBINFO}>
-                                                                      $<$<CONFIG:MinSizeRel>:${CONAN_COMPILE_DEFINITIONS_CHAINLOADER_MINSIZEREL}>
-                                                                      $<$<CONFIG:Debug>:${CONAN_COMPILE_DEFINITIONS_CHAINLOADER_DEBUG}>)
-    set_property(TARGET CONAN_PKG::chainloader PROPERTY INTERFACE_COMPILE_OPTIONS ${CONAN_C_FLAGS_CHAINLOADER_LIST} ${CONAN_CXX_FLAGS_CHAINLOADER_LIST}
-                                                                  $<$<CONFIG:Release>:${CONAN_C_FLAGS_CHAINLOADER_RELEASE_LIST} ${CONAN_CXX_FLAGS_CHAINLOADER_RELEASE_LIST}>
-                                                                  $<$<CONFIG:RelWithDebInfo>:${CONAN_C_FLAGS_CHAINLOADER_RELWITHDEBINFO_LIST} ${CONAN_CXX_FLAGS_CHAINLOADER_RELWITHDEBINFO_LIST}>
-                                                                  $<$<CONFIG:MinSizeRel>:${CONAN_C_FLAGS_CHAINLOADER_MINSIZEREL_LIST} ${CONAN_CXX_FLAGS_CHAINLOADER_MINSIZEREL_LIST}>
-                                                                  $<$<CONFIG:Debug>:${CONAN_C_FLAGS_CHAINLOADER_DEBUG_LIST}  ${CONAN_CXX_FLAGS_CHAINLOADER_DEBUG_LIST}>)
 
 
     conan_package_library_targets("${CONAN_LIBS_FRAMEWORKS_VMRUNNER}" "${CONAN_LIB_DIRS_VMRUNNER}"
@@ -929,6 +926,90 @@ macro(conan_define_targets)
                                                                   $<$<CONFIG:RelWithDebInfo>:${CONAN_C_FLAGS_VMBUILD_RELWITHDEBINFO_LIST} ${CONAN_CXX_FLAGS_VMBUILD_RELWITHDEBINFO_LIST}>
                                                                   $<$<CONFIG:MinSizeRel>:${CONAN_C_FLAGS_VMBUILD_MINSIZEREL_LIST} ${CONAN_CXX_FLAGS_VMBUILD_MINSIZEREL_LIST}>
                                                                   $<$<CONFIG:Debug>:${CONAN_C_FLAGS_VMBUILD_DEBUG_LIST}  ${CONAN_CXX_FLAGS_VMBUILD_DEBUG_LIST}>)
+
+
+    conan_package_library_targets("${CONAN_LIBS_FRAMEWORKS_CHAINLOADER}" "${CONAN_LIB_DIRS_CHAINLOADER}"
+                                  CONAN_PACKAGE_TARGETS_CHAINLOADER "${CONAN_SYSTEM_LIBS_CHAINLOADER} "
+                                  "" chainloader)
+    conan_package_library_targets("${CONAN_LIBS_FRAMEWORKS_CHAINLOADER_DEBUG}" "${CONAN_LIB_DIRS_CHAINLOADER_DEBUG}"
+                                  CONAN_PACKAGE_TARGETS_CHAINLOADER_DEBUG "${CONAN_SYSTEM_LIBS_CHAINLOADER_DEBUG} "
+                                  "debug" chainloader)
+    conan_package_library_targets("${CONAN_LIBS_FRAMEWORKS_CHAINLOADER_RELEASE}" "${CONAN_LIB_DIRS_CHAINLOADER_RELEASE}"
+                                  CONAN_PACKAGE_TARGETS_CHAINLOADER_RELEASE "${CONAN_SYSTEM_LIBS_CHAINLOADER_RELEASE} "
+                                  "release" chainloader)
+    conan_package_library_targets("${CONAN_LIBS_FRAMEWORKS_CHAINLOADER_RELWITHDEBINFO}" "${CONAN_LIB_DIRS_CHAINLOADER_RELWITHDEBINFO}"
+                                  CONAN_PACKAGE_TARGETS_CHAINLOADER_RELWITHDEBINFO "${CONAN_SYSTEM_LIBS_CHAINLOADER_RELWITHDEBINFO} "
+                                  "relwithdebinfo" chainloader)
+    conan_package_library_targets("${CONAN_LIBS_FRAMEWORKS_CHAINLOADER_MINSIZEREL}" "${CONAN_LIB_DIRS_CHAINLOADER_MINSIZEREL}"
+                                  CONAN_PACKAGE_TARGETS_CHAINLOADER_MINSIZEREL "${CONAN_SYSTEM_LIBS_CHAINLOADER_MINSIZEREL} "
+                                  "minsizerel" chainloader)
+
+    add_library(CONAN_PKG::chainloader INTERFACE IMPORTED)
+
+    # Property INTERFACE_LINK_FLAGS do not work, necessary to add to INTERFACE_LINK_LIBRARIES
+    set_property(TARGET CONAN_PKG::chainloader PROPERTY INTERFACE_LINK_LIBRARIES ${CONAN_PACKAGE_TARGETS_CHAINLOADER} ${CONAN_SHARED_LINKER_FLAGS_CHAINLOADER_LIST} ${CONAN_EXE_LINKER_FLAGS_CHAINLOADER_LIST}
+                                                                 $<$<CONFIG:Release>:${CONAN_PACKAGE_TARGETS_CHAINLOADER_RELEASE} ${CONAN_SHARED_LINKER_FLAGS_CHAINLOADER_RELEASE_LIST} ${CONAN_EXE_LINKER_FLAGS_CHAINLOADER_RELEASE_LIST}>
+                                                                 $<$<CONFIG:RelWithDebInfo>:${CONAN_PACKAGE_TARGETS_CHAINLOADER_RELWITHDEBINFO} ${CONAN_SHARED_LINKER_FLAGS_CHAINLOADER_RELWITHDEBINFO_LIST} ${CONAN_EXE_LINKER_FLAGS_CHAINLOADER_RELWITHDEBINFO_LIST}>
+                                                                 $<$<CONFIG:MinSizeRel>:${CONAN_PACKAGE_TARGETS_CHAINLOADER_MINSIZEREL} ${CONAN_SHARED_LINKER_FLAGS_CHAINLOADER_MINSIZEREL_LIST} ${CONAN_EXE_LINKER_FLAGS_CHAINLOADER_MINSIZEREL_LIST}>
+                                                                 $<$<CONFIG:Debug>:${CONAN_PACKAGE_TARGETS_CHAINLOADER_DEBUG} ${CONAN_SHARED_LINKER_FLAGS_CHAINLOADER_DEBUG_LIST} ${CONAN_EXE_LINKER_FLAGS_CHAINLOADER_DEBUG_LIST}>
+                                                                 )
+    set_property(TARGET CONAN_PKG::chainloader PROPERTY INTERFACE_INCLUDE_DIRECTORIES ${CONAN_INCLUDE_DIRS_CHAINLOADER}
+                                                                      $<$<CONFIG:Release>:${CONAN_INCLUDE_DIRS_CHAINLOADER_RELEASE}>
+                                                                      $<$<CONFIG:RelWithDebInfo>:${CONAN_INCLUDE_DIRS_CHAINLOADER_RELWITHDEBINFO}>
+                                                                      $<$<CONFIG:MinSizeRel>:${CONAN_INCLUDE_DIRS_CHAINLOADER_MINSIZEREL}>
+                                                                      $<$<CONFIG:Debug>:${CONAN_INCLUDE_DIRS_CHAINLOADER_DEBUG}>)
+    set_property(TARGET CONAN_PKG::chainloader PROPERTY INTERFACE_COMPILE_DEFINITIONS ${CONAN_COMPILE_DEFINITIONS_CHAINLOADER}
+                                                                      $<$<CONFIG:Release>:${CONAN_COMPILE_DEFINITIONS_CHAINLOADER_RELEASE}>
+                                                                      $<$<CONFIG:RelWithDebInfo>:${CONAN_COMPILE_DEFINITIONS_CHAINLOADER_RELWITHDEBINFO}>
+                                                                      $<$<CONFIG:MinSizeRel>:${CONAN_COMPILE_DEFINITIONS_CHAINLOADER_MINSIZEREL}>
+                                                                      $<$<CONFIG:Debug>:${CONAN_COMPILE_DEFINITIONS_CHAINLOADER_DEBUG}>)
+    set_property(TARGET CONAN_PKG::chainloader PROPERTY INTERFACE_COMPILE_OPTIONS ${CONAN_C_FLAGS_CHAINLOADER_LIST} ${CONAN_CXX_FLAGS_CHAINLOADER_LIST}
+                                                                  $<$<CONFIG:Release>:${CONAN_C_FLAGS_CHAINLOADER_RELEASE_LIST} ${CONAN_CXX_FLAGS_CHAINLOADER_RELEASE_LIST}>
+                                                                  $<$<CONFIG:RelWithDebInfo>:${CONAN_C_FLAGS_CHAINLOADER_RELWITHDEBINFO_LIST} ${CONAN_CXX_FLAGS_CHAINLOADER_RELWITHDEBINFO_LIST}>
+                                                                  $<$<CONFIG:MinSizeRel>:${CONAN_C_FLAGS_CHAINLOADER_MINSIZEREL_LIST} ${CONAN_CXX_FLAGS_CHAINLOADER_MINSIZEREL_LIST}>
+                                                                  $<$<CONFIG:Debug>:${CONAN_C_FLAGS_CHAINLOADER_DEBUG_LIST}  ${CONAN_CXX_FLAGS_CHAINLOADER_DEBUG_LIST}>)
+
+
+    conan_package_library_targets("${CONAN_LIBS_FRAMEWORKS_DISKBUILDER}" "${CONAN_LIB_DIRS_DISKBUILDER}"
+                                  CONAN_PACKAGE_TARGETS_DISKBUILDER "${CONAN_SYSTEM_LIBS_DISKBUILDER} "
+                                  "" diskbuilder)
+    conan_package_library_targets("${CONAN_LIBS_FRAMEWORKS_DISKBUILDER_DEBUG}" "${CONAN_LIB_DIRS_DISKBUILDER_DEBUG}"
+                                  CONAN_PACKAGE_TARGETS_DISKBUILDER_DEBUG "${CONAN_SYSTEM_LIBS_DISKBUILDER_DEBUG} "
+                                  "debug" diskbuilder)
+    conan_package_library_targets("${CONAN_LIBS_FRAMEWORKS_DISKBUILDER_RELEASE}" "${CONAN_LIB_DIRS_DISKBUILDER_RELEASE}"
+                                  CONAN_PACKAGE_TARGETS_DISKBUILDER_RELEASE "${CONAN_SYSTEM_LIBS_DISKBUILDER_RELEASE} "
+                                  "release" diskbuilder)
+    conan_package_library_targets("${CONAN_LIBS_FRAMEWORKS_DISKBUILDER_RELWITHDEBINFO}" "${CONAN_LIB_DIRS_DISKBUILDER_RELWITHDEBINFO}"
+                                  CONAN_PACKAGE_TARGETS_DISKBUILDER_RELWITHDEBINFO "${CONAN_SYSTEM_LIBS_DISKBUILDER_RELWITHDEBINFO} "
+                                  "relwithdebinfo" diskbuilder)
+    conan_package_library_targets("${CONAN_LIBS_FRAMEWORKS_DISKBUILDER_MINSIZEREL}" "${CONAN_LIB_DIRS_DISKBUILDER_MINSIZEREL}"
+                                  CONAN_PACKAGE_TARGETS_DISKBUILDER_MINSIZEREL "${CONAN_SYSTEM_LIBS_DISKBUILDER_MINSIZEREL} "
+                                  "minsizerel" diskbuilder)
+
+    add_library(CONAN_PKG::diskbuilder INTERFACE IMPORTED)
+
+    # Property INTERFACE_LINK_FLAGS do not work, necessary to add to INTERFACE_LINK_LIBRARIES
+    set_property(TARGET CONAN_PKG::diskbuilder PROPERTY INTERFACE_LINK_LIBRARIES ${CONAN_PACKAGE_TARGETS_DISKBUILDER} ${CONAN_SHARED_LINKER_FLAGS_DISKBUILDER_LIST} ${CONAN_EXE_LINKER_FLAGS_DISKBUILDER_LIST}
+                                                                 $<$<CONFIG:Release>:${CONAN_PACKAGE_TARGETS_DISKBUILDER_RELEASE} ${CONAN_SHARED_LINKER_FLAGS_DISKBUILDER_RELEASE_LIST} ${CONAN_EXE_LINKER_FLAGS_DISKBUILDER_RELEASE_LIST}>
+                                                                 $<$<CONFIG:RelWithDebInfo>:${CONAN_PACKAGE_TARGETS_DISKBUILDER_RELWITHDEBINFO} ${CONAN_SHARED_LINKER_FLAGS_DISKBUILDER_RELWITHDEBINFO_LIST} ${CONAN_EXE_LINKER_FLAGS_DISKBUILDER_RELWITHDEBINFO_LIST}>
+                                                                 $<$<CONFIG:MinSizeRel>:${CONAN_PACKAGE_TARGETS_DISKBUILDER_MINSIZEREL} ${CONAN_SHARED_LINKER_FLAGS_DISKBUILDER_MINSIZEREL_LIST} ${CONAN_EXE_LINKER_FLAGS_DISKBUILDER_MINSIZEREL_LIST}>
+                                                                 $<$<CONFIG:Debug>:${CONAN_PACKAGE_TARGETS_DISKBUILDER_DEBUG} ${CONAN_SHARED_LINKER_FLAGS_DISKBUILDER_DEBUG_LIST} ${CONAN_EXE_LINKER_FLAGS_DISKBUILDER_DEBUG_LIST}>
+                                                                 )
+    set_property(TARGET CONAN_PKG::diskbuilder PROPERTY INTERFACE_INCLUDE_DIRECTORIES ${CONAN_INCLUDE_DIRS_DISKBUILDER}
+                                                                      $<$<CONFIG:Release>:${CONAN_INCLUDE_DIRS_DISKBUILDER_RELEASE}>
+                                                                      $<$<CONFIG:RelWithDebInfo>:${CONAN_INCLUDE_DIRS_DISKBUILDER_RELWITHDEBINFO}>
+                                                                      $<$<CONFIG:MinSizeRel>:${CONAN_INCLUDE_DIRS_DISKBUILDER_MINSIZEREL}>
+                                                                      $<$<CONFIG:Debug>:${CONAN_INCLUDE_DIRS_DISKBUILDER_DEBUG}>)
+    set_property(TARGET CONAN_PKG::diskbuilder PROPERTY INTERFACE_COMPILE_DEFINITIONS ${CONAN_COMPILE_DEFINITIONS_DISKBUILDER}
+                                                                      $<$<CONFIG:Release>:${CONAN_COMPILE_DEFINITIONS_DISKBUILDER_RELEASE}>
+                                                                      $<$<CONFIG:RelWithDebInfo>:${CONAN_COMPILE_DEFINITIONS_DISKBUILDER_RELWITHDEBINFO}>
+                                                                      $<$<CONFIG:MinSizeRel>:${CONAN_COMPILE_DEFINITIONS_DISKBUILDER_MINSIZEREL}>
+                                                                      $<$<CONFIG:Debug>:${CONAN_COMPILE_DEFINITIONS_DISKBUILDER_DEBUG}>)
+    set_property(TARGET CONAN_PKG::diskbuilder PROPERTY INTERFACE_COMPILE_OPTIONS ${CONAN_C_FLAGS_DISKBUILDER_LIST} ${CONAN_CXX_FLAGS_DISKBUILDER_LIST}
+                                                                  $<$<CONFIG:Release>:${CONAN_C_FLAGS_DISKBUILDER_RELEASE_LIST} ${CONAN_CXX_FLAGS_DISKBUILDER_RELEASE_LIST}>
+                                                                  $<$<CONFIG:RelWithDebInfo>:${CONAN_C_FLAGS_DISKBUILDER_RELWITHDEBINFO_LIST} ${CONAN_CXX_FLAGS_DISKBUILDER_RELWITHDEBINFO_LIST}>
+                                                                  $<$<CONFIG:MinSizeRel>:${CONAN_C_FLAGS_DISKBUILDER_MINSIZEREL_LIST} ${CONAN_CXX_FLAGS_DISKBUILDER_MINSIZEREL_LIST}>
+                                                                  $<$<CONFIG:Debug>:${CONAN_C_FLAGS_DISKBUILDER_DEBUG_LIST}  ${CONAN_CXX_FLAGS_DISKBUILDER_DEBUG_LIST}>)
 
 
     conan_package_library_targets("${CONAN_LIBS_FRAMEWORKS_INCLUDEOS}" "${CONAN_LIB_DIRS_INCLUDEOS}"
@@ -1476,7 +1557,7 @@ macro(conan_define_targets)
                                                                   $<$<CONFIG:MinSizeRel>:${CONAN_C_FLAGS_LIBCXXABI_MINSIZEREL_LIST} ${CONAN_CXX_FLAGS_LIBCXXABI_MINSIZEREL_LIST}>
                                                                   $<$<CONFIG:Debug>:${CONAN_C_FLAGS_LIBCXXABI_DEBUG_LIST}  ${CONAN_CXX_FLAGS_LIBCXXABI_DEBUG_LIST}>)
 
-    set(CONAN_TARGETS CONAN_PKG::binutils CONAN_PKG::chainloader CONAN_PKG::vmrunner CONAN_PKG::vmbuild CONAN_PKG::includeos CONAN_PKG::GSL CONAN_PKG::libgcc CONAN_PKG::rapidjson CONAN_PKG::http-parser CONAN_PKG::uzlib CONAN_PKG::botan CONAN_PKG::s2n CONAN_PKG::openssl CONAN_PKG::libcxx CONAN_PKG::musl CONAN_PKG::libunwind CONAN_PKG::libcxxabi)
+    set(CONAN_TARGETS CONAN_PKG::binutils CONAN_PKG::vmrunner CONAN_PKG::vmbuild CONAN_PKG::chainloader CONAN_PKG::diskbuilder CONAN_PKG::includeos CONAN_PKG::GSL CONAN_PKG::libgcc CONAN_PKG::rapidjson CONAN_PKG::http-parser CONAN_PKG::uzlib CONAN_PKG::botan CONAN_PKG::s2n CONAN_PKG::openssl CONAN_PKG::libcxx CONAN_PKG::musl CONAN_PKG::libunwind CONAN_PKG::libcxxabi)
 
 endmacro()
 

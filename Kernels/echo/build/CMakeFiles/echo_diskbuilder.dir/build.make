@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/chetan/Documents/Unikernel-Serverless/echo
+CMAKE_SOURCE_DIR = /home/chetan/Documents/Unikernel-Serverless/Kernels/echo
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/chetan/Documents/Unikernel-Serverless/echo/build
+CMAKE_BINARY_DIR = /home/chetan/Documents/Unikernel-Serverless/Kernels/echo/build
 
 # Utility rule file for echo_diskbuilder.
 
@@ -57,8 +57,8 @@ CMakeFiles/echo_diskbuilder: memdisk.fat
 
 
 memdisk.fat: manifest.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/chetan/Documents/Unikernel-Serverless/echo/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Creating memdisk"
-	/home/chetan/.conan/data/diskbuilder/0.15.1-14/includeos/latest/package/44fcf6b9a7fb86b2586303e3db40189d3b511830/bin/diskbuilder -o memdisk.fat /home/chetan/Documents/Unikernel-Serverless/echo/build/certs
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/chetan/Documents/Unikernel-Serverless/Kernels/echo/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Creating memdisk"
+	/home/chetan/.conan/data/diskbuilder/0.15.1-14/includeos/latest/package/44fcf6b9a7fb86b2586303e3db40189d3b511830/bin/diskbuilder -o memdisk.fat /home/chetan/Documents/Unikernel-Serverless/Kernels/echo/build/certs
 
 echo_diskbuilder: CMakeFiles/echo_diskbuilder
 echo_diskbuilder: memdisk.fat
@@ -76,6 +76,6 @@ CMakeFiles/echo_diskbuilder.dir/clean:
 .PHONY : CMakeFiles/echo_diskbuilder.dir/clean
 
 CMakeFiles/echo_diskbuilder.dir/depend:
-	cd /home/chetan/Documents/Unikernel-Serverless/echo/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/chetan/Documents/Unikernel-Serverless/echo /home/chetan/Documents/Unikernel-Serverless/echo /home/chetan/Documents/Unikernel-Serverless/echo/build /home/chetan/Documents/Unikernel-Serverless/echo/build /home/chetan/Documents/Unikernel-Serverless/echo/build/CMakeFiles/echo_diskbuilder.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/chetan/Documents/Unikernel-Serverless/Kernels/echo/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/chetan/Documents/Unikernel-Serverless/Kernels/echo /home/chetan/Documents/Unikernel-Serverless/Kernels/echo /home/chetan/Documents/Unikernel-Serverless/Kernels/echo/build /home/chetan/Documents/Unikernel-Serverless/Kernels/echo/build /home/chetan/Documents/Unikernel-Serverless/Kernels/echo/build/CMakeFiles/echo_diskbuilder.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/echo_diskbuilder.dir/depend
 

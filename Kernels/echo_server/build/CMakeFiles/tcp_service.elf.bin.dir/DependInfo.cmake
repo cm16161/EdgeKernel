@@ -4,8 +4,8 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/chetan/.conan/data/includeos/0.15.1-5/includeos/latest/package/e70c8745fe4aa8eea40e3372373944d2a5e7f7e2/src/service_name.cpp" "/home/chetan/Documents/echo_server/build/CMakeFiles/tcp_service.elf.bin.dir/home/chetan/.conan/data/includeos/0.15.1-5/includeos/latest/package/e70c8745fe4aa8eea40e3372373944d2a5e7f7e2/src/service_name.cpp.o"
-  "/home/chetan/Documents/echo_server/main.cpp" "/home/chetan/Documents/echo_server/build/CMakeFiles/tcp_service.elf.bin.dir/main.cpp.o"
+  "/home/chetan/.conan/data/includeos/0.15.1-5/includeos/latest/package/e70c8745fe4aa8eea40e3372373944d2a5e7f7e2/src/service_name.cpp" "/home/chetan/Documents/Unikernel-Serverless/Kernels/echo_server/build/CMakeFiles/tcp_service.elf.bin.dir/home/chetan/.conan/data/includeos/0.15.1-5/includeos/latest/package/e70c8745fe4aa8eea40e3372373944d2a5e7f7e2/src/service_name.cpp.o"
+  "/home/chetan/Documents/Unikernel-Serverless/Kernels/echo_server/main.cpp" "/home/chetan/Documents/Unikernel-Serverless/Kernels/echo_server/build/CMakeFiles/tcp_service.elf.bin.dir/main.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "Clang")
 
@@ -36,7 +36,7 @@ set(CMAKE_CXX_TARGET_INCLUDE_PATH
 
 # Targets to which this target links.
 set(CMAKE_TARGET_LINKED_INFO_FILES
-  "/home/chetan/Documents/echo_server/build/CMakeFiles/config_json_tcp_service.elf.bin.dir/DependInfo.cmake"
+  "/home/chetan/Documents/Unikernel-Serverless/Kernels/echo_server/build/CMakeFiles/config_json_tcp_service.elf.bin.dir/DependInfo.cmake"
   )
 
 # Fortran module output directory.

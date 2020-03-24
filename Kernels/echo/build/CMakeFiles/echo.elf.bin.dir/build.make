@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/chetan/Documents/Unikernel-Serverless/echo
+CMAKE_SOURCE_DIR = /home/chetan/Documents/Unikernel-Serverless/Kernels/echo
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/chetan/Documents/Unikernel-Serverless/echo/build
+CMAKE_BINARY_DIR = /home/chetan/Documents/Unikernel-Serverless/Kernels/echo/build
 
 # Include any dependencies generated for this target.
 include CMakeFiles/echo.elf.bin.dir/depend.make
@@ -59,16 +59,16 @@ include CMakeFiles/echo.elf.bin.dir/flags.make
 
 CMakeFiles/echo.elf.bin.dir/main.cpp.o: CMakeFiles/echo.elf.bin.dir/flags.make
 CMakeFiles/echo.elf.bin.dir/main.cpp.o: ../main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chetan/Documents/Unikernel-Serverless/echo/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/echo.elf.bin.dir/main.cpp.o"
-	/usr/bin/clang++-6.0 --target=x86_64-pc-linux-elf  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/echo.elf.bin.dir/main.cpp.o -c /home/chetan/Documents/Unikernel-Serverless/echo/main.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chetan/Documents/Unikernel-Serverless/Kernels/echo/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/echo.elf.bin.dir/main.cpp.o"
+	/usr/bin/clang++-6.0 --target=x86_64-pc-linux-elf  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/echo.elf.bin.dir/main.cpp.o -c /home/chetan/Documents/Unikernel-Serverless/Kernels/echo/main.cpp
 
 CMakeFiles/echo.elf.bin.dir/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/echo.elf.bin.dir/main.cpp.i"
-	/usr/bin/clang++-6.0 --target=x86_64-pc-linux-elf $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/chetan/Documents/Unikernel-Serverless/echo/main.cpp > CMakeFiles/echo.elf.bin.dir/main.cpp.i
+	/usr/bin/clang++-6.0 --target=x86_64-pc-linux-elf $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/chetan/Documents/Unikernel-Serverless/Kernels/echo/main.cpp > CMakeFiles/echo.elf.bin.dir/main.cpp.i
 
 CMakeFiles/echo.elf.bin.dir/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/echo.elf.bin.dir/main.cpp.s"
-	/usr/bin/clang++-6.0 --target=x86_64-pc-linux-elf $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/chetan/Documents/Unikernel-Serverless/echo/main.cpp -o CMakeFiles/echo.elf.bin.dir/main.cpp.s
+	/usr/bin/clang++-6.0 --target=x86_64-pc-linux-elf $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/chetan/Documents/Unikernel-Serverless/Kernels/echo/main.cpp -o CMakeFiles/echo.elf.bin.dir/main.cpp.s
 
 CMakeFiles/echo.elf.bin.dir/main.cpp.o.requires:
 
@@ -83,7 +83,7 @@ CMakeFiles/echo.elf.bin.dir/main.cpp.o.provides.build: CMakeFiles/echo.elf.bin.d
 
 CMakeFiles/echo.elf.bin.dir/home/chetan/.conan/data/includeos/0.15.1-5/includeos/latest/package/e70c8745fe4aa8eea40e3372373944d2a5e7f7e2/src/service_name.cpp.o: CMakeFiles/echo.elf.bin.dir/flags.make
 CMakeFiles/echo.elf.bin.dir/home/chetan/.conan/data/includeos/0.15.1-5/includeos/latest/package/e70c8745fe4aa8eea40e3372373944d2a5e7f7e2/src/service_name.cpp.o: /home/chetan/.conan/data/includeos/0.15.1-5/includeos/latest/package/e70c8745fe4aa8eea40e3372373944d2a5e7f7e2/src/service_name.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chetan/Documents/Unikernel-Serverless/echo/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/echo.elf.bin.dir/home/chetan/.conan/data/includeos/0.15.1-5/includeos/latest/package/e70c8745fe4aa8eea40e3372373944d2a5e7f7e2/src/service_name.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chetan/Documents/Unikernel-Serverless/Kernels/echo/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/echo.elf.bin.dir/home/chetan/.conan/data/includeos/0.15.1-5/includeos/latest/package/e70c8745fe4aa8eea40e3372373944d2a5e7f7e2/src/service_name.cpp.o"
 	/usr/bin/clang++-6.0 --target=x86_64-pc-linux-elf  $(CXX_DEFINES) -DSERVICE=\"echo\" -DSERVICE_NAME="\"Echo Kernel- OS included\"" $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/echo.elf.bin.dir/home/chetan/.conan/data/includeos/0.15.1-5/includeos/latest/package/e70c8745fe4aa8eea40e3372373944d2a5e7f7e2/src/service_name.cpp.o -c /home/chetan/.conan/data/includeos/0.15.1-5/includeos/latest/package/e70c8745fe4aa8eea40e3372373944d2a5e7f7e2/src/service_name.cpp
 
 CMakeFiles/echo.elf.bin.dir/home/chetan/.conan/data/includeos/0.15.1-5/includeos/latest/package/e70c8745fe4aa8eea40e3372373944d2a5e7f7e2/src/service_name.cpp.i: cmake_force
@@ -148,7 +148,7 @@ bin/echo.elf.bin: /home/chetan/.conan/data/includeos/0.15.1-5/includeos/latest/p
 bin/echo.elf.bin: /home/chetan/.conan/data/includeos/0.15.1-5/includeos/latest/package/e70c8745fe4aa8eea40e3372373944d2a5e7f7e2/drivers/stdout/libdefault_stdout.a
 bin/echo.elf.bin: lib/libecho_memdisk.a
 bin/echo.elf.bin: CMakeFiles/echo.elf.bin.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/chetan/Documents/Unikernel-Serverless/echo/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable bin/echo.elf.bin"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/chetan/Documents/Unikernel-Serverless/Kernels/echo/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable bin/echo.elf.bin"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/echo.elf.bin.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -166,6 +166,6 @@ CMakeFiles/echo.elf.bin.dir/clean:
 .PHONY : CMakeFiles/echo.elf.bin.dir/clean
 
 CMakeFiles/echo.elf.bin.dir/depend:
-	cd /home/chetan/Documents/Unikernel-Serverless/echo/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/chetan/Documents/Unikernel-Serverless/echo /home/chetan/Documents/Unikernel-Serverless/echo /home/chetan/Documents/Unikernel-Serverless/echo/build /home/chetan/Documents/Unikernel-Serverless/echo/build /home/chetan/Documents/Unikernel-Serverless/echo/build/CMakeFiles/echo.elf.bin.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/chetan/Documents/Unikernel-Serverless/Kernels/echo/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/chetan/Documents/Unikernel-Serverless/Kernels/echo /home/chetan/Documents/Unikernel-Serverless/Kernels/echo /home/chetan/Documents/Unikernel-Serverless/Kernels/echo/build /home/chetan/Documents/Unikernel-Serverless/Kernels/echo/build /home/chetan/Documents/Unikernel-Serverless/Kernels/echo/build/CMakeFiles/echo.elf.bin.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/echo.elf.bin.dir/depend
 

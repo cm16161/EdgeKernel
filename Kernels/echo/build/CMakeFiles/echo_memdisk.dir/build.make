@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/chetan/Documents/Unikernel-Serverless/echo
+CMAKE_SOURCE_DIR = /home/chetan/Documents/Unikernel-Serverless/Kernels/echo
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/chetan/Documents/Unikernel-Serverless/echo/build
+CMAKE_BINARY_DIR = /home/chetan/Documents/Unikernel-Serverless/Kernels/echo/build
 
 # Include any dependencies generated for this target.
 include CMakeFiles/echo_memdisk.dir/depend.make
@@ -58,25 +58,25 @@ include CMakeFiles/echo_memdisk.dir/progress.make
 include CMakeFiles/echo_memdisk.dir/flags.make
 
 memdisk.o: memdisk.fat
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/chetan/Documents/Unikernel-Serverless/echo/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating memdisk.o"
-	/usr/bin/python3 /home/chetan/.conan/data/includeos/0.15.1-5/includeos/latest/package/e70c8745fe4aa8eea40e3372373944d2a5e7f7e2/tools/memdisk/memdisk.py --file memdisk.asm /home/chetan/Documents/Unikernel-Serverless/echo/build/memdisk.fat
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/chetan/Documents/Unikernel-Serverless/Kernels/echo/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating memdisk.o"
+	/usr/bin/python3 /home/chetan/.conan/data/includeos/0.15.1-5/includeos/latest/package/e70c8745fe4aa8eea40e3372373944d2a5e7f7e2/tools/memdisk/memdisk.py --file memdisk.asm /home/chetan/Documents/Unikernel-Serverless/Kernels/echo/build/memdisk.fat
 	nasm -f elf64 memdisk.asm -o memdisk.o
 
 memdisk.fat: manifest.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/chetan/Documents/Unikernel-Serverless/echo/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Creating memdisk"
-	/home/chetan/.conan/data/diskbuilder/0.15.1-14/includeos/latest/package/44fcf6b9a7fb86b2586303e3db40189d3b511830/bin/diskbuilder -o memdisk.fat /home/chetan/Documents/Unikernel-Serverless/echo/build/certs
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/chetan/Documents/Unikernel-Serverless/Kernels/echo/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Creating memdisk"
+	/home/chetan/.conan/data/diskbuilder/0.15.1-14/includeos/latest/package/44fcf6b9a7fb86b2586303e3db40189d3b511830/bin/diskbuilder -o memdisk.fat /home/chetan/Documents/Unikernel-Serverless/Kernels/echo/build/certs
 
 # Object files for target echo_memdisk
 echo_memdisk_OBJECTS =
 
 # External object files for target echo_memdisk
 echo_memdisk_EXTERNAL_OBJECTS = \
-"/home/chetan/Documents/Unikernel-Serverless/echo/build/memdisk.o"
+"/home/chetan/Documents/Unikernel-Serverless/Kernels/echo/build/memdisk.o"
 
 lib/libecho_memdisk.a: memdisk.o
 lib/libecho_memdisk.a: CMakeFiles/echo_memdisk.dir/build.make
 lib/libecho_memdisk.a: CMakeFiles/echo_memdisk.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/chetan/Documents/Unikernel-Serverless/echo/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX static library lib/libecho_memdisk.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/chetan/Documents/Unikernel-Serverless/Kernels/echo/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX static library lib/libecho_memdisk.a"
 	$(CMAKE_COMMAND) -P CMakeFiles/echo_memdisk.dir/cmake_clean_target.cmake
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/echo_memdisk.dir/link.txt --verbose=$(VERBOSE)
 
@@ -95,6 +95,6 @@ CMakeFiles/echo_memdisk.dir/clean:
 
 CMakeFiles/echo_memdisk.dir/depend: memdisk.o
 CMakeFiles/echo_memdisk.dir/depend: memdisk.fat
-	cd /home/chetan/Documents/Unikernel-Serverless/echo/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/chetan/Documents/Unikernel-Serverless/echo /home/chetan/Documents/Unikernel-Serverless/echo /home/chetan/Documents/Unikernel-Serverless/echo/build /home/chetan/Documents/Unikernel-Serverless/echo/build /home/chetan/Documents/Unikernel-Serverless/echo/build/CMakeFiles/echo_memdisk.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/chetan/Documents/Unikernel-Serverless/Kernels/echo/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/chetan/Documents/Unikernel-Serverless/Kernels/echo /home/chetan/Documents/Unikernel-Serverless/Kernels/echo /home/chetan/Documents/Unikernel-Serverless/Kernels/echo/build /home/chetan/Documents/Unikernel-Serverless/Kernels/echo/build /home/chetan/Documents/Unikernel-Serverless/Kernels/echo/build/CMakeFiles/echo_memdisk.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/echo_memdisk.dir/depend
 

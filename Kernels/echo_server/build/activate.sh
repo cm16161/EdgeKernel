@@ -12,7 +12,7 @@ export CONAN_OLD_PYTHONPATH="$PYTHONPATH"
 while read -r line; do
     LINE="$(eval echo $line)";
     export "$LINE";
-done < "/home/chetan/Documents/echo_server/build/environment.sh.env"
+done < "/home/chetan/Documents/Unikernel-Serverless/Kernels/echo_server/build/environment.sh.env"
 
 export CONAN_OLD_PS1=$PS1
 export PS1="(conanenv) $PS1"

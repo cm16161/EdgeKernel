@@ -54,10 +54,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/chetan/Documents/Unikernel-Serverless/echo
+CMAKE_SOURCE_DIR = /home/chetan/Documents/Unikernel-Serverless/Kernels/echo
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/chetan/Documents/Unikernel-Serverless/echo/build
+CMAKE_BINARY_DIR = /home/chetan/Documents/Unikernel-Serverless/Kernels/echo/build
 
 #=============================================================================
 # Target rules for target CMakeFiles/echo.dir
@@ -66,7 +66,7 @@ CMAKE_BINARY_DIR = /home/chetan/Documents/Unikernel-Serverless/echo/build
 CMakeFiles/echo.dir/all: CMakeFiles/echo.elf.bin.dir/all
 	$(MAKE) -f CMakeFiles/echo.dir/build.make CMakeFiles/echo.dir/depend
 	$(MAKE) -f CMakeFiles/echo.dir/build.make CMakeFiles/echo.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/chetan/Documents/Unikernel-Serverless/echo/build/CMakeFiles --progress-num=3 "Built target echo"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/chetan/Documents/Unikernel-Serverless/Kernels/echo/build/CMakeFiles --progress-num=3 "Built target echo"
 .PHONY : CMakeFiles/echo.dir/all
 
 # Include target in all.
@@ -76,9 +76,9 @@ all: CMakeFiles/echo.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/echo.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/chetan/Documents/Unikernel-Serverless/echo/build/CMakeFiles 11
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/chetan/Documents/Unikernel-Serverless/Kernels/echo/build/CMakeFiles 11
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/echo.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/chetan/Documents/Unikernel-Serverless/echo/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/chetan/Documents/Unikernel-Serverless/Kernels/echo/build/CMakeFiles 0
 .PHONY : CMakeFiles/echo.dir/rule
 
 # Convenience name for target.
@@ -100,12 +100,12 @@ clean: CMakeFiles/echo.dir/clean
 # Target rules for target CMakeFiles/echo.elf.bin.dir
 
 # All Build rule for target.
-CMakeFiles/echo.elf.bin.dir/all: CMakeFiles/config_json_echo.elf.bin.dir/all
 CMakeFiles/echo.elf.bin.dir/all: CMakeFiles/echo_diskbuilder.dir/all
 CMakeFiles/echo.elf.bin.dir/all: CMakeFiles/echo_memdisk.dir/all
+CMakeFiles/echo.elf.bin.dir/all: CMakeFiles/config_json_echo.elf.bin.dir/all
 	$(MAKE) -f CMakeFiles/echo.elf.bin.dir/build.make CMakeFiles/echo.elf.bin.dir/depend
 	$(MAKE) -f CMakeFiles/echo.elf.bin.dir/build.make CMakeFiles/echo.elf.bin.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/chetan/Documents/Unikernel-Serverless/echo/build/CMakeFiles --progress-num=4,5,6 "Built target echo.elf.bin"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/chetan/Documents/Unikernel-Serverless/Kernels/echo/build/CMakeFiles --progress-num=4,5,6 "Built target echo.elf.bin"
 .PHONY : CMakeFiles/echo.elf.bin.dir/all
 
 # Include target in all.
@@ -115,9 +115,9 @@ all: CMakeFiles/echo.elf.bin.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/echo.elf.bin.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/chetan/Documents/Unikernel-Serverless/echo/build/CMakeFiles 10
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/chetan/Documents/Unikernel-Serverless/Kernels/echo/build/CMakeFiles 10
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/echo.elf.bin.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/chetan/Documents/Unikernel-Serverless/echo/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/chetan/Documents/Unikernel-Serverless/Kernels/echo/build/CMakeFiles 0
 .PHONY : CMakeFiles/echo.elf.bin.dir/rule
 
 # Convenience name for target.
@@ -142,7 +142,7 @@ clean: CMakeFiles/echo.elf.bin.dir/clean
 CMakeFiles/config_json_echo.elf.bin.dir/all:
 	$(MAKE) -f CMakeFiles/config_json_echo.elf.bin.dir/build.make CMakeFiles/config_json_echo.elf.bin.dir/depend
 	$(MAKE) -f CMakeFiles/config_json_echo.elf.bin.dir/build.make CMakeFiles/config_json_echo.elf.bin.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/chetan/Documents/Unikernel-Serverless/echo/build/CMakeFiles --progress-num=1,2 "Built target config_json_echo.elf.bin"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/chetan/Documents/Unikernel-Serverless/Kernels/echo/build/CMakeFiles --progress-num=1,2 "Built target config_json_echo.elf.bin"
 .PHONY : CMakeFiles/config_json_echo.elf.bin.dir/all
 
 # Include target in all.
@@ -152,9 +152,9 @@ all: CMakeFiles/config_json_echo.elf.bin.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/config_json_echo.elf.bin.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/chetan/Documents/Unikernel-Serverless/echo/build/CMakeFiles 2
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/chetan/Documents/Unikernel-Serverless/Kernels/echo/build/CMakeFiles 2
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/config_json_echo.elf.bin.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/chetan/Documents/Unikernel-Serverless/echo/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/chetan/Documents/Unikernel-Serverless/Kernels/echo/build/CMakeFiles 0
 .PHONY : CMakeFiles/config_json_echo.elf.bin.dir/rule
 
 # Convenience name for target.
@@ -179,7 +179,7 @@ clean: CMakeFiles/config_json_echo.elf.bin.dir/clean
 CMakeFiles/echo_disccontent.dir/all:
 	$(MAKE) -f CMakeFiles/echo_disccontent.dir/build.make CMakeFiles/echo_disccontent.dir/depend
 	$(MAKE) -f CMakeFiles/echo_disccontent.dir/build.make CMakeFiles/echo_disccontent.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/chetan/Documents/Unikernel-Serverless/echo/build/CMakeFiles --progress-num=7 "Built target echo_disccontent"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/chetan/Documents/Unikernel-Serverless/Kernels/echo/build/CMakeFiles --progress-num=7 "Built target echo_disccontent"
 .PHONY : CMakeFiles/echo_disccontent.dir/all
 
 # Include target in all.
@@ -189,9 +189,9 @@ all: CMakeFiles/echo_disccontent.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/echo_disccontent.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/chetan/Documents/Unikernel-Serverless/echo/build/CMakeFiles 1
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/chetan/Documents/Unikernel-Serverless/Kernels/echo/build/CMakeFiles 1
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/echo_disccontent.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/chetan/Documents/Unikernel-Serverless/echo/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/chetan/Documents/Unikernel-Serverless/Kernels/echo/build/CMakeFiles 0
 .PHONY : CMakeFiles/echo_disccontent.dir/rule
 
 # Convenience name for target.
@@ -216,14 +216,14 @@ clean: CMakeFiles/echo_disccontent.dir/clean
 CMakeFiles/echo_diskbuilder.dir/all: CMakeFiles/echo_disccontent.dir/all
 	$(MAKE) -f CMakeFiles/echo_diskbuilder.dir/build.make CMakeFiles/echo_diskbuilder.dir/depend
 	$(MAKE) -f CMakeFiles/echo_diskbuilder.dir/build.make CMakeFiles/echo_diskbuilder.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/chetan/Documents/Unikernel-Serverless/echo/build/CMakeFiles --progress-num=8 "Built target echo_diskbuilder"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/chetan/Documents/Unikernel-Serverless/Kernels/echo/build/CMakeFiles --progress-num=8 "Built target echo_diskbuilder"
 .PHONY : CMakeFiles/echo_diskbuilder.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/echo_diskbuilder.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/chetan/Documents/Unikernel-Serverless/echo/build/CMakeFiles 2
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/chetan/Documents/Unikernel-Serverless/Kernels/echo/build/CMakeFiles 2
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/echo_diskbuilder.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/chetan/Documents/Unikernel-Serverless/echo/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/chetan/Documents/Unikernel-Serverless/Kernels/echo/build/CMakeFiles 0
 .PHONY : CMakeFiles/echo_diskbuilder.dir/rule
 
 # Convenience name for target.
@@ -248,7 +248,7 @@ clean: CMakeFiles/echo_diskbuilder.dir/clean
 CMakeFiles/echo_memdisk.dir/all: CMakeFiles/echo_disccontent.dir/all
 	$(MAKE) -f CMakeFiles/echo_memdisk.dir/build.make CMakeFiles/echo_memdisk.dir/depend
 	$(MAKE) -f CMakeFiles/echo_memdisk.dir/build.make CMakeFiles/echo_memdisk.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/chetan/Documents/Unikernel-Serverless/echo/build/CMakeFiles --progress-num=9,10,11 "Built target echo_memdisk"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/chetan/Documents/Unikernel-Serverless/Kernels/echo/build/CMakeFiles --progress-num=9,10,11 "Built target echo_memdisk"
 .PHONY : CMakeFiles/echo_memdisk.dir/all
 
 # Include target in all.
@@ -258,9 +258,9 @@ all: CMakeFiles/echo_memdisk.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/echo_memdisk.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/chetan/Documents/Unikernel-Serverless/echo/build/CMakeFiles 4
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/chetan/Documents/Unikernel-Serverless/Kernels/echo/build/CMakeFiles 4
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/echo_memdisk.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/chetan/Documents/Unikernel-Serverless/echo/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/chetan/Documents/Unikernel-Serverless/Kernels/echo/build/CMakeFiles 0
 .PHONY : CMakeFiles/echo_memdisk.dir/rule
 
 # Convenience name for target.

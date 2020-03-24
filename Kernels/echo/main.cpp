@@ -18,7 +18,7 @@ static void begin_http(net::Inet &inet)
 
 	using namespace http;
 	static http::Basic_client basic{ inet.tcp() };
-	const auto blocking_pop{ "http://127.0.0.1:7379/BLPOP/echo/3"s };
+	const auto blocking_pop{ "http://127.0.0.1:7379/BRPOP/echo/3"s };
 
 	Timers::periodic(500ms, [blocking_pop](auto) {
 		{
@@ -27,13 +27,13 @@ static void begin_http(net::Inet &inet)
 				{
 					json j = json::parse(res->Message::body());
 
-					if (j["BLPOP"][1] == nullptr)
+					if (j["BRPOP"][1] == nullptr)
 					{
 						exit(EXIT_SUCCESS);
 					}
 					else
 					{
-						std::cout << j["BLPOP"][1] << std::endl;
+						std::cout << j["BRPOP"][1] << std::endl;
 					}
 				}
 				else

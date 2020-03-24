@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/chetan/Documents/Unikernel-Serverless/echo
+CMAKE_SOURCE_DIR = /home/chetan/Documents/Unikernel-Serverless/Kernels/echo
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/chetan/Documents/Unikernel-Serverless/echo/build
+CMAKE_BINARY_DIR = /home/chetan/Documents/Unikernel-Serverless/Kernels/echo/build
 
 # Utility rule file for echo_disccontent.
 
@@ -54,9 +54,9 @@ CMAKE_BINARY_DIR = /home/chetan/Documents/Unikernel-Serverless/echo/build
 include CMakeFiles/echo_disccontent.dir/progress.make
 
 CMakeFiles/echo_disccontent:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/chetan/Documents/Unikernel-Serverless/echo/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Checking disc content changes"
-	find /home/chetan/Documents/Unikernel-Serverless/echo/build/certs/ -type f -exec /usr/bin/md5sum {} + > /tmp/manifest.txt.new
-	cmp --silent /home/chetan/Documents/Unikernel-Serverless/echo/build/manifest.txt /tmp/manifest.txt.new || cp /tmp/manifest.txt.new /home/chetan/Documents/Unikernel-Serverless/echo/build/manifest.txt
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/chetan/Documents/Unikernel-Serverless/Kernels/echo/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Checking disc content changes"
+	find /home/chetan/Documents/Unikernel-Serverless/Kernels/echo/build/certs/ -type f -exec /usr/bin/md5sum {} + > /tmp/manifest.txt.new
+	cmp --silent /home/chetan/Documents/Unikernel-Serverless/Kernels/echo/build/manifest.txt /tmp/manifest.txt.new || cp /tmp/manifest.txt.new /home/chetan/Documents/Unikernel-Serverless/Kernels/echo/build/manifest.txt
 
 echo_disccontent: CMakeFiles/echo_disccontent
 echo_disccontent: CMakeFiles/echo_disccontent.dir/build.make
@@ -73,6 +73,6 @@ CMakeFiles/echo_disccontent.dir/clean:
 .PHONY : CMakeFiles/echo_disccontent.dir/clean
 
 CMakeFiles/echo_disccontent.dir/depend:
-	cd /home/chetan/Documents/Unikernel-Serverless/echo/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/chetan/Documents/Unikernel-Serverless/echo /home/chetan/Documents/Unikernel-Serverless/echo /home/chetan/Documents/Unikernel-Serverless/echo/build /home/chetan/Documents/Unikernel-Serverless/echo/build /home/chetan/Documents/Unikernel-Serverless/echo/build/CMakeFiles/echo_disccontent.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/chetan/Documents/Unikernel-Serverless/Kernels/echo/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/chetan/Documents/Unikernel-Serverless/Kernels/echo /home/chetan/Documents/Unikernel-Serverless/Kernels/echo /home/chetan/Documents/Unikernel-Serverless/Kernels/echo/build /home/chetan/Documents/Unikernel-Serverless/Kernels/echo/build /home/chetan/Documents/Unikernel-Serverless/Kernels/echo/build/CMakeFiles/echo_disccontent.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/echo_disccontent.dir/depend
 

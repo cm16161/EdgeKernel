@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/chetan/Documents/echo_server
+CMAKE_SOURCE_DIR = /home/chetan/Documents/Unikernel-Serverless/Kernels/echo_server
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/chetan/Documents/echo_server/build
+CMAKE_BINARY_DIR = /home/chetan/Documents/Unikernel-Serverless/Kernels/echo_server/build
 
 # Utility rule file for tcp_client.
 
@@ -54,10 +54,10 @@ CMAKE_BINARY_DIR = /home/chetan/Documents/echo_server/build
 include CMakeFiles/tcp_client.dir/progress.make
 
 CMakeFiles/tcp_client: bin/tcp_client.elf.bin
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/chetan/Documents/echo_server/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) elf.syms
-	/home/chetan/.conan/data/vmbuild/0.15.1-15/includeos/latest/package/44fcf6b9a7fb86b2586303e3db40189d3b511830/bin/elf_syms /home/chetan/Documents/echo_server/build/bin/tcp_client.elf.bin
-	/usr/bin/objcopy --update-section .elf_symbols=_elf_symbols.bin /home/chetan/Documents/echo_server/build/bin/tcp_client.elf.bin /home/chetan/Documents/echo_server/build/tcp_client
-	/usr/bin/strip --strip-all /home/chetan/Documents/echo_server/build/tcp_client
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/chetan/Documents/Unikernel-Serverless/Kernels/echo_server/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) elf.syms
+	/home/chetan/.conan/data/vmbuild/0.15.1-15/includeos/latest/package/44fcf6b9a7fb86b2586303e3db40189d3b511830/bin/elf_syms /home/chetan/Documents/Unikernel-Serverless/Kernels/echo_server/build/bin/tcp_client.elf.bin
+	/usr/bin/objcopy --update-section .elf_symbols=_elf_symbols.bin /home/chetan/Documents/Unikernel-Serverless/Kernels/echo_server/build/bin/tcp_client.elf.bin /home/chetan/Documents/Unikernel-Serverless/Kernels/echo_server/build/tcp_client
+	/usr/bin/strip --strip-all /home/chetan/Documents/Unikernel-Serverless/Kernels/echo_server/build/tcp_client
 	mv bin/tcp_client.elf.bin bin/tcp_client.elf.bin.copy
 
 tcp_client: CMakeFiles/tcp_client
@@ -75,6 +75,6 @@ CMakeFiles/tcp_client.dir/clean:
 .PHONY : CMakeFiles/tcp_client.dir/clean
 
 CMakeFiles/tcp_client.dir/depend:
-	cd /home/chetan/Documents/echo_server/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/chetan/Documents/echo_server /home/chetan/Documents/echo_server /home/chetan/Documents/echo_server/build /home/chetan/Documents/echo_server/build /home/chetan/Documents/echo_server/build/CMakeFiles/tcp_client.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/chetan/Documents/Unikernel-Serverless/Kernels/echo_server/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/chetan/Documents/Unikernel-Serverless/Kernels/echo_server /home/chetan/Documents/Unikernel-Serverless/Kernels/echo_server /home/chetan/Documents/Unikernel-Serverless/Kernels/echo_server/build /home/chetan/Documents/Unikernel-Serverless/Kernels/echo_server/build /home/chetan/Documents/Unikernel-Serverless/Kernels/echo_server/build/CMakeFiles/tcp_client.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/tcp_client.dir/depend
 

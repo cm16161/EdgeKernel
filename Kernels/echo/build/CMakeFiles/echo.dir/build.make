@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/chetan/Documents/Unikernel-Serverless/echo
+CMAKE_SOURCE_DIR = /home/chetan/Documents/Unikernel-Serverless/Kernels/echo
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/chetan/Documents/Unikernel-Serverless/echo/build
+CMAKE_BINARY_DIR = /home/chetan/Documents/Unikernel-Serverless/Kernels/echo/build
 
 # Utility rule file for echo.
 
@@ -54,10 +54,10 @@ CMAKE_BINARY_DIR = /home/chetan/Documents/Unikernel-Serverless/echo/build
 include CMakeFiles/echo.dir/progress.make
 
 CMakeFiles/echo: bin/echo.elf.bin
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/chetan/Documents/Unikernel-Serverless/echo/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) elf.syms
-	/home/chetan/.conan/data/vmbuild/0.15.0/includeos/stable/package/44fcf6b9a7fb86b2586303e3db40189d3b511830/bin/elf_syms /home/chetan/Documents/Unikernel-Serverless/echo/build/bin/echo.elf.bin
-	/usr/bin/objcopy --update-section .elf_symbols=_elf_symbols.bin /home/chetan/Documents/Unikernel-Serverless/echo/build/bin/echo.elf.bin /home/chetan/Documents/Unikernel-Serverless/echo/build/echo
-	/usr/bin/strip --strip-all /home/chetan/Documents/Unikernel-Serverless/echo/build/echo
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/chetan/Documents/Unikernel-Serverless/Kernels/echo/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) elf.syms
+	/home/chetan/.conan/data/vmbuild/0.15.1-15/includeos/latest/package/44fcf6b9a7fb86b2586303e3db40189d3b511830/bin/elf_syms /home/chetan/Documents/Unikernel-Serverless/Kernels/echo/build/bin/echo.elf.bin
+	/usr/bin/objcopy --update-section .elf_symbols=_elf_symbols.bin /home/chetan/Documents/Unikernel-Serverless/Kernels/echo/build/bin/echo.elf.bin /home/chetan/Documents/Unikernel-Serverless/Kernels/echo/build/echo
+	/usr/bin/strip --strip-all /home/chetan/Documents/Unikernel-Serverless/Kernels/echo/build/echo
 	mv bin/echo.elf.bin bin/echo.elf.bin.copy
 
 echo: CMakeFiles/echo
@@ -75,6 +75,6 @@ CMakeFiles/echo.dir/clean:
 .PHONY : CMakeFiles/echo.dir/clean
 
 CMakeFiles/echo.dir/depend:
-	cd /home/chetan/Documents/Unikernel-Serverless/echo/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/chetan/Documents/Unikernel-Serverless/echo /home/chetan/Documents/Unikernel-Serverless/echo /home/chetan/Documents/Unikernel-Serverless/echo/build /home/chetan/Documents/Unikernel-Serverless/echo/build /home/chetan/Documents/Unikernel-Serverless/echo/build/CMakeFiles/echo.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/chetan/Documents/Unikernel-Serverless/Kernels/echo/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/chetan/Documents/Unikernel-Serverless/Kernels/echo /home/chetan/Documents/Unikernel-Serverless/Kernels/echo /home/chetan/Documents/Unikernel-Serverless/Kernels/echo/build /home/chetan/Documents/Unikernel-Serverless/Kernels/echo/build /home/chetan/Documents/Unikernel-Serverless/Kernels/echo/build/CMakeFiles/echo.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/echo.dir/depend
 

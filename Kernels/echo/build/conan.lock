@@ -7,12 +7,13 @@
     "options": "includeos:platform=default\nincludeos:smp=False\nlibcxx:shared=False\nlibcxx:threads=True\nlibcxxabi:shared=False\nlibunwind:shared=False\nopenssl:async=False\nopenssl:shared=False\nopenssl:threads=True\nopenssl:ubsan=False\ns2n:threads=False",
     "requires": {
      "includeos/0.15.1-5@includeos/latest#0": "1",
-     "chainloader/0.15.1-5@includeos/latest": "14",
-     "vmrunner/0.16.0@includeos/stable": "15",
-     "vmbuild/0.15.0@includeos/stable": "16",
-     "binutils/2.31@includeos/toolchain": "17"
+     "vmrunner/0.16.1-5@includeos/latest": "14",
+     "vmbuild/0.15.1-15@includeos/latest": "15",
+     "chainloader/0.15.1-5@includeos/latest": "16",
+     "diskbuilder/0.15.1-14@includeos/latest": "17",
+     "binutils/2.31@includeos/toolchain": "18"
     },
-    "path": "/home/chetan/Documents/Unikernel-Serverless/echo/conanfile.txt"
+    "path": "/home/chetan/Documents/Unikernel-Serverless/Kernels/echo/conanfile.txt"
    },
    "1": {
     "pref": "includeos/0.15.1-5@includeos/latest#0:e70c8745fe4aa8eea40e3372373944d2a5e7f7e2#0",
@@ -58,27 +59,34 @@
     }
    },
    "14": {
-    "pref": "chainloader/0.15.1-5@includeos/latest#0:5ab84d6acfe1f23c4fae0ab88f26e3a396351ac9#0",
+    "pref": "vmrunner/0.16.1-5@includeos/latest#0:5ab84d6acfe1f23c4fae0ab88f26e3a396351ac9#0",
     "options": "",
     "python_requires": [
      "conan-tools/1.0.0@includeos/stable#0"
     ]
    },
    "15": {
-    "pref": "vmrunner/0.16.0@includeos/stable#0:5ab84d6acfe1f23c4fae0ab88f26e3a396351ac9#0",
+    "pref": "vmbuild/0.15.1-15@includeos/latest#0:44fcf6b9a7fb86b2586303e3db40189d3b511830#0",
     "options": "",
     "python_requires": [
      "conan-tools/1.0.0@includeos/stable#0"
     ]
    },
    "16": {
-    "pref": "vmbuild/0.15.0@includeos/stable#0:44fcf6b9a7fb86b2586303e3db40189d3b511830#0",
+    "pref": "chainloader/0.15.1-5@includeos/latest#0:5ab84d6acfe1f23c4fae0ab88f26e3a396351ac9#0",
     "options": "",
     "python_requires": [
      "conan-tools/1.0.0@includeos/stable#0"
     ]
    },
    "17": {
+    "pref": "diskbuilder/0.15.1-14@includeos/latest#0:44fcf6b9a7fb86b2586303e3db40189d3b511830#0",
+    "options": "",
+    "python_requires": [
+     "conan-tools/1.0.0@includeos/stable#0"
+    ]
+   },
+   "18": {
     "pref": "binutils/2.31@includeos/toolchain#0:0b18460aeb1058d7174e2cd4df4095ee9cfb1cb6#0",
     "options": ""
    },

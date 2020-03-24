@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/chetan/Documents/echo_server
+CMAKE_SOURCE_DIR = /home/chetan/Documents/Unikernel-Serverless/Kernels/echo_server
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/chetan/Documents/echo_server/build
+CMAKE_BINARY_DIR = /home/chetan/Documents/Unikernel-Serverless/Kernels/echo_server/build
 
 # Include any dependencies generated for this target.
 include CMakeFiles/tcp_service.elf.bin.dir/depend.make
@@ -59,16 +59,16 @@ include CMakeFiles/tcp_service.elf.bin.dir/flags.make
 
 CMakeFiles/tcp_service.elf.bin.dir/main.cpp.o: CMakeFiles/tcp_service.elf.bin.dir/flags.make
 CMakeFiles/tcp_service.elf.bin.dir/main.cpp.o: ../main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chetan/Documents/echo_server/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/tcp_service.elf.bin.dir/main.cpp.o"
-	/usr/bin/clang++-6.0 --target=x86_64-pc-linux-elf  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/tcp_service.elf.bin.dir/main.cpp.o -c /home/chetan/Documents/echo_server/main.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chetan/Documents/Unikernel-Serverless/Kernels/echo_server/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/tcp_service.elf.bin.dir/main.cpp.o"
+	/usr/bin/clang++-6.0 --target=x86_64-pc-linux-elf  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/tcp_service.elf.bin.dir/main.cpp.o -c /home/chetan/Documents/Unikernel-Serverless/Kernels/echo_server/main.cpp
 
 CMakeFiles/tcp_service.elf.bin.dir/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/tcp_service.elf.bin.dir/main.cpp.i"
-	/usr/bin/clang++-6.0 --target=x86_64-pc-linux-elf $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/chetan/Documents/echo_server/main.cpp > CMakeFiles/tcp_service.elf.bin.dir/main.cpp.i
+	/usr/bin/clang++-6.0 --target=x86_64-pc-linux-elf $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/chetan/Documents/Unikernel-Serverless/Kernels/echo_server/main.cpp > CMakeFiles/tcp_service.elf.bin.dir/main.cpp.i
 
 CMakeFiles/tcp_service.elf.bin.dir/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/tcp_service.elf.bin.dir/main.cpp.s"
-	/usr/bin/clang++-6.0 --target=x86_64-pc-linux-elf $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/chetan/Documents/echo_server/main.cpp -o CMakeFiles/tcp_service.elf.bin.dir/main.cpp.s
+	/usr/bin/clang++-6.0 --target=x86_64-pc-linux-elf $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/chetan/Documents/Unikernel-Serverless/Kernels/echo_server/main.cpp -o CMakeFiles/tcp_service.elf.bin.dir/main.cpp.s
 
 CMakeFiles/tcp_service.elf.bin.dir/main.cpp.o.requires:
 
@@ -83,7 +83,7 @@ CMakeFiles/tcp_service.elf.bin.dir/main.cpp.o.provides.build: CMakeFiles/tcp_ser
 
 CMakeFiles/tcp_service.elf.bin.dir/home/chetan/.conan/data/includeos/0.15.1-5/includeos/latest/package/e70c8745fe4aa8eea40e3372373944d2a5e7f7e2/src/service_name.cpp.o: CMakeFiles/tcp_service.elf.bin.dir/flags.make
 CMakeFiles/tcp_service.elf.bin.dir/home/chetan/.conan/data/includeos/0.15.1-5/includeos/latest/package/e70c8745fe4aa8eea40e3372373944d2a5e7f7e2/src/service_name.cpp.o: /home/chetan/.conan/data/includeos/0.15.1-5/includeos/latest/package/e70c8745fe4aa8eea40e3372373944d2a5e7f7e2/src/service_name.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chetan/Documents/echo_server/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/tcp_service.elf.bin.dir/home/chetan/.conan/data/includeos/0.15.1-5/includeos/latest/package/e70c8745fe4aa8eea40e3372373944d2a5e7f7e2/src/service_name.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chetan/Documents/Unikernel-Serverless/Kernels/echo_server/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/tcp_service.elf.bin.dir/home/chetan/.conan/data/includeos/0.15.1-5/includeos/latest/package/e70c8745fe4aa8eea40e3372373944d2a5e7f7e2/src/service_name.cpp.o"
 	/usr/bin/clang++-6.0 --target=x86_64-pc-linux-elf  $(CXX_DEFINES) -DSERVICE=\"tcp_client\" -DSERVICE_NAME="\"TCP Client\"" $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/tcp_service.elf.bin.dir/home/chetan/.conan/data/includeos/0.15.1-5/includeos/latest/package/e70c8745fe4aa8eea40e3372373944d2a5e7f7e2/src/service_name.cpp.o -c /home/chetan/.conan/data/includeos/0.15.1-5/includeos/latest/package/e70c8745fe4aa8eea40e3372373944d2a5e7f7e2/src/service_name.cpp
 
 CMakeFiles/tcp_service.elf.bin.dir/home/chetan/.conan/data/includeos/0.15.1-5/includeos/latest/package/e70c8745fe4aa8eea40e3372373944d2a5e7f7e2/src/service_name.cpp.i: cmake_force
@@ -147,7 +147,7 @@ bin/tcp_service.elf.bin: /home/chetan/.conan/data/includeos/0.15.1-5/includeos/l
 bin/tcp_service.elf.bin: /home/chetan/.conan/data/includeos/0.15.1-5/includeos/latest/package/e70c8745fe4aa8eea40e3372373944d2a5e7f7e2/drivers/stdout/libdefault_stdout.a
 bin/tcp_service.elf.bin: /home/chetan/.conan/data/includeos/0.15.1-5/includeos/latest/package/e70c8745fe4aa8eea40e3372373944d2a5e7f7e2/plugins/libautoconf.a
 bin/tcp_service.elf.bin: CMakeFiles/tcp_service.elf.bin.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/chetan/Documents/echo_server/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable bin/tcp_service.elf.bin"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/chetan/Documents/Unikernel-Serverless/Kernels/echo_server/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable bin/tcp_service.elf.bin"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/tcp_service.elf.bin.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -165,6 +165,6 @@ CMakeFiles/tcp_service.elf.bin.dir/clean:
 .PHONY : CMakeFiles/tcp_service.elf.bin.dir/clean
 
 CMakeFiles/tcp_service.elf.bin.dir/depend:
-	cd /home/chetan/Documents/echo_server/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/chetan/Documents/echo_server /home/chetan/Documents/echo_server /home/chetan/Documents/echo_server/build /home/chetan/Documents/echo_server/build /home/chetan/Documents/echo_server/build/CMakeFiles/tcp_service.elf.bin.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/chetan/Documents/Unikernel-Serverless/Kernels/echo_server/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/chetan/Documents/Unikernel-Serverless/Kernels/echo_server /home/chetan/Documents/Unikernel-Serverless/Kernels/echo_server /home/chetan/Documents/Unikernel-Serverless/Kernels/echo_server/build /home/chetan/Documents/Unikernel-Serverless/Kernels/echo_server/build /home/chetan/Documents/Unikernel-Serverless/Kernels/echo_server/build/CMakeFiles/tcp_service.elf.bin.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/tcp_service.elf.bin.dir/depend
 

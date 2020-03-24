@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/chetan/Documents/echo_server
+CMAKE_SOURCE_DIR = /home/chetan/Documents/Unikernel-Serverless/Kernels/echo_server
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/chetan/Documents/echo_server/build
+CMAKE_BINARY_DIR = /home/chetan/Documents/Unikernel-Serverless/Kernels/echo_server/build
 
 # Include any dependencies generated for this target.
 include CMakeFiles/config_json_tcp_client.elf.bin.dir/depend.make
@@ -58,20 +58,20 @@ include CMakeFiles/config_json_tcp_client.elf.bin.dir/progress.make
 include CMakeFiles/config_json_tcp_client.elf.bin.dir/flags.make
 
 config.json.o: ../config.json
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/chetan/Documents/echo_server/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating config.json.o"
-	/usr/bin/objcopy -I binary -O elf64-x86-64 -B i386 --rename-section .data=.config,CONTENTS,ALLOC,LOAD,READONLY,DATA /home/chetan/Documents/echo_server/config.json /home/chetan/Documents/echo_server/build/config.json.o
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/chetan/Documents/Unikernel-Serverless/Kernels/echo_server/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating config.json.o"
+	/usr/bin/objcopy -I binary -O elf64-x86-64 -B i386 --rename-section .data=.config,CONTENTS,ALLOC,LOAD,READONLY,DATA /home/chetan/Documents/Unikernel-Serverless/Kernels/echo_server/config.json /home/chetan/Documents/Unikernel-Serverless/Kernels/echo_server/build/config.json.o
 
 # Object files for target config_json_tcp_client.elf.bin
 config_json_tcp_client_elf_bin_OBJECTS =
 
 # External object files for target config_json_tcp_client.elf.bin
 config_json_tcp_client_elf_bin_EXTERNAL_OBJECTS = \
-"/home/chetan/Documents/echo_server/build/config.json.o"
+"/home/chetan/Documents/Unikernel-Serverless/Kernels/echo_server/build/config.json.o"
 
 lib/libconfig_json_tcp_client.elf.bin.a: config.json.o
 lib/libconfig_json_tcp_client.elf.bin.a: CMakeFiles/config_json_tcp_client.elf.bin.dir/build.make
 lib/libconfig_json_tcp_client.elf.bin.a: CMakeFiles/config_json_tcp_client.elf.bin.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/chetan/Documents/echo_server/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX static library lib/libconfig_json_tcp_client.elf.bin.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/chetan/Documents/Unikernel-Serverless/Kernels/echo_server/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX static library lib/libconfig_json_tcp_client.elf.bin.a"
 	$(CMAKE_COMMAND) -P CMakeFiles/config_json_tcp_client.elf.bin.dir/cmake_clean_target.cmake
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/config_json_tcp_client.elf.bin.dir/link.txt --verbose=$(VERBOSE)
 
@@ -89,6 +89,6 @@ CMakeFiles/config_json_tcp_client.elf.bin.dir/clean:
 .PHONY : CMakeFiles/config_json_tcp_client.elf.bin.dir/clean
 
 CMakeFiles/config_json_tcp_client.elf.bin.dir/depend: config.json.o
-	cd /home/chetan/Documents/echo_server/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/chetan/Documents/echo_server /home/chetan/Documents/echo_server /home/chetan/Documents/echo_server/build /home/chetan/Documents/echo_server/build /home/chetan/Documents/echo_server/build/CMakeFiles/config_json_tcp_client.elf.bin.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/chetan/Documents/Unikernel-Serverless/Kernels/echo_server/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/chetan/Documents/Unikernel-Serverless/Kernels/echo_server /home/chetan/Documents/Unikernel-Serverless/Kernels/echo_server /home/chetan/Documents/Unikernel-Serverless/Kernels/echo_server/build /home/chetan/Documents/Unikernel-Serverless/Kernels/echo_server/build /home/chetan/Documents/Unikernel-Serverless/Kernels/echo_server/build/CMakeFiles/config_json_tcp_client.elf.bin.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/config_json_tcp_client.elf.bin.dir/depend
 
