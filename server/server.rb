@@ -94,14 +94,11 @@ def load_channels()
 end
 
 def execute_kernel(kernel, part_count)
-  puts kernel
   Dir.chdir($directories[kernel])
   command = "boot "+ kernel+ "; exit"
   r = IO.popen("bash","r+")
   r.write "#{command}\n"
   ofile = $base_dir + "/output/" + $ofiles[kernel] + ".part."+part_count
-  puts ofile
-
   open(ofile, "w") do |f|
     while line = r.gets do
       f.puts line
@@ -141,24 +138,25 @@ def main()
   loop do
     for c in $channels do
       queue_name = c[1]
-      if c[0].empty? then
-        for u in $queues[queue_name] do
+      for u in $queues[queue_name] do
+        if c[0].empty? then
           if $has_output[u] and $active_kernels[u] == 0 then
             combine_logs(u)
           end
-        end
-      else
-        for u in $queues[queue_name] do
+        else
           if $active_kernels[u] >= $kernel_limit[u] then
             next
           else
             $mutex.synchronize do
               $active_kernels[u] += 1
             end
-            puts "SPAWNING " + u
-            $has_output[u] = true
+            # When starting a new thread, the next iteration of the loop executes
+            # and so this line is needed to ensure the correct unikernel boots
+            kernel = u
+            $has_output[kernel] = true
             Thread.new{
-              execute_kernel(u, $active_kernels[u].to_s)
+              puts "SPAWNING " + kernel
+              execute_kernel(kernel, $active_kernels[kernel].to_s)
             }
           end
         end
