@@ -1,0 +1,2 @@
+/usr/bin/ar qc lib/libget_time_memdisk.a  memdisk.o
+/usr/bin/ranlib lib/libget_time_memdisk.a

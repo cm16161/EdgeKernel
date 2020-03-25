@@ -1,0 +1,7 @@
+{
+    "name" : "get_time",
+    "directory" : "/home/chetan/Documents/Unikernel-Serverless/Kernels/get_time/build",
+    "queue" : ["timestamp"],
+    "max_instances" : 1,
+    "ofile" : "get_time.output"
+}

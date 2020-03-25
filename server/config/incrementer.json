@@ -1,0 +1,7 @@
+{
+    "name" : "incrementer",
+    "directory" : "/home/chetan/Documents/Unikernel-Serverless/Kernels/incrementer/build",
+    "queue" : ["to_increment"],
+    "max_instances" : 1,
+    "ofile" : "incrementer.output"
+}
