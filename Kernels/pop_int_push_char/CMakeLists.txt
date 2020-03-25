@@ -1,0 +1,12 @@
+cmake_minimum_required(VERSION 3.0)
+set(CMAKE_TRY_COMPILE_TARGET_TYPE STATIC_LIBRARY)
+project (int_char_link)
+include(${CMAKE_CURRENT_BINARY_DIR}/conanbuildinfo.cmake OPTIONAL RESULT_VARIABLE HAS_CONAN)
+conan_basic_setup()
+include(os)
+
+os_add_executable(int_char_link "Pop Int from Queue and Push Char" main.cpp)
+os_add_drivers(int_char_link virtionet vmxnet3 e1000 boot_logger)
+os_add_plugins(int_char_link autoconf)
+os_add_stdout(int_char_link default_stdout)
+os_add_ssl_certificates(int_char_link)

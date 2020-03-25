@@ -110,7 +110,7 @@ c++abi
 [frameworks]
 
 
-[framework_paths]
+[frameworkdirs]
 
 
 
@@ -159,7 +159,7 @@ c++abi
 [frameworks_binutils]
 
 
-[framework_paths_binutils]
+[frameworkdirs_binutils]
 
 
 [rootpath_binutils]
@@ -211,7 +211,7 @@ c++abi
 [frameworks_vmrunner]
 
 
-[framework_paths_vmrunner]
+[frameworkdirs_vmrunner]
 
 
 [rootpath_vmrunner]
@@ -263,7 +263,7 @@ c++abi
 [frameworks_vmbuild]
 
 
-[framework_paths_vmbuild]
+[frameworkdirs_vmbuild]
 
 
 [rootpath_vmbuild]
@@ -315,7 +315,7 @@ c++abi
 [frameworks_chainloader]
 
 
-[framework_paths_chainloader]
+[frameworkdirs_chainloader]
 
 
 [rootpath_chainloader]
@@ -367,7 +367,7 @@ c++abi
 [frameworks_diskbuilder]
 
 
-[framework_paths_diskbuilder]
+[frameworkdirs_diskbuilder]
 
 
 [rootpath_diskbuilder]
@@ -423,7 +423,7 @@ x86_64_pc
 [frameworks_includeos]
 
 
-[framework_paths_includeos]
+[frameworkdirs_includeos]
 
 
 [rootpath_includeos]
@@ -475,7 +475,7 @@ x86_64_pc
 [frameworks_GSL]
 
 
-[framework_paths_GSL]
+[frameworkdirs_GSL]
 
 
 [rootpath_GSL]
@@ -527,7 +527,7 @@ compiler
 [frameworks_libgcc]
 
 
-[framework_paths_libgcc]
+[frameworkdirs_libgcc]
 
 
 [rootpath_libgcc]
@@ -579,7 +579,7 @@ compiler
 [frameworks_rapidjson]
 
 
-[framework_paths_rapidjson]
+[frameworkdirs_rapidjson]
 
 
 [rootpath_rapidjson]
@@ -631,7 +631,7 @@ http-parser
 [frameworks_http-parser]
 
 
-[framework_paths_http-parser]
+[frameworkdirs_http-parser]
 
 
 [rootpath_http-parser]
@@ -683,7 +683,7 @@ tinf
 [frameworks_uzlib]
 
 
-[framework_paths_uzlib]
+[frameworkdirs_uzlib]
 
 
 [rootpath_uzlib]
@@ -735,7 +735,7 @@ tinf
 [frameworks_botan]
 
 
-[framework_paths_botan]
+[frameworkdirs_botan]
 
 
 [rootpath_botan]
@@ -787,7 +787,7 @@ s2n
 [frameworks_s2n]
 
 
-[framework_paths_s2n]
+[frameworkdirs_s2n]
 
 
 [rootpath_s2n]
@@ -840,7 +840,7 @@ ssl
 [frameworks_openssl]
 
 
-[framework_paths_openssl]
+[frameworkdirs_openssl]
 
 
 [rootpath_openssl]
@@ -894,7 +894,7 @@ c++experimental
 [frameworks_libcxx]
 
 
-[framework_paths_libcxx]
+[frameworkdirs_libcxx]
 
 
 [rootpath_libcxx]
@@ -954,7 +954,7 @@ xnet
 [frameworks_musl]
 
 
-[framework_paths_musl]
+[frameworkdirs_musl]
 
 
 [rootpath_musl]
@@ -1006,7 +1006,7 @@ unwind
 [frameworks_libunwind]
 
 
-[framework_paths_libunwind]
+[frameworkdirs_libunwind]
 
 
 [rootpath_libunwind]
@@ -1058,7 +1058,7 @@ c++abi
 [frameworks_libcxxabi]
 
 
-[framework_paths_libcxxabi]
+[frameworkdirs_libcxxabi]
 
 
 [rootpath_libcxxabi]

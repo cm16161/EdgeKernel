@@ -1,0 +1,2 @@
+/usr/bin/ar qc lib/libpopipuch_memdisk.a  memdisk.o
+/usr/bin/ranlib lib/libpopipuch_memdisk.a

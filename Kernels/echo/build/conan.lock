@@ -5,14 +5,16 @@
    "0": {
     "pref": null,
     "options": "includeos:platform=default\nincludeos:smp=False\nlibcxx:shared=False\nlibcxx:threads=True\nlibcxxabi:shared=False\nlibunwind:shared=False\nopenssl:async=False\nopenssl:shared=False\nopenssl:threads=True\nopenssl:ubsan=False\ns2n:threads=False",
-    "requires": {
-     "includeos/0.15.1-5@includeos/latest#0": "1",
-     "vmrunner/0.16.1-5@includeos/latest": "14",
-     "vmbuild/0.15.1-15@includeos/latest": "15",
-     "chainloader/0.15.1-5@includeos/latest": "16",
-     "diskbuilder/0.15.1-14@includeos/latest": "17",
-     "binutils/2.31@includeos/toolchain": "18"
-    },
+    "requires": [
+     "1"
+    ],
+    "build_requires": [
+     "14",
+     "15",
+     "16",
+     "17",
+     "18"
+    ],
     "path": "/home/chetan/Documents/Unikernel-Serverless/Kernels/echo/conanfile.txt"
    },
    "1": {
@@ -21,16 +23,53 @@
     "python_requires": [
      "conan-tools/1.0.0@includeos/stable#0"
     ],
-    "requires": {
-     "GSL/2.0.0@includeos/stable#0": "2",
-     "libcxx/7.0.1@includeos/stable#0": "3",
-     "libgcc/1.0@includeos/stable#0": "7",
-     "rapidjson/1.1.0@includeos/stable#0": "8",
-     "http-parser/2.8.1@includeos/stable#0": "9",
-     "uzlib/v2.1.1@includeos/stable#0": "10",
-     "botan/2.8.0@includeos/stable#0": "11",
-     "s2n/0.8@includeos/stable#0": "12"
-    }
+    "requires": [
+     "2",
+     "3",
+     "7",
+     "8",
+     "9",
+     "10",
+     "11",
+     "12"
+    ]
+   },
+   "2": {
+    "pref": "GSL/2.0.0@includeos/stable#0:5ab84d6acfe1f23c4fae0ab88f26e3a396351ac9#0",
+    "options": ""
+   },
+   "3": {
+    "pref": "libcxx/7.0.1@includeos/stable#0:1a6e18396c747cde73f080a5f492b49fcefbb012#0",
+    "options": "shared=False\nthreads=True\nlibcxxabi:shared=False\nlibunwind:shared=False",
+    "requires": [
+     "4",
+     "5",
+     "6"
+    ]
+   },
+   "4": {
+    "pref": "musl/1.1.18@includeos/stable#0:b6ca6a0ffff110bf17b843d4258482a94281eb43#0",
+    "options": ""
+   },
+   "5": {
+    "pref": "libunwind/7.0.1@includeos/stable#0:c78b30f867758f14db30f570224a7f03bf7ddfab#0",
+    "options": "shared=False"
+   },
+   "6": {
+    "pref": "libcxxabi/7.0.1@includeos/stable#0:5d88dc4b26402479b7aa0fcb29ca9b9c28da4c9f#0",
+    "options": "shared=False"
+   },
+   "7": {
+    "pref": "libgcc/1.0@includeos/stable#0:5d88dc4b26402479b7aa0fcb29ca9b9c28da4c9f#0",
+    "options": ""
+   },
+   "8": {
+    "pref": "rapidjson/1.1.0@includeos/stable#0:5ab84d6acfe1f23c4fae0ab88f26e3a396351ac9#0",
+    "options": ""
+   },
+   "9": {
+    "pref": "http-parser/2.8.1@includeos/stable#0:c78b30f867758f14db30f570224a7f03bf7ddfab#0",
+    "options": ""
    },
    "10": {
     "pref": "uzlib/v2.1.1@includeos/stable#0:c78b30f867758f14db30f570224a7f03bf7ddfab#0",
@@ -39,24 +78,24 @@
    "11": {
     "pref": "botan/2.8.0@includeos/stable#0:86ea9478749b6b151377a318eab036c1a5c76d6f#0",
     "options": "libcxx:shared=False\nlibcxx:threads=True\nlibcxxabi:shared=False\nlibunwind:shared=False",
-    "requires": {
-     "libcxx/7.0.1@includeos/stable#0": "3",
-     "musl/1.1.18@includeos/stable#0": "4"
-    }
+    "requires": [
+     "3",
+     "4"
+    ]
    },
    "12": {
     "pref": "s2n/0.8@includeos/stable#0:c66c28cef47ff50b0bffd409ac60e5bcc7601da5#0",
     "options": "threads=False\nlibcxx:shared=False\nlibcxx:threads=True\nlibcxxabi:shared=False\nlibunwind:shared=False\nopenssl:async=False\nopenssl:shared=False\nopenssl:threads=True\nopenssl:ubsan=False",
-    "requires": {
-     "openssl/1.1.1@includeos/stable#0": "13"
-    }
+    "requires": [
+     "13"
+    ]
    },
    "13": {
     "pref": "openssl/1.1.1@includeos/stable#0:a15f421984675bd76e8df07971c322909358ebd9#0",
     "options": "async=False\nshared=False\nthreads=True\nubsan=False\nlibcxx:shared=False\nlibcxx:threads=True\nlibcxxabi:shared=False\nlibunwind:shared=False",
-    "requires": {
-     "libcxx/7.0.1@includeos/stable#0": "3"
-    }
+    "requires": [
+     "3"
+    ]
    },
    "14": {
     "pref": "vmrunner/0.16.1-5@includeos/latest#0:5ab84d6acfe1f23c4fae0ab88f26e3a396351ac9#0",
@@ -89,45 +128,8 @@
    "18": {
     "pref": "binutils/2.31@includeos/toolchain#0:0b18460aeb1058d7174e2cd4df4095ee9cfb1cb6#0",
     "options": ""
-   },
-   "2": {
-    "pref": "GSL/2.0.0@includeos/stable#0:5ab84d6acfe1f23c4fae0ab88f26e3a396351ac9#0",
-    "options": ""
-   },
-   "3": {
-    "pref": "libcxx/7.0.1@includeos/stable#0:1a6e18396c747cde73f080a5f492b49fcefbb012#0",
-    "options": "shared=False\nthreads=True\nlibcxxabi:shared=False\nlibunwind:shared=False",
-    "requires": {
-     "musl/1.1.18@includeos/stable#0": "4",
-     "libunwind/7.0.1@includeos/stable#0": "5",
-     "libcxxabi/7.0.1@includeos/stable#0": "6"
-    }
-   },
-   "4": {
-    "pref": "musl/1.1.18@includeos/stable#0:b6ca6a0ffff110bf17b843d4258482a94281eb43#0",
-    "options": ""
-   },
-   "5": {
-    "pref": "libunwind/7.0.1@includeos/stable#0:c78b30f867758f14db30f570224a7f03bf7ddfab#0",
-    "options": "shared=False"
-   },
-   "6": {
-    "pref": "libcxxabi/7.0.1@includeos/stable#0:5d88dc4b26402479b7aa0fcb29ca9b9c28da4c9f#0",
-    "options": "shared=False"
-   },
-   "7": {
-    "pref": "libgcc/1.0@includeos/stable#0:5d88dc4b26402479b7aa0fcb29ca9b9c28da4c9f#0",
-    "options": ""
-   },
-   "8": {
-    "pref": "rapidjson/1.1.0@includeos/stable#0:5ab84d6acfe1f23c4fae0ab88f26e3a396351ac9#0",
-    "options": ""
-   },
-   "9": {
-    "pref": "http-parser/2.8.1@includeos/stable#0:c78b30f867758f14db30f570224a7f03bf7ddfab#0",
-    "options": ""
    }
   }
  },
- "version": "0.2"
+ "version": "0.3"
 }

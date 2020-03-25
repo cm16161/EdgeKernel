@@ -100,9 +100,9 @@ clean: CMakeFiles/echo.dir/clean
 # Target rules for target CMakeFiles/echo.elf.bin.dir
 
 # All Build rule for target.
+CMakeFiles/echo.elf.bin.dir/all: CMakeFiles/config_json_echo.elf.bin.dir/all
 CMakeFiles/echo.elf.bin.dir/all: CMakeFiles/echo_diskbuilder.dir/all
 CMakeFiles/echo.elf.bin.dir/all: CMakeFiles/echo_memdisk.dir/all
-CMakeFiles/echo.elf.bin.dir/all: CMakeFiles/config_json_echo.elf.bin.dir/all
 	$(MAKE) -f CMakeFiles/echo.elf.bin.dir/build.make CMakeFiles/echo.elf.bin.dir/depend
 	$(MAKE) -f CMakeFiles/echo.elf.bin.dir/build.make CMakeFiles/echo.elf.bin.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/chetan/Documents/Unikernel-Serverless/Kernels/echo/build/CMakeFiles --progress-num=4,5,6 "Built target echo.elf.bin"

@@ -4,3 +4,7 @@
 [submodule "vmtouch"]
 	path = vmtouch
 	url = https://github.com/hoytech/vmtouch.git
+
+[submodule "hello_world"]
+	path = Kernels/hello_world
+	url = https://github.com/includeos/hello_world.git

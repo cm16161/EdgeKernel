@@ -188,18 +188,18 @@ Found /home/chetan/.conan/data/chainloader/0.15.1-5/includeos/latest/package/5ab
                 Gateway: 	10.0.0.1
                 DNS Server: 	10.0.0.1
 Listening at 10.0.0.42:7
-Connection 10.0.0.42:7 10.0.0.1:54090 (ESTABLISHED) established
-[SERVER] Received: l
-<
-[SERVER] Sent: l
-<
+Connection 10.0.0.42:7 10.0.0.1:37330 (ESTABLISHED) established
 [SERVER] Received: a
 <
 [SERVER] Sent: a
 <
-[SERVER] Received: s
+[SERVER] Received: b
 <
-[SERVER] Sent: s
+[SERVER] Sent: b
+<
+[SERVER] Received: d
+<
+[SERVER] Sent: d
 <
 [SERVER] Received: EXIT
 

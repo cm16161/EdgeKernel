@@ -92,26 +92,13 @@ CMakeFiles/tcp_service.elf.bin.dir/main.cpp.o
  /home/chetan/.conan/data/includeos/0.15.1-5/includeos/latest/package/e70c8745fe4aa8eea40e3372373944d2a5e7f7e2/include/os/net/dns/client.hpp
  /home/chetan/.conan/data/includeos/0.15.1-5/includeos/latest/package/e70c8745fe4aa8eea40e3372373944d2a5e7f7e2/include/os/net/dns/dns.hpp
  /home/chetan/.conan/data/includeos/0.15.1-5/includeos/latest/package/e70c8745fe4aa8eea40e3372373944d2a5e7f7e2/include/os/net/dns/query.hpp
+ /home/chetan/.conan/data/includeos/0.15.1-5/includeos/latest/package/e70c8745fe4aa8eea40e3372373944d2a5e7f7e2/include/os/net/dns/record.hpp
+ /home/chetan/.conan/data/includeos/0.15.1-5/includeos/latest/package/e70c8745fe4aa8eea40e3372373944d2a5e7f7e2/include/os/net/dns/response.hpp
  /home/chetan/.conan/data/includeos/0.15.1-5/includeos/latest/package/e70c8745fe4aa8eea40e3372373944d2a5e7f7e2/include/os/net/error.hpp
  /home/chetan/.conan/data/includeos/0.15.1-5/includeos/latest/package/e70c8745fe4aa8eea40e3372373944d2a5e7f7e2/include/os/net/ethernet/ethernet.hpp
  /home/chetan/.conan/data/includeos/0.15.1-5/includeos/latest/package/e70c8745fe4aa8eea40e3372373944d2a5e7f7e2/include/os/net/ethernet/ethernet_8021q.hpp
  /home/chetan/.conan/data/includeos/0.15.1-5/includeos/latest/package/e70c8745fe4aa8eea40e3372373944d2a5e7f7e2/include/os/net/ethernet/ethertype.hpp
- /home/chetan/.conan/data/includeos/0.15.1-5/includeos/latest/package/e70c8745fe4aa8eea40e3372373944d2a5e7f7e2/include/os/net/http/basic_client.hpp
- /home/chetan/.conan/data/includeos/0.15.1-5/includeos/latest/package/e70c8745fe4aa8eea40e3372373944d2a5e7f7e2/include/os/net/http/client.hpp
- /home/chetan/.conan/data/includeos/0.15.1-5/includeos/latest/package/e70c8745fe4aa8eea40e3372373944d2a5e7f7e2/include/os/net/http/client_connection.hpp
- /home/chetan/.conan/data/includeos/0.15.1-5/includeos/latest/package/e70c8745fe4aa8eea40e3372373944d2a5e7f7e2/include/os/net/http/common.hpp
- /home/chetan/.conan/data/includeos/0.15.1-5/includeos/latest/package/e70c8745fe4aa8eea40e3372373944d2a5e7f7e2/include/os/net/http/connection.hpp
- /home/chetan/.conan/data/includeos/0.15.1-5/includeos/latest/package/e70c8745fe4aa8eea40e3372373944d2a5e7f7e2/include/os/net/http/error.hpp
- /home/chetan/.conan/data/includeos/0.15.1-5/includeos/latest/package/e70c8745fe4aa8eea40e3372373944d2a5e7f7e2/include/os/net/http/message.hpp
- /home/chetan/.conan/data/includeos/0.15.1-5/includeos/latest/package/e70c8745fe4aa8eea40e3372373944d2a5e7f7e2/include/os/net/http/methods.hpp
- /home/chetan/.conan/data/includeos/0.15.1-5/includeos/latest/package/e70c8745fe4aa8eea40e3372373944d2a5e7f7e2/include/os/net/http/request.hpp
- /home/chetan/.conan/data/includeos/0.15.1-5/includeos/latest/package/e70c8745fe4aa8eea40e3372373944d2a5e7f7e2/include/os/net/http/response.hpp
- /home/chetan/.conan/data/includeos/0.15.1-5/includeos/latest/package/e70c8745fe4aa8eea40e3372373944d2a5e7f7e2/include/os/net/http/status_code_constants.hpp
- /home/chetan/.conan/data/includeos/0.15.1-5/includeos/latest/package/e70c8745fe4aa8eea40e3372373944d2a5e7f7e2/include/os/net/http/status_codes.hpp
- /home/chetan/.conan/data/includeos/0.15.1-5/includeos/latest/package/e70c8745fe4aa8eea40e3372373944d2a5e7f7e2/include/os/net/http/time.hpp
- /home/chetan/.conan/data/includeos/0.15.1-5/includeos/latest/package/e70c8745fe4aa8eea40e3372373944d2a5e7f7e2/include/os/net/http/version.hpp
  /home/chetan/.conan/data/includeos/0.15.1-5/includeos/latest/package/e70c8745fe4aa8eea40e3372373944d2a5e7f7e2/include/os/net/iana.hpp
- /home/chetan/.conan/data/includeos/0.15.1-5/includeos/latest/package/e70c8745fe4aa8eea40e3372373944d2a5e7f7e2/include/os/net/inet
  /home/chetan/.conan/data/includeos/0.15.1-5/includeos/latest/package/e70c8745fe4aa8eea40e3372373944d2a5e7f7e2/include/os/net/inet.hpp
  /home/chetan/.conan/data/includeos/0.15.1-5/includeos/latest/package/e70c8745fe4aa8eea40e3372373944d2a5e7f7e2/include/os/net/inet_common.hpp
  /home/chetan/.conan/data/includeos/0.15.1-5/includeos/latest/package/e70c8745fe4aa8eea40e3372373944d2a5e7f7e2/include/os/net/interfaces
@@ -150,7 +137,7 @@ CMakeFiles/tcp_service.elf.bin.dir/main.cpp.o
  /home/chetan/.conan/data/includeos/0.15.1-5/includeos/latest/package/e70c8745fe4aa8eea40e3372373944d2a5e7f7e2/include/os/net/packet.hpp
  /home/chetan/.conan/data/includeos/0.15.1-5/includeos/latest/package/e70c8745fe4aa8eea40e3372373944d2a5e7f7e2/include/os/net/port_util.hpp
  /home/chetan/.conan/data/includeos/0.15.1-5/includeos/latest/package/e70c8745fe4aa8eea40e3372373944d2a5e7f7e2/include/os/net/socket.hpp
- /home/chetan/.conan/data/includeos/0.15.1-5/includeos/latest/package/e70c8745fe4aa8eea40e3372373944d2a5e7f7e2/include/os/net/stream.hpp
+ /home/chetan/.conan/data/includeos/0.15.1-5/includeos/latest/package/e70c8745fe4aa8eea40e3372373944d2a5e7f7e2/include/os/net/tcp/common.hpp
  /home/chetan/.conan/data/includeos/0.15.1-5/includeos/latest/package/e70c8745fe4aa8eea40e3372373944d2a5e7f7e2/include/os/net/tcp/connection.hpp
  /home/chetan/.conan/data/includeos/0.15.1-5/includeos/latest/package/e70c8745fe4aa8eea40e3372373944d2a5e7f7e2/include/os/net/tcp/connection.inc
  /home/chetan/.conan/data/includeos/0.15.1-5/includeos/latest/package/e70c8745fe4aa8eea40e3372373944d2a5e7f7e2/include/os/net/tcp/headers.hpp
@@ -162,7 +149,6 @@ CMakeFiles/tcp_service.elf.bin.dir/main.cpp.o
  /home/chetan/.conan/data/includeos/0.15.1-5/includeos/latest/package/e70c8745fe4aa8eea40e3372373944d2a5e7f7e2/include/os/net/tcp/read_request.hpp
  /home/chetan/.conan/data/includeos/0.15.1-5/includeos/latest/package/e70c8745fe4aa8eea40e3372373944d2a5e7f7e2/include/os/net/tcp/rttm.hpp
  /home/chetan/.conan/data/includeos/0.15.1-5/includeos/latest/package/e70c8745fe4aa8eea40e3372373944d2a5e7f7e2/include/os/net/tcp/sack.hpp
- /home/chetan/.conan/data/includeos/0.15.1-5/includeos/latest/package/e70c8745fe4aa8eea40e3372373944d2a5e7f7e2/include/os/net/tcp/stream.hpp
  /home/chetan/.conan/data/includeos/0.15.1-5/includeos/latest/package/e70c8745fe4aa8eea40e3372373944d2a5e7f7e2/include/os/net/tcp/tcp.hpp
  /home/chetan/.conan/data/includeos/0.15.1-5/includeos/latest/package/e70c8745fe4aa8eea40e3372373944d2a5e7f7e2/include/os/net/tcp/tcp_errors.hpp
  /home/chetan/.conan/data/includeos/0.15.1-5/includeos/latest/package/e70c8745fe4aa8eea40e3372373944d2a5e7f7e2/include/os/net/tcp/write_queue.hpp
@@ -181,22 +167,18 @@ CMakeFiles/tcp_service.elf.bin.dir/main.cpp.o
  /home/chetan/.conan/data/includeos/0.15.1-5/includeos/latest/package/e70c8745fe4aa8eea40e3372373944d2a5e7f7e2/include/os/smp
  /home/chetan/.conan/data/includeos/0.15.1-5/includeos/latest/package/e70c8745fe4aa8eea40e3372373944d2a5e7f7e2/include/os/smp_utils
  /home/chetan/.conan/data/includeos/0.15.1-5/includeos/latest/package/e70c8745fe4aa8eea40e3372373944d2a5e7f7e2/include/os/timers
- /home/chetan/.conan/data/includeos/0.15.1-5/includeos/latest/package/e70c8745fe4aa8eea40e3372373944d2a5e7f7e2/include/os/uri
  /home/chetan/.conan/data/includeos/0.15.1-5/includeos/latest/package/e70c8745fe4aa8eea40e3372373944d2a5e7f7e2/include/os/util/alloc_pmr.hpp
  /home/chetan/.conan/data/includeos/0.15.1-5/includeos/latest/package/e70c8745fe4aa8eea40e3372373944d2a5e7f7e2/include/os/util/bitops.hpp
  /home/chetan/.conan/data/includeos/0.15.1-5/includeos/latest/package/e70c8745fe4aa8eea40e3372373944d2a5e7f7e2/include/os/util/config.hpp
  /home/chetan/.conan/data/includeos/0.15.1-5/includeos/latest/package/e70c8745fe4aa8eea40e3372373944d2a5e7f7e2/include/os/util/delegate.hpp
  /home/chetan/.conan/data/includeos/0.15.1-5/includeos/latest/package/e70c8745fe4aa8eea40e3372373944d2a5e7f7e2/include/os/util/detail/alloc_pmr.hpp
- /home/chetan/.conan/data/includeos/0.15.1-5/includeos/latest/package/e70c8745fe4aa8eea40e3372373944d2a5e7f7e2/include/os/util/detail/string_view
  /home/chetan/.conan/data/includeos/0.15.1-5/includeos/latest/package/e70c8745fe4aa8eea40e3372373944d2a5e7f7e2/include/os/util/fixed_bitmap.hpp
  /home/chetan/.conan/data/includeos/0.15.1-5/includeos/latest/package/e70c8745fe4aa8eea40e3372373944d2a5e7f7e2/include/os/util/fixed_list_alloc.hpp
  /home/chetan/.conan/data/includeos/0.15.1-5/includeos/latest/package/e70c8745fe4aa8eea40e3372373944d2a5e7f7e2/include/os/util/fixed_storage.hpp
  /home/chetan/.conan/data/includeos/0.15.1-5/includeos/latest/package/e70c8745fe4aa8eea40e3372373944d2a5e7f7e2/include/os/util/fixed_vector.hpp
  /home/chetan/.conan/data/includeos/0.15.1-5/includeos/latest/package/e70c8745fe4aa8eea40e3372373944d2a5e7f7e2/include/os/util/membitmap.hpp
- /home/chetan/.conan/data/includeos/0.15.1-5/includeos/latest/package/e70c8745fe4aa8eea40e3372373944d2a5e7f7e2/include/os/util/percent_encoding.hpp
  /home/chetan/.conan/data/includeos/0.15.1-5/includeos/latest/package/e70c8745fe4aa8eea40e3372373944d2a5e7f7e2/include/os/util/timer.hpp
  /home/chetan/.conan/data/includeos/0.15.1-5/includeos/latest/package/e70c8745fe4aa8eea40e3372373944d2a5e7f7e2/include/os/util/units.hpp
- /home/chetan/.conan/data/includeos/0.15.1-5/includeos/latest/package/e70c8745fe4aa8eea40e3372373944d2a5e7f7e2/include/os/util/uri.hpp
  /home/chetan/.conan/data/libcxx/7.0.1/includeos/stable/package/1a6e18396c747cde73f080a5f492b49fcefbb012/include/c++/v1/__bit_reference
  /home/chetan/.conan/data/libcxx/7.0.1/includeos/stable/package/1a6e18396c747cde73f080a5f492b49fcefbb012/include/c++/v1/__bsd_locale_defaults.h
  /home/chetan/.conan/data/libcxx/7.0.1/includeos/stable/package/1a6e18396c747cde73f080a5f492b49fcefbb012/include/c++/v1/__bsd_locale_fallbacks.h
@@ -250,7 +232,6 @@ CMakeFiles/tcp_service.elf.bin.dir/main.cpp.o
  /home/chetan/.conan/data/libcxx/7.0.1/includeos/stable/package/1a6e18396c747cde73f080a5f492b49fcefbb012/include/c++/v1/functional
  /home/chetan/.conan/data/libcxx/7.0.1/includeos/stable/package/1a6e18396c747cde73f080a5f492b49fcefbb012/include/c++/v1/initializer_list
  /home/chetan/.conan/data/libcxx/7.0.1/includeos/stable/package/1a6e18396c747cde73f080a5f492b49fcefbb012/include/c++/v1/inttypes.h
- /home/chetan/.conan/data/libcxx/7.0.1/includeos/stable/package/1a6e18396c747cde73f080a5f492b49fcefbb012/include/c++/v1/iomanip
  /home/chetan/.conan/data/libcxx/7.0.1/includeos/stable/package/1a6e18396c747cde73f080a5f492b49fcefbb012/include/c++/v1/ios
  /home/chetan/.conan/data/libcxx/7.0.1/includeos/stable/package/1a6e18396c747cde73f080a5f492b49fcefbb012/include/c++/v1/iosfwd
  /home/chetan/.conan/data/libcxx/7.0.1/includeos/stable/package/1a6e18396c747cde73f080a5f492b49fcefbb012/include/c++/v1/iostream
@@ -270,7 +251,6 @@ CMakeFiles/tcp_service.elf.bin.dir/main.cpp.o
  /home/chetan/.conan/data/libcxx/7.0.1/includeos/stable/package/1a6e18396c747cde73f080a5f492b49fcefbb012/include/c++/v1/optional
  /home/chetan/.conan/data/libcxx/7.0.1/includeos/stable/package/1a6e18396c747cde73f080a5f492b49fcefbb012/include/c++/v1/ostream
  /home/chetan/.conan/data/libcxx/7.0.1/includeos/stable/package/1a6e18396c747cde73f080a5f492b49fcefbb012/include/c++/v1/ratio
- /home/chetan/.conan/data/libcxx/7.0.1/includeos/stable/package/1a6e18396c747cde73f080a5f492b49fcefbb012/include/c++/v1/sstream
  /home/chetan/.conan/data/libcxx/7.0.1/includeos/stable/package/1a6e18396c747cde73f080a5f492b49fcefbb012/include/c++/v1/stdexcept
  /home/chetan/.conan/data/libcxx/7.0.1/includeos/stable/package/1a6e18396c747cde73f080a5f492b49fcefbb012/include/c++/v1/stdint.h
  /home/chetan/.conan/data/libcxx/7.0.1/includeos/stable/package/1a6e18396c747cde73f080a5f492b49fcefbb012/include/c++/v1/stdio.h
@@ -313,10 +293,6 @@ CMakeFiles/tcp_service.elf.bin.dir/main.cpp.o
  /home/chetan/.conan/data/musl/1.1.18/includeos/stable/package/b6ca6a0ffff110bf17b843d4258482a94281eb43/include/sched.h
  /home/chetan/.conan/data/musl/1.1.18/includeos/stable/package/b6ca6a0ffff110bf17b843d4258482a94281eb43/include/stdarg.h
  /home/chetan/.conan/data/musl/1.1.18/includeos/stable/package/b6ca6a0ffff110bf17b843d4258482a94281eb43/include/time.h
- /home/chetan/.conan/data/openssl/1.1.1/includeos/stable/package/a15f421984675bd76e8df07971c322909358ebd9/include/openssl/e_os2.h
- /home/chetan/.conan/data/openssl/1.1.1/includeos/stable/package/a15f421984675bd76e8df07971c322909358ebd9/include/openssl/opensslconf.h
- /home/chetan/.conan/data/openssl/1.1.1/includeos/stable/package/a15f421984675bd76e8df07971c322909358ebd9/include/openssl/opensslv.h
- /home/chetan/.conan/data/openssl/1.1.1/includeos/stable/package/a15f421984675bd76e8df07971c322909358ebd9/include/openssl/ossl_typ.h
  /home/chetan/.conan/data/rapidjson/1.1.0/includeos/stable/package/5ab84d6acfe1f23c4fae0ab88f26e3a396351ac9/include/rapidjson/allocators.h
  /home/chetan/.conan/data/rapidjson/1.1.0/includeos/stable/package/5ab84d6acfe1f23c4fae0ab88f26e3a396351ac9/include/rapidjson/document.h
  /home/chetan/.conan/data/rapidjson/1.1.0/includeos/stable/package/5ab84d6acfe1f23c4fae0ab88f26e3a396351ac9/include/rapidjson/encodedstream.h

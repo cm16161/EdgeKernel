@@ -1,0 +1,7 @@
+{
+    "name" : "int_char_link",
+    "directory" : "/home/chetan/Documents/Unikernel-Serverless/Kernels/pop_int_push_char/build",
+    "queue" : ["int"],
+    "max_instances" : 1,
+    "ofile" : "int_char_link.output"
+}

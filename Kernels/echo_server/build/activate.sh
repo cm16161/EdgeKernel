@@ -1,4 +1,3 @@
-
 #!/usr/bin/env sh
 export CONAN_OLD_CC="$CC"
 export CONAN_OLD_CXX="$CXX"
@@ -14,5 +13,5 @@ while read -r line; do
     export "$LINE";
 done < "/home/chetan/Documents/Unikernel-Serverless/Kernels/echo_server/build/environment.sh.env"
 
-export CONAN_OLD_PS1=$PS1
+export CONAN_OLD_PS1="$PS1"
 export PS1="(conanenv) $PS1"

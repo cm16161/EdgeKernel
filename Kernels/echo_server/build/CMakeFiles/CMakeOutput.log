@@ -28,32 +28,32 @@ The CXX compiler identification is Clang, found in "/home/chetan/Documents/Unike
 Determining if the C compiler works passed with the following output:
 Change Dir: /home/chetan/Documents/Unikernel-Serverless/Kernels/echo_server/build/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_35c5b/fast"
-/usr/bin/make -f CMakeFiles/cmTC_35c5b.dir/build.make CMakeFiles/cmTC_35c5b.dir/build
+Run Build Command:"/usr/bin/make" "cmTC_1cacf/fast"
+/usr/bin/make -f CMakeFiles/cmTC_1cacf.dir/build.make CMakeFiles/cmTC_1cacf.dir/build
 make[1]: Entering directory '/home/chetan/Documents/Unikernel-Serverless/Kernels/echo_server/build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_35c5b.dir/testCCompiler.c.o
-/usr/bin/clang-6.0   -msse3 -mfpmath=sse -O2 -g    -o CMakeFiles/cmTC_35c5b.dir/testCCompiler.c.o   -c /home/chetan/Documents/Unikernel-Serverless/Kernels/echo_server/build/CMakeFiles/CMakeTmp/testCCompiler.c
-Linking C static library libcmTC_35c5b.a
-/usr/bin/cmake -P CMakeFiles/cmTC_35c5b.dir/cmake_clean_target.cmake
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_35c5b.dir/link.txt --verbose=1
-/usr/bin/ar qc libcmTC_35c5b.a  CMakeFiles/cmTC_35c5b.dir/testCCompiler.c.o
-/usr/bin/ranlib libcmTC_35c5b.a
+Building C object CMakeFiles/cmTC_1cacf.dir/testCCompiler.c.o
+/usr/bin/clang-6.0   -msse3 -mfpmath=sse -O2 -g    -o CMakeFiles/cmTC_1cacf.dir/testCCompiler.c.o   -c /home/chetan/Documents/Unikernel-Serverless/Kernels/echo_server/build/CMakeFiles/CMakeTmp/testCCompiler.c
+Linking C static library libcmTC_1cacf.a
+/usr/bin/cmake -P CMakeFiles/cmTC_1cacf.dir/cmake_clean_target.cmake
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_1cacf.dir/link.txt --verbose=1
+/usr/bin/ar qc libcmTC_1cacf.a  CMakeFiles/cmTC_1cacf.dir/testCCompiler.c.o
+/usr/bin/ranlib libcmTC_1cacf.a
 make[1]: Leaving directory '/home/chetan/Documents/Unikernel-Serverless/Kernels/echo_server/build/CMakeFiles/CMakeTmp'
 
 
 Detecting C compiler ABI info compiled with the following output:
 Change Dir: /home/chetan/Documents/Unikernel-Serverless/Kernels/echo_server/build/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_3ea54/fast"
-/usr/bin/make -f CMakeFiles/cmTC_3ea54.dir/build.make CMakeFiles/cmTC_3ea54.dir/build
+Run Build Command:"/usr/bin/make" "cmTC_13a45/fast"
+/usr/bin/make -f CMakeFiles/cmTC_13a45.dir/build.make CMakeFiles/cmTC_13a45.dir/build
 make[1]: Entering directory '/home/chetan/Documents/Unikernel-Serverless/Kernels/echo_server/build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_3ea54.dir/CMakeCCompilerABI.c.o
-/usr/bin/clang-6.0   -msse3 -mfpmath=sse -O2 -g    -o CMakeFiles/cmTC_3ea54.dir/CMakeCCompilerABI.c.o   -c /usr/share/cmake-3.10/Modules/CMakeCCompilerABI.c
-Linking C static library libcmTC_3ea54.a
-/usr/bin/cmake -P CMakeFiles/cmTC_3ea54.dir/cmake_clean_target.cmake
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_3ea54.dir/link.txt --verbose=1
-/usr/bin/ar qc libcmTC_3ea54.a  CMakeFiles/cmTC_3ea54.dir/CMakeCCompilerABI.c.o
-/usr/bin/ranlib libcmTC_3ea54.a
+Building C object CMakeFiles/cmTC_13a45.dir/CMakeCCompilerABI.c.o
+/usr/bin/clang-6.0   -msse3 -mfpmath=sse -O2 -g    -o CMakeFiles/cmTC_13a45.dir/CMakeCCompilerABI.c.o   -c /usr/share/cmake-3.10/Modules/CMakeCCompilerABI.c
+Linking C static library libcmTC_13a45.a
+/usr/bin/cmake -P CMakeFiles/cmTC_13a45.dir/cmake_clean_target.cmake
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_13a45.dir/link.txt --verbose=1
+/usr/bin/ar qc libcmTC_13a45.a  CMakeFiles/cmTC_13a45.dir/CMakeCCompilerABI.c.o
+/usr/bin/ranlib libcmTC_13a45.a
 make[1]: Leaving directory '/home/chetan/Documents/Unikernel-Serverless/Kernels/echo_server/build/CMakeFiles/CMakeTmp'
 
 
@@ -61,16 +61,16 @@ Parsed C implicit link information from above output:
   link line regex: [^( *|.*[/\])(ld|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\]+-)?ld|collect2)[^/\]*( |$)]
   ignore line: [Change Dir: /home/chetan/Documents/Unikernel-Serverless/Kernels/echo_server/build/CMakeFiles/CMakeTmp]
   ignore line: []
-  ignore line: [Run Build Command:"/usr/bin/make" "cmTC_3ea54/fast"]
-  ignore line: [/usr/bin/make -f CMakeFiles/cmTC_3ea54.dir/build.make CMakeFiles/cmTC_3ea54.dir/build]
+  ignore line: [Run Build Command:"/usr/bin/make" "cmTC_13a45/fast"]
+  ignore line: [/usr/bin/make -f CMakeFiles/cmTC_13a45.dir/build.make CMakeFiles/cmTC_13a45.dir/build]
   ignore line: [make[1]: Entering directory '/home/chetan/Documents/Unikernel-Serverless/Kernels/echo_server/build/CMakeFiles/CMakeTmp']
-  ignore line: [Building C object CMakeFiles/cmTC_3ea54.dir/CMakeCCompilerABI.c.o]
-  ignore line: [/usr/bin/clang-6.0   -msse3 -mfpmath=sse -O2 -g    -o CMakeFiles/cmTC_3ea54.dir/CMakeCCompilerABI.c.o   -c /usr/share/cmake-3.10/Modules/CMakeCCompilerABI.c]
-  ignore line: [Linking C static library libcmTC_3ea54.a]
-  ignore line: [/usr/bin/cmake -P CMakeFiles/cmTC_3ea54.dir/cmake_clean_target.cmake]
-  ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_3ea54.dir/link.txt --verbose=1]
-  ignore line: [/usr/bin/ar qc libcmTC_3ea54.a  CMakeFiles/cmTC_3ea54.dir/CMakeCCompilerABI.c.o]
-  ignore line: [/usr/bin/ranlib libcmTC_3ea54.a]
+  ignore line: [Building C object CMakeFiles/cmTC_13a45.dir/CMakeCCompilerABI.c.o]
+  ignore line: [/usr/bin/clang-6.0   -msse3 -mfpmath=sse -O2 -g    -o CMakeFiles/cmTC_13a45.dir/CMakeCCompilerABI.c.o   -c /usr/share/cmake-3.10/Modules/CMakeCCompilerABI.c]
+  ignore line: [Linking C static library libcmTC_13a45.a]
+  ignore line: [/usr/bin/cmake -P CMakeFiles/cmTC_13a45.dir/cmake_clean_target.cmake]
+  ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_13a45.dir/link.txt --verbose=1]
+  ignore line: [/usr/bin/ar qc libcmTC_13a45.a  CMakeFiles/cmTC_13a45.dir/CMakeCCompilerABI.c.o]
+  ignore line: [/usr/bin/ranlib libcmTC_13a45.a]
   ignore line: [make[1]: Leaving directory '/home/chetan/Documents/Unikernel-Serverless/Kernels/echo_server/build/CMakeFiles/CMakeTmp']
   ignore line: []
   implicit libs: []
@@ -83,16 +83,16 @@ Parsed C implicit link information from above output:
 Detecting C [-std=c11] compiler features compiled with the following output:
 Change Dir: /home/chetan/Documents/Unikernel-Serverless/Kernels/echo_server/build/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_813c7/fast"
-/usr/bin/make -f CMakeFiles/cmTC_813c7.dir/build.make CMakeFiles/cmTC_813c7.dir/build
+Run Build Command:"/usr/bin/make" "cmTC_bf799/fast"
+/usr/bin/make -f CMakeFiles/cmTC_bf799.dir/build.make CMakeFiles/cmTC_bf799.dir/build
 make[1]: Entering directory '/home/chetan/Documents/Unikernel-Serverless/Kernels/echo_server/build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_813c7.dir/feature_tests.c.o
-/usr/bin/clang-6.0   -msse3 -mfpmath=sse -O2 -g    -std=c11 -o CMakeFiles/cmTC_813c7.dir/feature_tests.c.o   -c /home/chetan/Documents/Unikernel-Serverless/Kernels/echo_server/build/CMakeFiles/feature_tests.c
-Linking C static library libcmTC_813c7.a
-/usr/bin/cmake -P CMakeFiles/cmTC_813c7.dir/cmake_clean_target.cmake
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_813c7.dir/link.txt --verbose=1
-/usr/bin/ar qc libcmTC_813c7.a  CMakeFiles/cmTC_813c7.dir/feature_tests.c.o
-/usr/bin/ranlib libcmTC_813c7.a
+Building C object CMakeFiles/cmTC_bf799.dir/feature_tests.c.o
+/usr/bin/clang-6.0   -msse3 -mfpmath=sse -O2 -g    -std=c11 -o CMakeFiles/cmTC_bf799.dir/feature_tests.c.o   -c /home/chetan/Documents/Unikernel-Serverless/Kernels/echo_server/build/CMakeFiles/feature_tests.c
+Linking C static library libcmTC_bf799.a
+/usr/bin/cmake -P CMakeFiles/cmTC_bf799.dir/cmake_clean_target.cmake
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_bf799.dir/link.txt --verbose=1
+/usr/bin/ar qc libcmTC_bf799.a  CMakeFiles/cmTC_bf799.dir/feature_tests.c.o
+/usr/bin/ranlib libcmTC_bf799.a
 make[1]: Leaving directory '/home/chetan/Documents/Unikernel-Serverless/Kernels/echo_server/build/CMakeFiles/CMakeTmp'
 
 
@@ -105,16 +105,16 @@ make[1]: Leaving directory '/home/chetan/Documents/Unikernel-Serverless/Kernels/
 Detecting C [-std=c99] compiler features compiled with the following output:
 Change Dir: /home/chetan/Documents/Unikernel-Serverless/Kernels/echo_server/build/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_5fe77/fast"
-/usr/bin/make -f CMakeFiles/cmTC_5fe77.dir/build.make CMakeFiles/cmTC_5fe77.dir/build
+Run Build Command:"/usr/bin/make" "cmTC_ddbdf/fast"
+/usr/bin/make -f CMakeFiles/cmTC_ddbdf.dir/build.make CMakeFiles/cmTC_ddbdf.dir/build
 make[1]: Entering directory '/home/chetan/Documents/Unikernel-Serverless/Kernels/echo_server/build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_5fe77.dir/feature_tests.c.o
-/usr/bin/clang-6.0   -msse3 -mfpmath=sse -O2 -g    -std=c99 -o CMakeFiles/cmTC_5fe77.dir/feature_tests.c.o   -c /home/chetan/Documents/Unikernel-Serverless/Kernels/echo_server/build/CMakeFiles/feature_tests.c
-Linking C static library libcmTC_5fe77.a
-/usr/bin/cmake -P CMakeFiles/cmTC_5fe77.dir/cmake_clean_target.cmake
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_5fe77.dir/link.txt --verbose=1
-/usr/bin/ar qc libcmTC_5fe77.a  CMakeFiles/cmTC_5fe77.dir/feature_tests.c.o
-/usr/bin/ranlib libcmTC_5fe77.a
+Building C object CMakeFiles/cmTC_ddbdf.dir/feature_tests.c.o
+/usr/bin/clang-6.0   -msse3 -mfpmath=sse -O2 -g    -std=c99 -o CMakeFiles/cmTC_ddbdf.dir/feature_tests.c.o   -c /home/chetan/Documents/Unikernel-Serverless/Kernels/echo_server/build/CMakeFiles/feature_tests.c
+Linking C static library libcmTC_ddbdf.a
+/usr/bin/cmake -P CMakeFiles/cmTC_ddbdf.dir/cmake_clean_target.cmake
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_ddbdf.dir/link.txt --verbose=1
+/usr/bin/ar qc libcmTC_ddbdf.a  CMakeFiles/cmTC_ddbdf.dir/feature_tests.c.o
+/usr/bin/ranlib libcmTC_ddbdf.a
 make[1]: Leaving directory '/home/chetan/Documents/Unikernel-Serverless/Kernels/echo_server/build/CMakeFiles/CMakeTmp'
 
 
@@ -127,16 +127,16 @@ make[1]: Leaving directory '/home/chetan/Documents/Unikernel-Serverless/Kernels/
 Detecting C [-std=c90] compiler features compiled with the following output:
 Change Dir: /home/chetan/Documents/Unikernel-Serverless/Kernels/echo_server/build/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_4aabc/fast"
-/usr/bin/make -f CMakeFiles/cmTC_4aabc.dir/build.make CMakeFiles/cmTC_4aabc.dir/build
+Run Build Command:"/usr/bin/make" "cmTC_148f1/fast"
+/usr/bin/make -f CMakeFiles/cmTC_148f1.dir/build.make CMakeFiles/cmTC_148f1.dir/build
 make[1]: Entering directory '/home/chetan/Documents/Unikernel-Serverless/Kernels/echo_server/build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_4aabc.dir/feature_tests.c.o
-/usr/bin/clang-6.0   -msse3 -mfpmath=sse -O2 -g    -std=c90 -o CMakeFiles/cmTC_4aabc.dir/feature_tests.c.o   -c /home/chetan/Documents/Unikernel-Serverless/Kernels/echo_server/build/CMakeFiles/feature_tests.c
-Linking C static library libcmTC_4aabc.a
-/usr/bin/cmake -P CMakeFiles/cmTC_4aabc.dir/cmake_clean_target.cmake
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_4aabc.dir/link.txt --verbose=1
-/usr/bin/ar qc libcmTC_4aabc.a  CMakeFiles/cmTC_4aabc.dir/feature_tests.c.o
-/usr/bin/ranlib libcmTC_4aabc.a
+Building C object CMakeFiles/cmTC_148f1.dir/feature_tests.c.o
+/usr/bin/clang-6.0   -msse3 -mfpmath=sse -O2 -g    -std=c90 -o CMakeFiles/cmTC_148f1.dir/feature_tests.c.o   -c /home/chetan/Documents/Unikernel-Serverless/Kernels/echo_server/build/CMakeFiles/feature_tests.c
+Linking C static library libcmTC_148f1.a
+/usr/bin/cmake -P CMakeFiles/cmTC_148f1.dir/cmake_clean_target.cmake
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_148f1.dir/link.txt --verbose=1
+/usr/bin/ar qc libcmTC_148f1.a  CMakeFiles/cmTC_148f1.dir/feature_tests.c.o
+/usr/bin/ranlib libcmTC_148f1.a
 make[1]: Leaving directory '/home/chetan/Documents/Unikernel-Serverless/Kernels/echo_server/build/CMakeFiles/CMakeTmp'
 
 
@@ -147,32 +147,32 @@ make[1]: Leaving directory '/home/chetan/Documents/Unikernel-Serverless/Kernels/
 Determining if the CXX compiler works passed with the following output:
 Change Dir: /home/chetan/Documents/Unikernel-Serverless/Kernels/echo_server/build/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_14f4d/fast"
-/usr/bin/make -f CMakeFiles/cmTC_14f4d.dir/build.make CMakeFiles/cmTC_14f4d.dir/build
+Run Build Command:"/usr/bin/make" "cmTC_47217/fast"
+/usr/bin/make -f CMakeFiles/cmTC_47217.dir/build.make CMakeFiles/cmTC_47217.dir/build
 make[1]: Entering directory '/home/chetan/Documents/Unikernel-Serverless/Kernels/echo_server/build/CMakeFiles/CMakeTmp'
-Building CXX object CMakeFiles/cmTC_14f4d.dir/testCXXCompiler.cxx.o
-/usr/bin/clang++-6.0    -msse3 -mfpmath=sse -O2 -g    -o CMakeFiles/cmTC_14f4d.dir/testCXXCompiler.cxx.o -c /home/chetan/Documents/Unikernel-Serverless/Kernels/echo_server/build/CMakeFiles/CMakeTmp/testCXXCompiler.cxx
-Linking CXX static library libcmTC_14f4d.a
-/usr/bin/cmake -P CMakeFiles/cmTC_14f4d.dir/cmake_clean_target.cmake
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_14f4d.dir/link.txt --verbose=1
-/usr/bin/ar qc libcmTC_14f4d.a  CMakeFiles/cmTC_14f4d.dir/testCXXCompiler.cxx.o
-/usr/bin/ranlib libcmTC_14f4d.a
+Building CXX object CMakeFiles/cmTC_47217.dir/testCXXCompiler.cxx.o
+/usr/bin/clang++-6.0    -msse3 -mfpmath=sse -O2 -g    -o CMakeFiles/cmTC_47217.dir/testCXXCompiler.cxx.o -c /home/chetan/Documents/Unikernel-Serverless/Kernels/echo_server/build/CMakeFiles/CMakeTmp/testCXXCompiler.cxx
+Linking CXX static library libcmTC_47217.a
+/usr/bin/cmake -P CMakeFiles/cmTC_47217.dir/cmake_clean_target.cmake
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_47217.dir/link.txt --verbose=1
+/usr/bin/ar qc libcmTC_47217.a  CMakeFiles/cmTC_47217.dir/testCXXCompiler.cxx.o
+/usr/bin/ranlib libcmTC_47217.a
 make[1]: Leaving directory '/home/chetan/Documents/Unikernel-Serverless/Kernels/echo_server/build/CMakeFiles/CMakeTmp'
 
 
 Detecting CXX compiler ABI info compiled with the following output:
 Change Dir: /home/chetan/Documents/Unikernel-Serverless/Kernels/echo_server/build/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_c28d2/fast"
-/usr/bin/make -f CMakeFiles/cmTC_c28d2.dir/build.make CMakeFiles/cmTC_c28d2.dir/build
+Run Build Command:"/usr/bin/make" "cmTC_067d2/fast"
+/usr/bin/make -f CMakeFiles/cmTC_067d2.dir/build.make CMakeFiles/cmTC_067d2.dir/build
 make[1]: Entering directory '/home/chetan/Documents/Unikernel-Serverless/Kernels/echo_server/build/CMakeFiles/CMakeTmp'
-Building CXX object CMakeFiles/cmTC_c28d2.dir/CMakeCXXCompilerABI.cpp.o
-/usr/bin/clang++-6.0    -msse3 -mfpmath=sse -O2 -g    -o CMakeFiles/cmTC_c28d2.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake-3.10/Modules/CMakeCXXCompilerABI.cpp
-Linking CXX static library libcmTC_c28d2.a
-/usr/bin/cmake -P CMakeFiles/cmTC_c28d2.dir/cmake_clean_target.cmake
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_c28d2.dir/link.txt --verbose=1
-/usr/bin/ar qc libcmTC_c28d2.a  CMakeFiles/cmTC_c28d2.dir/CMakeCXXCompilerABI.cpp.o
-/usr/bin/ranlib libcmTC_c28d2.a
+Building CXX object CMakeFiles/cmTC_067d2.dir/CMakeCXXCompilerABI.cpp.o
+/usr/bin/clang++-6.0    -msse3 -mfpmath=sse -O2 -g    -o CMakeFiles/cmTC_067d2.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake-3.10/Modules/CMakeCXXCompilerABI.cpp
+Linking CXX static library libcmTC_067d2.a
+/usr/bin/cmake -P CMakeFiles/cmTC_067d2.dir/cmake_clean_target.cmake
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_067d2.dir/link.txt --verbose=1
+/usr/bin/ar qc libcmTC_067d2.a  CMakeFiles/cmTC_067d2.dir/CMakeCXXCompilerABI.cpp.o
+/usr/bin/ranlib libcmTC_067d2.a
 make[1]: Leaving directory '/home/chetan/Documents/Unikernel-Serverless/Kernels/echo_server/build/CMakeFiles/CMakeTmp'
 
 
@@ -180,16 +180,16 @@ Parsed CXX implicit link information from above output:
   link line regex: [^( *|.*[/\])(ld|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\]+-)?ld|collect2)[^/\]*( |$)]
   ignore line: [Change Dir: /home/chetan/Documents/Unikernel-Serverless/Kernels/echo_server/build/CMakeFiles/CMakeTmp]
   ignore line: []
-  ignore line: [Run Build Command:"/usr/bin/make" "cmTC_c28d2/fast"]
-  ignore line: [/usr/bin/make -f CMakeFiles/cmTC_c28d2.dir/build.make CMakeFiles/cmTC_c28d2.dir/build]
+  ignore line: [Run Build Command:"/usr/bin/make" "cmTC_067d2/fast"]
+  ignore line: [/usr/bin/make -f CMakeFiles/cmTC_067d2.dir/build.make CMakeFiles/cmTC_067d2.dir/build]
   ignore line: [make[1]: Entering directory '/home/chetan/Documents/Unikernel-Serverless/Kernels/echo_server/build/CMakeFiles/CMakeTmp']
-  ignore line: [Building CXX object CMakeFiles/cmTC_c28d2.dir/CMakeCXXCompilerABI.cpp.o]
-  ignore line: [/usr/bin/clang++-6.0    -msse3 -mfpmath=sse -O2 -g    -o CMakeFiles/cmTC_c28d2.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake-3.10/Modules/CMakeCXXCompilerABI.cpp]
-  ignore line: [Linking CXX static library libcmTC_c28d2.a]
-  ignore line: [/usr/bin/cmake -P CMakeFiles/cmTC_c28d2.dir/cmake_clean_target.cmake]
-  ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_c28d2.dir/link.txt --verbose=1]
-  ignore line: [/usr/bin/ar qc libcmTC_c28d2.a  CMakeFiles/cmTC_c28d2.dir/CMakeCXXCompilerABI.cpp.o]
-  ignore line: [/usr/bin/ranlib libcmTC_c28d2.a]
+  ignore line: [Building CXX object CMakeFiles/cmTC_067d2.dir/CMakeCXXCompilerABI.cpp.o]
+  ignore line: [/usr/bin/clang++-6.0    -msse3 -mfpmath=sse -O2 -g    -o CMakeFiles/cmTC_067d2.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake-3.10/Modules/CMakeCXXCompilerABI.cpp]
+  ignore line: [Linking CXX static library libcmTC_067d2.a]
+  ignore line: [/usr/bin/cmake -P CMakeFiles/cmTC_067d2.dir/cmake_clean_target.cmake]
+  ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_067d2.dir/link.txt --verbose=1]
+  ignore line: [/usr/bin/ar qc libcmTC_067d2.a  CMakeFiles/cmTC_067d2.dir/CMakeCXXCompilerABI.cpp.o]
+  ignore line: [/usr/bin/ranlib libcmTC_067d2.a]
   ignore line: [make[1]: Leaving directory '/home/chetan/Documents/Unikernel-Serverless/Kernels/echo_server/build/CMakeFiles/CMakeTmp']
   ignore line: []
   implicit libs: []
@@ -202,16 +202,16 @@ Parsed CXX implicit link information from above output:
 Detecting CXX [-std=c++1z] compiler features compiled with the following output:
 Change Dir: /home/chetan/Documents/Unikernel-Serverless/Kernels/echo_server/build/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_110df/fast"
-/usr/bin/make -f CMakeFiles/cmTC_110df.dir/build.make CMakeFiles/cmTC_110df.dir/build
+Run Build Command:"/usr/bin/make" "cmTC_56b11/fast"
+/usr/bin/make -f CMakeFiles/cmTC_56b11.dir/build.make CMakeFiles/cmTC_56b11.dir/build
 make[1]: Entering directory '/home/chetan/Documents/Unikernel-Serverless/Kernels/echo_server/build/CMakeFiles/CMakeTmp'
-Building CXX object CMakeFiles/cmTC_110df.dir/feature_tests.cxx.o
-/usr/bin/clang++-6.0    -msse3 -mfpmath=sse -O2 -g    -std=c++1z -o CMakeFiles/cmTC_110df.dir/feature_tests.cxx.o -c /home/chetan/Documents/Unikernel-Serverless/Kernels/echo_server/build/CMakeFiles/feature_tests.cxx
-Linking CXX static library libcmTC_110df.a
-/usr/bin/cmake -P CMakeFiles/cmTC_110df.dir/cmake_clean_target.cmake
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_110df.dir/link.txt --verbose=1
-/usr/bin/ar qc libcmTC_110df.a  CMakeFiles/cmTC_110df.dir/feature_tests.cxx.o
-/usr/bin/ranlib libcmTC_110df.a
+Building CXX object CMakeFiles/cmTC_56b11.dir/feature_tests.cxx.o
+/usr/bin/clang++-6.0    -msse3 -mfpmath=sse -O2 -g    -std=c++1z -o CMakeFiles/cmTC_56b11.dir/feature_tests.cxx.o -c /home/chetan/Documents/Unikernel-Serverless/Kernels/echo_server/build/CMakeFiles/feature_tests.cxx
+Linking CXX static library libcmTC_56b11.a
+/usr/bin/cmake -P CMakeFiles/cmTC_56b11.dir/cmake_clean_target.cmake
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_56b11.dir/link.txt --verbose=1
+/usr/bin/ar qc libcmTC_56b11.a  CMakeFiles/cmTC_56b11.dir/feature_tests.cxx.o
+/usr/bin/ranlib libcmTC_56b11.a
 make[1]: Leaving directory '/home/chetan/Documents/Unikernel-Serverless/Kernels/echo_server/build/CMakeFiles/CMakeTmp'
 
 
@@ -277,16 +277,16 @@ make[1]: Leaving directory '/home/chetan/Documents/Unikernel-Serverless/Kernels/
 Detecting CXX [-std=c++14] compiler features compiled with the following output:
 Change Dir: /home/chetan/Documents/Unikernel-Serverless/Kernels/echo_server/build/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_c894f/fast"
-/usr/bin/make -f CMakeFiles/cmTC_c894f.dir/build.make CMakeFiles/cmTC_c894f.dir/build
+Run Build Command:"/usr/bin/make" "cmTC_ee3dd/fast"
+/usr/bin/make -f CMakeFiles/cmTC_ee3dd.dir/build.make CMakeFiles/cmTC_ee3dd.dir/build
 make[1]: Entering directory '/home/chetan/Documents/Unikernel-Serverless/Kernels/echo_server/build/CMakeFiles/CMakeTmp'
-Building CXX object CMakeFiles/cmTC_c894f.dir/feature_tests.cxx.o
-/usr/bin/clang++-6.0    -msse3 -mfpmath=sse -O2 -g    -std=c++14 -o CMakeFiles/cmTC_c894f.dir/feature_tests.cxx.o -c /home/chetan/Documents/Unikernel-Serverless/Kernels/echo_server/build/CMakeFiles/feature_tests.cxx
-Linking CXX static library libcmTC_c894f.a
-/usr/bin/cmake -P CMakeFiles/cmTC_c894f.dir/cmake_clean_target.cmake
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_c894f.dir/link.txt --verbose=1
-/usr/bin/ar qc libcmTC_c894f.a  CMakeFiles/cmTC_c894f.dir/feature_tests.cxx.o
-/usr/bin/ranlib libcmTC_c894f.a
+Building CXX object CMakeFiles/cmTC_ee3dd.dir/feature_tests.cxx.o
+/usr/bin/clang++-6.0    -msse3 -mfpmath=sse -O2 -g    -std=c++14 -o CMakeFiles/cmTC_ee3dd.dir/feature_tests.cxx.o -c /home/chetan/Documents/Unikernel-Serverless/Kernels/echo_server/build/CMakeFiles/feature_tests.cxx
+Linking CXX static library libcmTC_ee3dd.a
+/usr/bin/cmake -P CMakeFiles/cmTC_ee3dd.dir/cmake_clean_target.cmake
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_ee3dd.dir/link.txt --verbose=1
+/usr/bin/ar qc libcmTC_ee3dd.a  CMakeFiles/cmTC_ee3dd.dir/feature_tests.cxx.o
+/usr/bin/ranlib libcmTC_ee3dd.a
 make[1]: Leaving directory '/home/chetan/Documents/Unikernel-Serverless/Kernels/echo_server/build/CMakeFiles/CMakeTmp'
 
 
@@ -352,16 +352,16 @@ make[1]: Leaving directory '/home/chetan/Documents/Unikernel-Serverless/Kernels/
 Detecting CXX [-std=c++11] compiler features compiled with the following output:
 Change Dir: /home/chetan/Documents/Unikernel-Serverless/Kernels/echo_server/build/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_07800/fast"
-/usr/bin/make -f CMakeFiles/cmTC_07800.dir/build.make CMakeFiles/cmTC_07800.dir/build
+Run Build Command:"/usr/bin/make" "cmTC_79bb2/fast"
+/usr/bin/make -f CMakeFiles/cmTC_79bb2.dir/build.make CMakeFiles/cmTC_79bb2.dir/build
 make[1]: Entering directory '/home/chetan/Documents/Unikernel-Serverless/Kernels/echo_server/build/CMakeFiles/CMakeTmp'
-Building CXX object CMakeFiles/cmTC_07800.dir/feature_tests.cxx.o
-/usr/bin/clang++-6.0    -msse3 -mfpmath=sse -O2 -g    -std=c++11 -o CMakeFiles/cmTC_07800.dir/feature_tests.cxx.o -c /home/chetan/Documents/Unikernel-Serverless/Kernels/echo_server/build/CMakeFiles/feature_tests.cxx
-Linking CXX static library libcmTC_07800.a
-/usr/bin/cmake -P CMakeFiles/cmTC_07800.dir/cmake_clean_target.cmake
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_07800.dir/link.txt --verbose=1
-/usr/bin/ar qc libcmTC_07800.a  CMakeFiles/cmTC_07800.dir/feature_tests.cxx.o
-/usr/bin/ranlib libcmTC_07800.a
+Building CXX object CMakeFiles/cmTC_79bb2.dir/feature_tests.cxx.o
+/usr/bin/clang++-6.0    -msse3 -mfpmath=sse -O2 -g    -std=c++11 -o CMakeFiles/cmTC_79bb2.dir/feature_tests.cxx.o -c /home/chetan/Documents/Unikernel-Serverless/Kernels/echo_server/build/CMakeFiles/feature_tests.cxx
+Linking CXX static library libcmTC_79bb2.a
+/usr/bin/cmake -P CMakeFiles/cmTC_79bb2.dir/cmake_clean_target.cmake
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_79bb2.dir/link.txt --verbose=1
+/usr/bin/ar qc libcmTC_79bb2.a  CMakeFiles/cmTC_79bb2.dir/feature_tests.cxx.o
+/usr/bin/ranlib libcmTC_79bb2.a
 make[1]: Leaving directory '/home/chetan/Documents/Unikernel-Serverless/Kernels/echo_server/build/CMakeFiles/CMakeTmp'
 
 
@@ -427,16 +427,16 @@ make[1]: Leaving directory '/home/chetan/Documents/Unikernel-Serverless/Kernels/
 Detecting CXX [-std=c++98] compiler features compiled with the following output:
 Change Dir: /home/chetan/Documents/Unikernel-Serverless/Kernels/echo_server/build/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_575a4/fast"
-/usr/bin/make -f CMakeFiles/cmTC_575a4.dir/build.make CMakeFiles/cmTC_575a4.dir/build
+Run Build Command:"/usr/bin/make" "cmTC_64d5b/fast"
+/usr/bin/make -f CMakeFiles/cmTC_64d5b.dir/build.make CMakeFiles/cmTC_64d5b.dir/build
 make[1]: Entering directory '/home/chetan/Documents/Unikernel-Serverless/Kernels/echo_server/build/CMakeFiles/CMakeTmp'
-Building CXX object CMakeFiles/cmTC_575a4.dir/feature_tests.cxx.o
-/usr/bin/clang++-6.0    -msse3 -mfpmath=sse -O2 -g    -std=c++98 -o CMakeFiles/cmTC_575a4.dir/feature_tests.cxx.o -c /home/chetan/Documents/Unikernel-Serverless/Kernels/echo_server/build/CMakeFiles/feature_tests.cxx
-Linking CXX static library libcmTC_575a4.a
-/usr/bin/cmake -P CMakeFiles/cmTC_575a4.dir/cmake_clean_target.cmake
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_575a4.dir/link.txt --verbose=1
-/usr/bin/ar qc libcmTC_575a4.a  CMakeFiles/cmTC_575a4.dir/feature_tests.cxx.o
-/usr/bin/ranlib libcmTC_575a4.a
+Building CXX object CMakeFiles/cmTC_64d5b.dir/feature_tests.cxx.o
+/usr/bin/clang++-6.0    -msse3 -mfpmath=sse -O2 -g    -std=c++98 -o CMakeFiles/cmTC_64d5b.dir/feature_tests.cxx.o -c /home/chetan/Documents/Unikernel-Serverless/Kernels/echo_server/build/CMakeFiles/feature_tests.cxx
+Linking CXX static library libcmTC_64d5b.a
+/usr/bin/cmake -P CMakeFiles/cmTC_64d5b.dir/cmake_clean_target.cmake
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_64d5b.dir/link.txt --verbose=1
+/usr/bin/ar qc libcmTC_64d5b.a  CMakeFiles/cmTC_64d5b.dir/feature_tests.cxx.o
+/usr/bin/ranlib libcmTC_64d5b.a
 make[1]: Leaving directory '/home/chetan/Documents/Unikernel-Serverless/Kernels/echo_server/build/CMakeFiles/CMakeTmp'
 
 

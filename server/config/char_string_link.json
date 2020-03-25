@@ -1,0 +1,7 @@
+{
+    "name" : "char_string_link",
+    "directory" : "/home/chetan/Documents/Unikernel-Serverless/Kernels/pop_char_push_string/build",
+    "queue" : ["char"],
+    "max_instances" : 1,
+    "ofile" : "char_string_link.output"
+}
