@@ -1,6 +1,7 @@
 {
-    "name" : "print_count",
-    "directory" : "/home/chetan/Documents/Unikernel-Serverless/Kernels/print_count/build",
+    "name" : "print_count.hvt",
+    // "directory" : "/home/chetan/Documents/Unikernel-Serverless/Kernels/print_count/build",
+    "directory" : "/home/chetan/Documents/Unikernel-Serverless/Kernels/MirageOS/bin",
     "queue" : ["print_count_trigger"],
     "max_instances" : 1,
     "ofile" : "print_count.output"

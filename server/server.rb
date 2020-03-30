@@ -6,7 +6,8 @@ require 'net/http'
 
 
 def check_webdis()
-  uri = URI('http://127.0.0.1:7379/GET/hello')
+  # uri = URI('http://127.0.0.1:7379/GET/hello')
+  uri = URI('http://192.168.0.37:7379/GET/hello')
   response = Net::HTTP.get_response(uri)
   if response.code != '200' then
     fork{
@@ -19,7 +20,7 @@ end
 
 def load_kernels_to_memory()
   fork{
-    exec("vmtouch -vtdl ../Kernels/bin")
+    exec("vmtouch -vtdl ../Kernels/")
   }
 end
 
@@ -95,11 +96,12 @@ end
 
 def execute_kernel(kernel, part_count)
   Dir.chdir($directories[kernel])
-  command = "boot "+ kernel+ "; exit"
+  # command = "boot "+ kernel+ "; exit"
+  command = "solo5-hvt --net:service=tap100 -- " + kernel + "; exit"
   r = IO.popen("bash","r+")
   r.write "#{command}\n"
   ofile = $base_dir + "/output/" + $ofiles[kernel] + ".part."+part_count
-  open(ofile, "w") do |f|
+  open(ofile, "a") do |f|
     while line = r.gets do
       f.puts line
     end

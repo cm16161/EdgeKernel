@@ -1,0 +1,2 @@
+/usr/bin/ar qc lib/libprint_count_memdisk.a  memdisk.o
+/usr/bin/ranlib lib/libprint_count_memdisk.a

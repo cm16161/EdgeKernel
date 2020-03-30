@@ -1,5 +1,0 @@
-LC_ALL=C
-PATH=/bin
-HOME=/home/chetan
-USER=chetan
-LOGNAME=chetan /usr/bin/qemu-system-x86_64 --enable-kvm -cpu kvm64,+rdrand,+rdseed -kernel /home/chetan/.conan/data/chainloader/0.15.1-5/includeos/latest/package/5ab84d6acfe1f23c4fae0ab88f26e3a396351ac9/bin/chainloader -initrd /home/chetan/Documents/echo_server/build/tcp_service -device virtio-net,netdev=net0,mac=c0:01:0a:00:00:2a,romfile= -netdev tap,id=net0,vhost=on,script=/home/chetan/.conan/data/vmrunner/0.16.1-5/includeos/latest/package/5ab84d6acfe1f23c4fae0ab88f26e3a396351ac9/bin/qemu-ifup,downscript=/home/chetan/.conan/data/vmrunner/0.16.1-5/includeos/latest/package/5ab84d6acfe1f23c4fae0ab88f26e3a396351ac9/bin/qemu-ifdown -device virtio-net,netdev=net1,mac=c0:01:0a:00:00:3a,romfile= -netdev tap,id=net1,vhost=on,script=/home/chetan/.conan/data/vmrunner/0.16.1-5/includeos/latest/package/5ab84d6acfe1f23c4fae0ab88f26e3a396351ac9/bin/qemu-ifup,downscript=/home/chetan/.conan/data/vmrunner/0.16.1-5/includeos/latest/package/5ab84d6acfe1f23c4fae0ab88f26e3a396351ac9/bin/qemu-ifdown -m 128 -nographic

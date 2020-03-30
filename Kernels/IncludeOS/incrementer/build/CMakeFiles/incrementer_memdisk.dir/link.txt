@@ -1,0 +1,2 @@
+/usr/bin/ar qc lib/libincrementer_memdisk.a  memdisk.o
+/usr/bin/ranlib lib/libincrementer_memdisk.a

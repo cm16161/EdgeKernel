@@ -1,8 +1,0 @@
-/home/chetan/Documents/Unikernel-Serverless/Kernels/print_count/build/CMakeFiles/rebuild_cache.dir
-/home/chetan/Documents/Unikernel-Serverless/Kernels/print_count/build/CMakeFiles/edit_cache.dir
-/home/chetan/Documents/Unikernel-Serverless/Kernels/print_count/build/CMakeFiles/print_count.elf.bin.dir
-/home/chetan/Documents/Unikernel-Serverless/Kernels/print_count/build/CMakeFiles/print_count.dir
-/home/chetan/Documents/Unikernel-Serverless/Kernels/print_count/build/CMakeFiles/print_count_diskbuilder.dir
-/home/chetan/Documents/Unikernel-Serverless/Kernels/print_count/build/CMakeFiles/config_json_print_count.elf.bin.dir
-/home/chetan/Documents/Unikernel-Serverless/Kernels/print_count/build/CMakeFiles/print_count_memdisk.dir
-/home/chetan/Documents/Unikernel-Serverless/Kernels/print_count/build/CMakeFiles/print_count_disccontent.dir

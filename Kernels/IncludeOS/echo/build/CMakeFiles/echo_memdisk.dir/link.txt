@@ -1,0 +1,2 @@
+/usr/bin/ar qc lib/libecho_memdisk.a  memdisk.o
+/usr/bin/ranlib lib/libecho_memdisk.a

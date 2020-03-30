@@ -1,8 +1,0 @@
-/home/chetan/Documents/Unikernel-Serverless/Kernels/incrementer/build/CMakeFiles/rebuild_cache.dir
-/home/chetan/Documents/Unikernel-Serverless/Kernels/incrementer/build/CMakeFiles/edit_cache.dir
-/home/chetan/Documents/Unikernel-Serverless/Kernels/incrementer/build/CMakeFiles/incrementer.dir
-/home/chetan/Documents/Unikernel-Serverless/Kernels/incrementer/build/CMakeFiles/incrementer.elf.bin.dir
-/home/chetan/Documents/Unikernel-Serverless/Kernels/incrementer/build/CMakeFiles/config_json_incrementer.elf.bin.dir
-/home/chetan/Documents/Unikernel-Serverless/Kernels/incrementer/build/CMakeFiles/incrementer_diskbuilder.dir
-/home/chetan/Documents/Unikernel-Serverless/Kernels/incrementer/build/CMakeFiles/incrementer_memdisk.dir
-/home/chetan/Documents/Unikernel-Serverless/Kernels/incrementer/build/CMakeFiles/incrementer_disccontent.dir

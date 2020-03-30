@@ -1,0 +1,8 @@
+/home/chetan/Documents/Unikernel-Serverless/Kernels/get_time/build/CMakeFiles/rebuild_cache.dir
+/home/chetan/Documents/Unikernel-Serverless/Kernels/get_time/build/CMakeFiles/edit_cache.dir
+/home/chetan/Documents/Unikernel-Serverless/Kernels/get_time/build/CMakeFiles/get_time.dir
+/home/chetan/Documents/Unikernel-Serverless/Kernels/get_time/build/CMakeFiles/get_time.elf.bin.dir
+/home/chetan/Documents/Unikernel-Serverless/Kernels/get_time/build/CMakeFiles/get_time_diskbuilder.dir
+/home/chetan/Documents/Unikernel-Serverless/Kernels/get_time/build/CMakeFiles/config_json_get_time.elf.bin.dir
+/home/chetan/Documents/Unikernel-Serverless/Kernels/get_time/build/CMakeFiles/get_time_memdisk.dir
+/home/chetan/Documents/Unikernel-Serverless/Kernels/get_time/build/CMakeFiles/get_time_disccontent.dir

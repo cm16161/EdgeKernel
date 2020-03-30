@@ -1,0 +1,12 @@
+cmake_minimum_required(VERSION 3.0)
+set(CMAKE_TRY_COMPILE_TARGET_TYPE STATIC_LIBRARY)
+project (get_time)
+include(${CMAKE_CURRENT_BINARY_DIR}/conanbuildinfo.cmake OPTIONAL RESULT_VARIABLE HAS_CONAN)
+conan_basic_setup()
+include(os)
+
+os_add_executable(get_time "Get a Timestamp for Now" main.cpp)
+os_add_drivers(get_time virtionet vmxnet3 e1000 boot_logger)
+os_add_plugins(get_time autoconf)
+os_add_stdout(get_time default_stdout)
+os_add_ssl_certificates(get_time)

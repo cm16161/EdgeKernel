@@ -1,0 +1,8 @@
+/home/chetan/Documents/Unikernel-Serverless/Kernels/pop_int_push_char/build/CMakeFiles/rebuild_cache.dir
+/home/chetan/Documents/Unikernel-Serverless/Kernels/pop_int_push_char/build/CMakeFiles/edit_cache.dir
+/home/chetan/Documents/Unikernel-Serverless/Kernels/pop_int_push_char/build/CMakeFiles/int_char_link.elf.bin.dir
+/home/chetan/Documents/Unikernel-Serverless/Kernels/pop_int_push_char/build/CMakeFiles/int_char_link_disccontent.dir
+/home/chetan/Documents/Unikernel-Serverless/Kernels/pop_int_push_char/build/CMakeFiles/int_char_link.dir
+/home/chetan/Documents/Unikernel-Serverless/Kernels/pop_int_push_char/build/CMakeFiles/int_char_link_memdisk.dir
+/home/chetan/Documents/Unikernel-Serverless/Kernels/pop_int_push_char/build/CMakeFiles/config_json_int_char_link.elf.bin.dir
+/home/chetan/Documents/Unikernel-Serverless/Kernels/pop_int_push_char/build/CMakeFiles/int_char_link_diskbuilder.dir

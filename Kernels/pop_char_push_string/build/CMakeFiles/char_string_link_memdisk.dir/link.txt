@@ -1,2 +1,0 @@
-/usr/bin/ar qc lib/libchar_string_link_memdisk.a  memdisk.o
-/usr/bin/ranlib lib/libchar_string_link_memdisk.a
