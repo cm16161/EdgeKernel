@@ -1,3 +1,4 @@
 Kernels/bin
 Kernels/*/build
 Kernels/MirageOS/bin
+Kernels/MirageOS/*/*.hvt
