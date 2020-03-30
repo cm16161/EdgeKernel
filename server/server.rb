@@ -20,7 +20,7 @@ end
 
 def load_kernels_to_memory()
   fork{
-    exec("vmtouch -vtdl ../Kernels/")
+    exec("vmtouch -tq ../Kernels/")
   }
 end
 
@@ -54,6 +54,11 @@ $active_kernels = Hash.new(0)
 # Map between the unikernel and whether or not it has any output files which need aggregating
 $has_output = Hash.new(false)
 
+#Map between the unikernel and the how large the queue needs to be before a new instance can spawn
+$scale_thresholds = Hash.new(10)
+
+#Map between the unikernel and the time it needs to wait in seconds between each new instance is spawned
+$grace_period = Hash.new(0)
 
 # List of Channels to link the Redis Queue object with its Name
 $channels = []
@@ -75,13 +80,16 @@ def register_unikernels()
     queue = json["queue"]
     ofile = json["ofile"]
     limit = json["max_instances"]
+    threshold = json["scale_threshold"]
     fill_queues(queue, name)
 
     $directories[name] = dir
     if limit then
       $kernel_limit[name] = limit
     end
-
+    if threshold then
+      $scale_thresholds[name] = threshold
+    end
     $ofiles[name] = ofile
   end
 end
@@ -97,7 +105,8 @@ end
 def execute_kernel(kernel, part_count)
   Dir.chdir($directories[kernel])
   # command = "boot "+ kernel+ "; exit"
-  command = "solo5-hvt --net:service=tap100 -- " + kernel + "; exit"
+  # command = "solo5-hvt --net:service=tap100 -- " + kernel + "; exit"
+  command = "./" + kernel + "; exit"
   r = IO.popen("bash","r+")
   r.write "#{command}\n"
   ofile = $base_dir + "/output/" + $ofiles[kernel] + ".part."+part_count
@@ -109,6 +118,7 @@ def execute_kernel(kernel, part_count)
   $mutex.synchronize do
     $active_kernels[kernel] -= 1
   end
+  $grace_period[kernel] = 0
     puts "Finished"
 end
 
@@ -117,7 +127,6 @@ def init()
   while !active do
     active = check_webdis()
   end
-
   load_kernels_to_memory()
   register_unikernels()
   load_channels()
@@ -146,20 +155,29 @@ def main()
             combine_logs(u)
           end
         else
-          if $active_kernels[u] >= $kernel_limit[u] then
+          queue_count = c[0].length
+          if $active_kernels[u] > queue_count/10 then
             next
           else
-            $mutex.synchronize do
-              $active_kernels[u] += 1
-            end
-            # When starting a new thread, the next iteration of the loop executes
-            # and so this line is needed to ensure the correct unikernel boots
-            kernel = u
-            $has_output[kernel] = true
+            if $active_kernels[u] >= $kernel_limit[u] then
+              "Limit Met, allow existing to terminate"
+              next
+            elsif $grace_period[u] + 10 > Time.now.to_i then
+              puts "Still within grace-period, please wait"
+            else
+              $mutex.synchronize do
+                $active_kernels[u] += 1
+              end
+              # When starting a new thread, the next iteration of the loop executes
+              # and so this line is needed to ensure the correct unikernel boots
+              kernel = u
+              $has_output[kernel] = true
+              $grace_period[kernel] = Time.now.to_i
             Thread.new{
               puts "SPAWNING " + kernel
               execute_kernel(kernel, $active_kernels[kernel].to_s)
             }
+            end
           end
         end
       end

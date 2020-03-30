@@ -1,0 +1,3 @@
+http://www8.cs.umu.se/kurser/5DV153/HT14/literature/lorido2012autoscaling.pdf
+"Threshold-based rules or policies are very popular among cloud providers such as AmazonEC2"
+

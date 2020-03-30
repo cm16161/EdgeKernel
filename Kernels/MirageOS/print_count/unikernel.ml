@@ -8,8 +8,10 @@ let blue fmt   = sprintf ("\027[36m"^^fmt^^"\027[m")
 
 module Client (T: Mirage_time.S) (C: Mirage_console.S) (RES: Resolver_lwt.S) (CON: Conduit_mirage.S) = struct
 
-  let http_fetch c resolver ctx uri uri_pop =
+  let http_fetch c resolver ctx uri uri_pop uri_incr=
+    let const_ctx = ctx in
     let ctx = Cohttp_mirage.Client.ctx resolver ctx in
+    Cohttp_mirage.Client.get ~ctx uri_incr >>= fun (null_resp, null_body) ->
     Cohttp_mirage.Client.get ~ctx uri_pop >>= fun (null_res, null_bod) ->
     Cohttp_mirage.Client.get ~ctx uri >>= fun (response, body) ->
     Cohttp_lwt.Body.to_string body >>= fun body ->
@@ -22,7 +24,8 @@ module Client (T: Mirage_time.S) (C: Mirage_console.S) (RES: Resolver_lwt.S) (CO
     let ns = Key_gen.resolver ()
     and uri = Uri.of_string "http://192.168.0.37:7379/GET/usage_count"
     and uri_pop = Uri.of_string "http://192.168.0.37:7379/RPOP/print_count_trigger"
+    and uri_incr = Uri.of_string "http://192.168.0.37:7379/INCR/something_cool"
     in
-    http_fetch c res ctx uri uri_pop
+    http_fetch c res ctx uri uri_pop uri_incr
 
 end

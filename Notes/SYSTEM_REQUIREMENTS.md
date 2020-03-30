@@ -53,7 +53,7 @@ $ whereis redis-server
 Once you have this location (for me it was in `/usr/bin`) enter the following:
 
 ```bash
-$ sudo /path/to/redis-server /etc/redis/redis.conf
+$ sudo /usr/bin/redis-server /etc/redis/redis.conf
 ```
 
 
@@ -63,6 +63,7 @@ The tap100 device is needed so that the Solo5 unikernel can access the internet.
 To make sure that this exists and is set up correctly enter the following commands on your terminal
 
 ``` bash
+sudo su
 ip tuntap add tap100 mode tap
 ip addr add 10.0.0.1/24 dev tap100
 ip link set dev tap100 up
