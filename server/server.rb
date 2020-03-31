@@ -3,6 +3,7 @@ require 'redis'
 require 'json'
 require 'redis-queue'
 require 'net/http'
+require 'pty'
 
 
 def check_webdis()
@@ -60,6 +61,9 @@ $scale_thresholds = Hash.new(10)
 #Map between the unikernel and the time it needs to wait in seconds between each new instance is spawned
 $grace_period = Hash.new(0)
 
+
+$tap_interfaces = []
+
 # List of Channels to link the Redis Queue object with its Name
 $channels = []
 
@@ -102,24 +106,41 @@ def load_channels()
   end
 end
 
-def execute_kernel(kernel, part_count)
+
+def generate_tap_list()
+  for i in 2..10 do
+    tapN = "tap1000".concat(i.to_s)
+    ipN = "10.0.0.".concat(i.to_s).concat("/24")
+    $tap_interfaces.append([tapN, ipN, true])
+  end
+end
+
+def execute_kernel(kernel, part_count, tap_index)
   Dir.chdir($directories[kernel])
-  # command = "boot "+ kernel+ "; exit"
-  # command = "solo5-hvt --net:service=tap100 -- " + kernel + "; exit"
-  command = "./" + kernel + "; exit"
-  r = IO.popen("bash","r+")
-  r.write "#{command}\n"
+  command = "solo5-hvt --net:service=" + $tap_interfaces[tap_index][0] + "  -- " + kernel + " --ipv4="+ $tap_interfaces[tap_index][1] + " --ipv4-gateway=10.0.0.1"
   ofile = $base_dir + "/output/" + $ofiles[kernel] + ".part."+part_count
-  open(ofile, "a") do |f|
-    while line = r.gets do
-      f.puts line
-    end
+
+  PTY.spawn( command ) do |stdout, stdin, pid|
+    open(ofile, "a") do |f|
+      stdout.each { |line| f.puts line }
+    end      
+    rescue Errno::EIO
   end
   $mutex.synchronize do
     $active_kernels[kernel] -= 1
+    $grace_period[kernel] = 0
+    $tap_interfaces[tap_index][2] = true
   end
-  $grace_period[kernel] = 0
     puts "Finished"
+end
+
+def get_tap_device()
+  for i in 0 .. $tap_interfaces.length-1 do
+    if $tap_interfaces[i][2] then
+      return i
+    end
+  end
+  return -1
 end
 
 def init()
@@ -128,6 +149,7 @@ def init()
     active = check_webdis()
   end
   load_kernels_to_memory()
+  generate_tap_list()
   register_unikernels()
   load_channels()
 
@@ -144,8 +166,7 @@ def combine_logs(kernel)
   $has_output[kernel] = false
 end
 
-def main()
-  init()
+def server()
   loop do
     for c in $channels do
       queue_name = c[1]
@@ -165,24 +186,35 @@ def main()
             elsif $grace_period[u] + 10 > Time.now.to_i then
               puts "Still within grace-period, please wait"
             else
+              tap_index = get_tap_device()
+              if tap_index == -1 then
+                puts "No Tap Device available"
+                next
+              end
               $mutex.synchronize do
                 $active_kernels[u] += 1
+                $grace_period[u] = Time.now.to_i
+                $tap_interfaces[tap_index][2] = false
               end
               # When starting a new thread, the next iteration of the loop executes
               # and so this line is needed to ensure the correct unikernel boots
               kernel = u
               $has_output[kernel] = true
-              $grace_period[kernel] = Time.now.to_i
-            Thread.new{
-              puts "SPAWNING " + kernel
-              execute_kernel(kernel, $active_kernels[kernel].to_s)
-            }
+              Thread.new{
+                puts "SPAWNING " + kernel
+                execute_kernel(kernel, $active_kernels[kernel].to_s, tap_index)
+              }
             end
           end
         end
       end
     end
   end
+end
+
+def main()
+  init()
+  server()
 end
 
 main()

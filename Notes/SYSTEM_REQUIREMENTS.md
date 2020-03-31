@@ -59,14 +59,37 @@ $ sudo /usr/bin/redis-server /etc/redis/redis.conf
 
 ## Network Configuration
 
-The tap100 device is needed so that the Solo5 unikernel can access the internet.
-To make sure that this exists and is set up correctly enter the following commands on your terminal
+To run multiple networking Unikernels on Solo5, the following commands need to be executed:
 
 ``` bash
 sudo su
-ip tuntap add tap100 mode tap
-ip addr add 10.0.0.1/24 dev tap100
-ip link set dev tap100 up
+
+# This step creates a bridge device that all network interfaces will communicate through
+brctl addbr br0
+ip addr add 10.0.0.1/24 dev br0 
+ip link set dev br0 up 
+
+# Set up the network devices for the Unikernels and add them to the bridge
+
+ip tuntap add tap10002 mode tap
+ip link set dev tap10002 up
+brctl addif br0 tap10002
+
+ip tuntap add tap10003 mode tap
+ip link set dev tap10003 up
+brctl addif br0 tap10003
+
+# Do this for as many concurrent Solo5 Unikernels as you want
+
+```
+
+Alternatively, you can execute (as root) the `network_configuration.sh` script to setup 10 devices.
+
+To execute the Unikernels on Solo5, they need to be executed like so:
+
+``` bash
+solo5-hvt --net:service=tap1000N -- my-unikernel-executable.hvt --ipv4=10.0.0.N/24 --ipv4-gateway=10.0.0.1
+
 ```
 
 
