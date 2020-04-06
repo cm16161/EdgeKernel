@@ -1,20 +1,29 @@
-## Sofware Requirements
+## Sofware Requirements ## 
 
 The following software is needed
 
 ``` bash
 mirage --version
 v3.7.6
+
 $ opam --version
 2.0.4
 
 $ ocaml --version 
 The OCaml toplevel, version 4.10.0
 
+$ ruby --version
+ruby 2.5.1p57 (2018-03-29 revision 63029) [x86_64-linux-gnu]
+
+```
+
+## Ubuntu Setup ##
+```bash
+sudo apt-get install libevent-dev ocaml redis libseccomp-dev opam ruby
 ```
 
 
-## Redis Configuration
+## Redis Configuration ##
 
 By default, the `redis-server` is configured to only listen on the `lo` network.
 To change this add/amend the following lines in `/etc/redis/redis.conf`:
@@ -57,7 +66,7 @@ $ sudo /usr/bin/redis-server /etc/redis/redis.conf
 ```
 
 
-## Network Configuration
+## Network Configuration ## 
 
 To run multiple networking Unikernels on Solo5, the following commands need to be executed:
 
@@ -104,7 +113,7 @@ $ echo 1 > /proc/sys/net/ipv4/ip_forward # enables IP forwarding
 
 # assuming "wlp59s0" is your default network interface where all the traffic goes to the Internet.
 $ /sbin/iptables -t nat -A POSTROUTING -o wlp59s0 -j MASQUERADE
-$ /sbin/iptables -A FORWARD -i wlp59s0 -o tap100 -m state --state RELATED,ESTABLISHED -j ACCEPT
-$ /sbin/iptables -A FORWARD -i tap100 -o wlp59s0 -j ACCEPT
+$ /sbin/iptables -A FORWARD -i wlp59s0 -o br0 -m state --state RELATED,ESTABLISHED -j ACCEPT
+$ /sbin/iptables -A FORWARD -i br0 -o wlp59s0 -j ACCEPT
 
 ```
