@@ -1,5 +1,8 @@
 #!/bin/bash
 
+adduser ${SUDO_USER:-${USER}} kvm
+chown ${SUDO_USER:-${USER}} /dev/kvm
+
 brctl addbr br0
 ip addr add 10.0.0.1/24 dev br0 
 ip link set dev br0 up 
