@@ -19,7 +19,7 @@ ruby 2.5.1p57 (2018-03-29 revision 63029) [x86_64-linux-gnu]
 
 ## Ubuntu Setup ##
 ```bash
-sudo apt-get install libevent-dev ocaml redis libseccomp-dev opam ruby
+sudo apt-get install -y libevent-dev ocaml redis libseccomp-dev opam ruby qemu-kvm libvirt-daemon-system libvirt-clients bridge-utils gcc m4 pkg-config
 ```
 
 
