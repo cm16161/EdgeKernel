@@ -9,7 +9,7 @@ do
     for i in {1..10}
     do
 	echo "Starting Run $j:$i"
-	./OW-EvalA.sh
+	./OW-EvalFib.sh
 	# echo_to_file ""
 	# echo_to_file "#################"
 	# echo_to_file ""
