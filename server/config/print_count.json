@@ -2,7 +2,7 @@
     "name" : "print_count.hvt",
     "directory" : "/home/chetan/Documents/Unikernel-Serverless/Kernels/MirageOS/print_count/",
     "queue" : ["print_count_trigger"],
-    "max_instances" : 2,
-    "scale_threshold" : 25,
+    "max_instances" : 100,
+    "scale_threshold" : 50,
     "ofile" : "print_count.output"
 }

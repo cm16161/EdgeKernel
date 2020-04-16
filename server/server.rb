@@ -4,6 +4,7 @@ require 'json'
 require 'redis-queue'
 require 'net/http'
 require 'pty'
+require 'usagewatch_ext'
 
 
 def check_webdis()
@@ -74,6 +75,8 @@ $base_dir =  Dir.pwd
 
 $mutex = Mutex.new
 
+$usw = Usagewatch
+
 def register_unikernels()
   Dir.chdir('config')
   files = Dir.glob("*.json")
@@ -131,7 +134,7 @@ def execute_kernel(kernel, part_count, tap_index)
     $grace_period[kernel] = 0
     $tap_interfaces[tap_index][2] = true
   end
-    puts "Finished"
+#    puts "Finished"
 end
 
 def get_tap_device()
@@ -167,10 +170,22 @@ def combine_logs(kernel)
 end
 
 def server()
+  # prev_val = `ps -o rss= -p #{$$}`.to_i
   loop do
+    puts $usw.uw_cpuused
+    # val =  `ps -o rss= -p #{$$}`.to_i
+    # if prev_val != val then
+    #   puts val
+    #   prev_val = val
+    # end
     for c in $channels do
       queue_name = c[1]
       for u in $queues[queue_name] do
+        if queue_name == "print_count_trigger" then
+          if c[0].empty? then
+            puts "FINISH"
+          end
+        end
         if c[0].empty? then
           if $has_output[u] and $active_kernels[u] == 0 then
             combine_logs(u)
@@ -183,12 +198,12 @@ def server()
             if $active_kernels[u] >= $kernel_limit[u] then
               "Limit Met, allow existing to terminate"
               next
-            elsif $grace_period[u] + 10 > Time.now.to_i then
-              puts "Still within grace-period, please wait"
+            elsif $grace_period[u] + 1 > Time.now.to_i then
+#              puts "Still within grace-period, please wait"
             else
               tap_index = get_tap_device()
               if tap_index == -1 then
-                puts "No Tap Device available"
+#                puts "No Tap Device available"
                 next
               end
               $mutex.synchronize do
@@ -201,7 +216,7 @@ def server()
               kernel = u
               $has_output[kernel] = true
               Thread.new{
-                puts "SPAWNING " + kernel
+#                puts "SPAWNING " + kernel
                 execute_kernel(kernel, $active_kernels[kernel].to_s, tap_index)
               }
             end
