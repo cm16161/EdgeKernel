@@ -174,7 +174,7 @@ def server()
   ts= `date +%s%N`.to_i
   loop do
 #    puts $usw.uw_cpuused
-    val =  `ps -o rss= -p #{$$}`.to_i
+    # val =  `ps -o rss= -p #{$$}`.to_i
     # if prev_val != val then
     #   puts val
     #   prev_val = val
@@ -182,7 +182,7 @@ def server()
     for c in $channels do
       queue_name = c[1]
       for u in $queues[queue_name] do
-        if queue_name == "eval_fib_trigger" then
+        if queue_name == "print_count_trigger" then
           if c[0].empty? then
             finished = (`date +%s%N`.to_i - ts)/1000000
             puts finished
