@@ -111,7 +111,7 @@ end
 
 
 def generate_tap_list()
-  for i in 2..10 do
+  for i in 2..100 do
     tapN = "tap1000".concat(i.to_s)
     ipN = "10.0.0.".concat(i.to_s).concat("/24")
     $tap_interfaces.append([tapN, ipN, true])
@@ -134,7 +134,7 @@ def execute_kernel(kernel, part_count, tap_index)
     $grace_period[kernel] = 0
     $tap_interfaces[tap_index][2] = true
   end
-#    puts "Finished"
+    # puts "Finished"
 end
 
 def get_tap_device()
@@ -171,9 +171,10 @@ end
 
 def server()
   # prev_val = `ps -o rss= -p #{$$}`.to_i
+  ts= `date +%s%N`.to_i
   loop do
-    puts $usw.uw_cpuused
-    # val =  `ps -o rss= -p #{$$}`.to_i
+#    puts $usw.uw_cpuused
+    val =  `ps -o rss= -p #{$$}`.to_i
     # if prev_val != val then
     #   puts val
     #   prev_val = val
@@ -181,9 +182,11 @@ def server()
     for c in $channels do
       queue_name = c[1]
       for u in $queues[queue_name] do
-        if queue_name == "print_count_trigger" then
+        if queue_name == "eval_fib_trigger" then
           if c[0].empty? then
-            puts "FINISH"
+            finished = (`date +%s%N`.to_i - ts)/1000000
+            puts finished
+            exit 0
           end
         end
         if c[0].empty? then
@@ -192,18 +195,19 @@ def server()
           end
         else
           queue_count = c[0].length
-          if $active_kernels[u] > queue_count/10 then
+          if $active_kernels[u] > queue_count/$scale_thresholds[u] then
             next
           else
             if $active_kernels[u] >= $kernel_limit[u] then
               "Limit Met, allow existing to terminate"
               next
-            elsif $grace_period[u] + 1 > Time.now.to_i then
+            # elsif $grace_period[u] + 1 > Time.now.to_i then
 #              puts "Still within grace-period, please wait"
             else
+              for i in 1..$kernel_limit[u] do
               tap_index = get_tap_device()
               if tap_index == -1 then
-#                puts "No Tap Device available"
+               # puts "No Tap Device available"
                 next
               end
               $mutex.synchronize do
@@ -216,9 +220,10 @@ def server()
               kernel = u
               $has_output[kernel] = true
               Thread.new{
-#                puts "SPAWNING " + kernel
+               # puts "SPAWNING " + kernel
                 execute_kernel(kernel, $active_kernels[kernel].to_s, tap_index)
               }
+              end
             end
           end
         end

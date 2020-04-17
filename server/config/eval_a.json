@@ -1,0 +1,8 @@
+{
+    "name" : "eval_test_a.hvt",
+    "directory" : "/home/chetan/Documents/Unikernel-Serverless/Kernels/MirageOS/evaluation_test_a/",
+    "queue" : ["eval_a_trigger"],
+    "max_instances" : 1,
+    "scale_threshold" : 1,
+    "ofile" : "eval_a.output"
+}
