@@ -22,6 +22,21 @@ ruby 2.5.1p57 (2018-03-29 revision 63029) [x86_64-linux-gnu]
 sudo apt-get install -y libevent-dev ocaml redis libseccomp-dev opam ruby qemu-kvm libvirt-daemon-system libvirt-clients bridge-utils gcc m4 pkg-config
 ```
 
+## Ruby Gems ## 
+The following Ruby Packages are required:
+  * redis
+  * json
+  * redis-queue
+
+These can be installed by executing the following commands:
+
+```bash
+$ sudo gem install redis
+$ sudo gem install json
+$ sudo gem install redis-queue
+
+```
+
 
 ## Redis Configuration ##
 
@@ -68,7 +83,10 @@ $ sudo /usr/bin/redis-server /etc/redis/redis.conf
 
 ## Network Configuration ## 
 
-To run multiple networking Unikernels on Solo5, the following commands need to be executed:
+To run multiple networking Unikernels on Solo5, you can execute (as root) the `network_configuration.sh` script to setup 10 devices.
+
+Alternatively, you can manually configure the network by executing the following commands:
+
 
 ``` bash
 sudo su
@@ -91,8 +109,6 @@ brctl addif br0 tap10003
 # Do this for as many concurrent Solo5 Unikernels as you want
 
 ```
-
-Alternatively, you can execute (as root) the `network_configuration.sh` script to setup 10 devices.
 
 To execute the Unikernels on Solo5, they need to be executed like so:
 
@@ -117,3 +133,5 @@ $ /sbin/iptables -A FORWARD -i wlp59s0 -o br0 -m state --state RELATED,ESTABLISH
 $ /sbin/iptables -A FORWARD -i br0 -o wlp59s0 -j ACCEPT
 
 ```
+
+

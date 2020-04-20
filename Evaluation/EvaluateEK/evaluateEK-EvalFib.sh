@@ -12,7 +12,7 @@ do
 	# echo "Starting Run $j:$i"
 	# ./EK-EvalFib.sh
 	redis-cli lpush eval_fib_trigger 1 >/dev/null
-	ruby server.rb
+	ruby server.rb # >> ../Times/EK/Eval-FDC.txt
 	# echo_to_file ""
 	# echo_to_file "#################"
 	# echo_to_file ""

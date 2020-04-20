@@ -15,11 +15,11 @@ module Client (T: Mirage_time.S) (C: Mirage_console.S) (RES: Resolver_lwt.S) (CO
     fibonacci (n-1) + fibonacci (n-2)
 
   
-  let http_fetch c resolver ctx uri uri_str=
+  let http_fetch c resolver ctx uri uri_str uri_pop=
     let const_ctx = ctx in
     let ctx = Cohttp_mirage.Client.ctx resolver ctx in
     (* Cohttp_mirage.Client.get ~ctx uri_incr >>= fun (null_resp, null_body) -> *)
-    (* cohttp_mirage.Client.get ~ctx uri_pop >>= fun (null_res, null_bod) -> *)
+    Cohttp_mirage.Client.get ~ctx uri_pop >>= fun (null_res, null_bod) ->
     Cohttp_mirage.Client.get ~ctx uri >>= fun (response, body) ->
     Cohttp_lwt.Body.to_string body >>= fun body ->
     let json = Yojson.Basic.from_string body in
@@ -35,8 +35,9 @@ module Client (T: Mirage_time.S) (C: Mirage_console.S) (RES: Resolver_lwt.S) (CO
   let start _time c res (ctx:CON.t) =
     let ns = Key_gen.resolver ()
     and uri = Uri.of_string "http://192.168.0.37:7379/GET/fib_number"
+    and uri_pop = Uri.of_string "http://192.168.0.37:7379/RPOP/eval_fib_trigger"
     and uri_str = "http://192.168.0.37:7379/SET/fib_result/"
     in
-    http_fetch c res ctx uri uri_str
+    http_fetch c res ctx uri uri_str uri_pop
 
 end

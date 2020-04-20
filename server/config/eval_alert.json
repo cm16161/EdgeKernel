@@ -1,0 +1,8 @@
+{
+    "name" : "eval_test_alert.hvt",
+    "directory" : "/home/chetan/Documents/Unikernel-Serverless/Kernels/MirageOS/evaluation_test_alert/",
+    "queue" : ["eval_alert_input"],
+    "max_instances" : 10,
+    "scale_threshold" : 1,
+    "ofile" : "eval_alert.output"
+}

@@ -8,7 +8,6 @@ require 'usagewatch_ext'
 
 
 def check_webdis()
-  # uri = URI('http://127.0.0.1:7379/GET/hello')
   uri = URI('http://192.168.0.37:7379/GET/hello')
   response = Net::HTTP.get_response(uri)
   if response.code != '200' then
@@ -65,11 +64,8 @@ $grace_period = Hash.new(0)
 
 $tap_interfaces = []
 
-# List of Channels to link the Redis Queue object with its Name
-$channels = []
-
-# Redis Object
-$redis = Redis.new(:timeout => 0)
+# # List of Channels to link the Redis Queue object with its Name
+# $channels = []
 
 $base_dir =  Dir.pwd
 
@@ -102,16 +98,21 @@ def register_unikernels()
 end
 
 
-def load_channels()
+def establish_channels()
+  channels = []
+  # Redis Object
+  $redis = Redis.new(:timeout => 0)
   $queues.each do | key, value |
     null_process_queue = key + "_null_process_queue"
-    $channels.append([Redis::Queue.new(key, null_process_queue, :redis=>$redis), key])
+    channels.append([Redis::Queue.new(key, null_process_queue, :redis=> $redis), key])
+    # channels.append(["", key])
   end
+  return channels
 end
 
 
 def generate_tap_list()
-  for i in 2..100 do
+  for i in 2..10 do
     tapN = "tap1000".concat(i.to_s)
     ipN = "10.0.0.".concat(i.to_s).concat("/24")
     $tap_interfaces.append([tapN, ipN, true])
@@ -154,7 +155,7 @@ def init()
   load_kernels_to_memory()
   generate_tap_list()
   register_unikernels()
-  load_channels()
+  # load_channels()
 
 end
 
@@ -179,7 +180,8 @@ def server()
     #   puts val
     #   prev_val = val
     # end
-    for c in $channels do
+    channels = establish_channels()
+    for c in channels do
       queue_name = c[1]
       for u in $queues[queue_name] do
         if queue_name == "print_count_trigger" then
@@ -189,6 +191,7 @@ def server()
             exit 0
           end
         end
+        
         if c[0].empty? then
           if $has_output[u] and $active_kernels[u] == 0 then
             combine_logs(u)
@@ -196,18 +199,18 @@ def server()
         else
           queue_count = c[0].length
           if $active_kernels[u] > queue_count/$scale_thresholds[u] then
+            # puts "wait to finish before creating new"
             next
           else
             if $active_kernels[u] >= $kernel_limit[u] then
-              "Limit Met, allow existing to terminate"
+              # "Limit Met, allow existing to terminate"
               next
-            # elsif $grace_period[u] + 1 > Time.now.to_i then
-#              puts "Still within grace-period, please wait"
+            elsif $grace_period[u] + 1 > Time.now.to_i then
+              # puts "Still within grace-period, please wait"
             else
-              for i in 1..$kernel_limit[u] do
               tap_index = get_tap_device()
               if tap_index == -1 then
-               # puts "No Tap Device available"
+                # puts "No Tap Device available"
                 next
               end
               $mutex.synchronize do
@@ -223,7 +226,6 @@ def server()
                # puts "SPAWNING " + kernel
                 execute_kernel(kernel, $active_kernels[kernel].to_s, tap_index)
               }
-              end
             end
           end
         end
@@ -235,6 +237,7 @@ end
 def main()
   init()
   server()
+
 end
 
 main()

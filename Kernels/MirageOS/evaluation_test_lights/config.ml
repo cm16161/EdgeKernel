@@ -16,5 +16,5 @@ let () =
   let res_dns = resolver_dns stack in
   let conduit = conduit_direct stack in
   let job =  [ client $ default_time $ default_console $ res_dns $ conduit ] in
-  register "eval_test_a" job
+  register "eval_test_lights" job
 
