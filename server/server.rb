@@ -170,6 +170,16 @@ def combine_logs(kernel)
   $has_output[kernel] = false
 end
 
+def terminate_on(c, target,u,ts)
+if c[1] == target then
+          if c[0].empty? and $active_kernels[u] == 0 then
+            finished = (`date +%s%N`.to_i - ts)/1000000
+            puts finished
+            exit 0
+          end
+        end
+end
+
 def server()
   # prev_val = `ps -o rss= -p #{$$}`.to_i
   ts= `date +%s%N`.to_i
@@ -184,13 +194,7 @@ def server()
     for c in channels do
       queue_name = c[1]
       for u in $queues[queue_name] do
-        if queue_name == "print_count_trigger" then
-          if c[0].empty? then
-            finished = (`date +%s%N`.to_i - ts)/1000000
-            puts finished
-            exit 0
-          end
-        end
+        terminate_on(c, "eval_lights_input",u,ts)
         
         if c[0].empty? then
           if $has_output[u] and $active_kernels[u] == 0 then

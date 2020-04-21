@@ -3,7 +3,7 @@
 function echo_to_file(){
     echo $1 >> Times/EK-Times
 }
-cd ../server
+cd ../../server
 
 for j in {1..10}
 do
@@ -12,7 +12,7 @@ do
 	# echo "Starting Run $j:$i"
 	# ./EK-EvalFib.sh
 	redis-cli lpush eval_fib_trigger 1 >/dev/null
-	ruby server.rb # >> ../Times/EK/Eval-FDC.txt
+	ruby server.rb # >> ../Times/EK/Eval-Fib.txt
 	# echo_to_file ""
 	# echo_to_file "#################"
 	# echo_to_file ""

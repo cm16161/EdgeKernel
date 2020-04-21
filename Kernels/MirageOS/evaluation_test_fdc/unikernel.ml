@@ -11,8 +11,8 @@ module Client (T: Mirage_time.S) (C: Mirage_console.S) (RES: Resolver_lwt.S) (CO
   let http_fetch c resolver ctx uri uri_pop=
     let const_ctx = ctx in
     let ctx = Cohttp_mirage.Client.ctx resolver ctx in
-    Cohttp_mirage.Client.get ~ctx uri_pop >>= fun (null_res, null_bod) ->
-    Cohttp_mirage.Client.get ~ctx uri
+    Cohttp_mirage.Client.get ~ctx uri >>= fun (null_res, null_bod) ->
+    Cohttp_mirage.Client.get ~ctx uri_pop
 
   let start _time c res (ctx:CON.t) =
     let ns = Key_gen.resolver ()

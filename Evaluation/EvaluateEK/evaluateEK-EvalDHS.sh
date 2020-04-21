@@ -4,7 +4,7 @@ function echo_to_file(){
     echo $1 >> Times/EK/Eval-FDC
 }
 
-cd ../server
+cd ../../server
 
 for j in {1..10}
 do
