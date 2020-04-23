@@ -1,0 +1,8 @@
+{
+    "name" : "sck_alert.hvt",
+    "directory" : "/home/chetan/Documents/Unikernel-Serverless/Kernels/MirageOS/SCK-Alert/",
+    "queue" : ["sensor_data"],
+    "max_instances" : 10,
+    "scale_threshold" : 50,
+    "ofile" : "sck-alert.output"
+}

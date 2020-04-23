@@ -61,6 +61,8 @@ $scale_thresholds = Hash.new(10)
 #Map between the unikernel and the time it needs to wait in seconds between each new instance is spawned
 $grace_period = Hash.new(0)
 
+$binary_type = Hash.new("mirageos")
+
 
 $tap_interfaces = []
 
@@ -84,14 +86,18 @@ def register_unikernels()
     ofile = json["ofile"]
     limit = json["max_instances"]
     threshold = json["scale_threshold"]
+    binary_type = json["binary"]
     fill_queues(queue, name)
-
+    
     $directories[name] = dir
     if limit then
       $kernel_limit[name] = limit
     end
     if threshold then
       $scale_thresholds[name] = threshold
+    end
+    if binary_type then
+      $binary_type[name] = binary_type
     end
     $ofiles[name] = ofile
   end
@@ -121,7 +127,12 @@ end
 
 def execute_kernel(kernel, part_count, tap_index)
   Dir.chdir($directories[kernel])
-  command = "solo5-hvt --net:service=" + $tap_interfaces[tap_index][0] + "  -- " + kernel + " --ipv4="+ $tap_interfaces[tap_index][1] + " --ipv4-gateway=10.0.0.1"
+  if $binary_type[kernel].eql? "bash" then
+    command = "./"+ kernel
+  else
+    command = "solo5-hvt --net:service=" + $tap_interfaces[tap_index][0] + "  -- " + kernel + " --ipv4="+ $tap_interfaces[tap_index][1] + " --ipv4-gateway=10.0.0.1"
+  end
+
   ofile = $base_dir + "/output/" + $ofiles[kernel] + ".part."+part_count
 
   PTY.spawn( command ) do |stdout, stdin, pid|
@@ -135,7 +146,7 @@ def execute_kernel(kernel, part_count, tap_index)
     $grace_period[kernel] = 0
     $tap_interfaces[tap_index][2] = true
   end
-    # puts "Finished"
+    puts "Finished"
 end
 
 def get_tap_device()
@@ -194,8 +205,7 @@ def server()
     for c in channels do
       queue_name = c[1]
       for u in $queues[queue_name] do
-        terminate_on(c, "eval_lights_input",u,ts)
-        
+        # terminate_on(c, "eval_alert_input",u,ts)
         if c[0].empty? then
           if $has_output[u] and $active_kernels[u] == 0 then
             combine_logs(u)
@@ -207,14 +217,14 @@ def server()
             next
           else
             if $active_kernels[u] >= $kernel_limit[u] then
-              # "Limit Met, allow existing to terminate"
+              "Limit Met, allow existing to terminate"
               next
             elsif $grace_period[u] + 1 > Time.now.to_i then
-              # puts "Still within grace-period, please wait"
+              puts "Still within grace-period, please wait"
             else
               tap_index = get_tap_device()
               if tap_index == -1 then
-                # puts "No Tap Device available"
+                puts "No Tap Device available"
                 next
               end
               $mutex.synchronize do
