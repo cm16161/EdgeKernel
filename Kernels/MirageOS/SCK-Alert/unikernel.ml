@@ -24,7 +24,7 @@ module Client (T: Mirage_time.S) (C: Mirage_console.S) (RES: Resolver_lwt.S) (CO
     else
       false
   
-  let http_fetch c resolver ctx uri_pop uri_set= 
+  let http_fetch c resolver ctx uri_pop uri_set=
     let const_ctx = ctx in
     let ctx = Cohttp_mirage.Client.ctx resolver ctx in
     Cohttp_mirage.Client.get ~ctx uri_pop >>= fun (response, body) ->
@@ -45,9 +45,9 @@ module Client (T: Mirage_time.S) (C: Mirage_console.S) (RES: Resolver_lwt.S) (CO
 
 
   let start _time c res (ctx:CON.t) =
-    let ns = Key_gen.resolver ()
-    and uri_get = Uri.of_string "http://192.168.0.37:7379/RPOP/sensor_data"
-    and uri_message = "http://192.168.0.37:7379/LPUSH/SCK-ALERT/ENTER-SLACK-WEBHOOK-URL&"
+    let ns = Key_gen.resolver ()  
+  and uri_get = Uri.of_string "http://192.168.0.37:7379/RPOP/sensor_data"
+  and uri_message = "https://slack.com/api/chat.postMessage?token=ENTER-SLACK-TOKEN&"
     in
     http_fetch c res ctx uri_get uri_message
 
