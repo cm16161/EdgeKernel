@@ -5,6 +5,7 @@ require 'redis-queue'
 require 'net/http'
 require 'pty'
 require 'usagewatch_ext'
+require 'timeout'
 
 
 def check_webdis()
@@ -12,7 +13,7 @@ def check_webdis()
   response = Net::HTTP.get_response(uri)
   if response.code != '200' then
     fork{
-      exec("echo test;cd ../webdis; ./webdis")
+      exec("echo error;cd ../webdis; ./webdis")
     }
     return false
   end
@@ -61,13 +62,12 @@ $scale_thresholds = Hash.new(10)
 #Map between the unikernel and the time it needs to wait in seconds between each new instance is spawned
 $grace_period = Hash.new(0)
 
+#Map bewtween the unikernel and the platform which it runs on, default is mirageos unikernels on solo5
 $binary_type = Hash.new("mirageos")
 
 
+#List of tap devices available 
 $tap_interfaces = []
-
-# # List of Channels to link the Redis Queue object with its Name
-# $channels = []
 
 $base_dir =  Dir.pwd
 
@@ -103,22 +103,20 @@ def register_unikernels()
   end
 end
 
+$redis = Redis.new()
 
 def establish_channels()
   channels = []
-  # Redis Object
-  $redis = Redis.new(:timeout => 0)
   $queues.each do | key, value |
     null_process_queue = key + "_null_process_queue"
     channels.append([Redis::Queue.new(key, null_process_queue, :redis=> $redis), key])
-    # channels.append(["", key])
   end
   return channels
 end
 
 
 def generate_tap_list()
-  for i in 2..10 do
+  for i in 2..11 do
     tapN = "tap1000".concat(i.to_s)
     ipN = "10.0.0.".concat(i.to_s).concat("/24")
     $tap_interfaces.append([tapN, ipN, true])
@@ -132,21 +130,23 @@ def execute_kernel(kernel, part_count, tap_index)
   else
     command = "solo5-hvt --net:service=" + $tap_interfaces[tap_index][0] + "  -- " + kernel + " --ipv4="+ $tap_interfaces[tap_index][1] + " --ipv4-gateway=10.0.0.1"
   end
-
   ofile = $base_dir + "/output/" + $ofiles[kernel] + ".part."+part_count
 
+  puts "Executing"
+  
   PTY.spawn( command ) do |stdout, stdin, pid|
-    open(ofile, "a") do |f|
-      stdout.each { |line| f.puts line }
-    end      
+    begin
+      Timeout::timeout(1){
+        open(ofile, "a") do |f|
+          stdout.each { |line| f.puts line }
+        end
+      }
     rescue Errno::EIO
+    rescue Timeout::Error
+      Process.kill(9, pid)
+    end
   end
-  $mutex.synchronize do
-    $active_kernels[kernel] -= 1
-    $grace_period[kernel] = 0
-    $tap_interfaces[tap_index][2] = true
-  end
-    puts "Finished"
+
 end
 
 def get_tap_device()
@@ -166,8 +166,7 @@ def init()
   load_kernels_to_memory()
   generate_tap_list()
   register_unikernels()
-  # load_channels()
-
+ 
 end
 
 def combine_logs(kernel)
@@ -181,6 +180,7 @@ def combine_logs(kernel)
   $has_output[kernel] = false
 end
 
+#Function used to terminate EdgeKernel when a queue is empty and report
 def terminate_on(c, target,u,ts)
 if c[1] == target then
           if c[0].empty? and $active_kernels[u] == 0 then
@@ -191,21 +191,13 @@ if c[1] == target then
         end
 end
 
+
 def server()
-  # prev_val = `ps -o rss= -p #{$$}`.to_i
-  ts= `date +%s%N`.to_i
   loop do
-#    puts $usw.uw_cpuused
-    # val =  `ps -o rss= -p #{$$}`.to_i
-    # if prev_val != val then
-    #   puts val
-    #   prev_val = val
-    # end
     channels = establish_channels()
     for c in channels do
       queue_name = c[1]
       for u in $queues[queue_name] do
-        # terminate_on(c, "eval_alert_input",u,ts)
         if c[0].empty? then
           if $has_output[u] and $active_kernels[u] == 0 then
             combine_logs(u)
@@ -213,7 +205,7 @@ def server()
         else
           queue_count = c[0].length
           if $active_kernels[u] > queue_count/$scale_thresholds[u] then
-            # puts "wait to finish before creating new"
+            puts "wait to finish before creating new"
             next
           else
             if $active_kernels[u] >= $kernel_limit[u] then
@@ -221,6 +213,7 @@ def server()
               next
             elsif $grace_period[u] + 1 > Time.now.to_i then
               puts "Still within grace-period, please wait"
+              next
             else
               tap_index = get_tap_device()
               if tap_index == -1 then
@@ -231,15 +224,27 @@ def server()
                 $active_kernels[u] += 1
                 $grace_period[u] = Time.now.to_i
                 $tap_interfaces[tap_index][2] = false
+
+
               end
+
               # When starting a new thread, the next iteration of the loop executes
               # and so this line is needed to ensure the correct unikernel boots
               kernel = u
               $has_output[kernel] = true
-              Thread.new{
-               # puts "SPAWNING " + kernel
-                execute_kernel(kernel, $active_kernels[kernel].to_s, tap_index)
+
+              puts "SPAWNING " + kernel
+              Thread.new(kernel, tap_index) {|kernel, tp|
+                execute_kernel(kernel, $active_kernels[kernel].to_s, tp)
+                $mutex.synchronize do
+                  puts "Finished"
+                  $active_kernels[kernel] -= 1
+                  $grace_period[kernel] = 0
+                  $tap_interfaces[tp][2] = true
+
+                end
               }
+              
             end
           end
         end
@@ -253,5 +258,4 @@ def main()
   server()
 
 end
-
 main()

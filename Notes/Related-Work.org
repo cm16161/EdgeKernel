@@ -1,0 +1,160 @@
+* Unikernels vs Containers
+
+@phdthesis{enberg2016performance,
+  title={A performance evaluation of hypervisor, unikernel, and container network I/O virtualization},
+  author={Enberg, Pekka},
+  year={2016},
+  school={MS thesis, Faculty Sci., Univ. Helsinki, Helsinki, Finland}
+}
+
+Only evaluate Networking capabilities and CPU load
+Uses OSv where possible <- general purpose <- overheads
+QEMU/KVM
+Netperf benchmarks
+Containers have highest performance when configured correctly
+Analysis of vitualisation focuses on VMs over Unikernels
+
+
+@inproceedings{madhavapeddy2015jitsu,
+  title={Jitsu: Just-in-time summoning of unikernels},
+  author={Madhavapeddy, Anil and Leonard, Thomas and Skjegstad, Magnus and Gazagnaire, Thomas and Sheets, David and Scott, Dave and Mortier, Richard and Chaudhry, Amir and Singh, Balraj and Ludlam, Jon and others},
+  booktitle={12th $\{$USENIX$\}$ Symposium on Networked Systems Design and Implementation ($\{$NSDI$\}$ 15)},
+  pages={559--573},
+  year={2015}
+}
+
+Multi-tenant isolation on resource constrained devices
+Not looking at functionality 
+``Multi-tenant networked applications"
+They argue that future success in IoT on edge depends on security and isolation
+Configured for Xen, optimisation features based around Xen
+Docker slow storage results in start times 600ms longer than Jitsu
+Only focus on booting and speed
+
+
+@inproceedings{goethals2018unikernels,
+  title={Unikernels vs containers: An in-depth benchmarking study in the context of microservice applications},
+  author={Goethals, Tom and Sebrechts, Merlijn and Atrey, Ankita and Volckaert, Bruno and De Turck, Filip},
+  booktitle={2018 IEEE 8th International Symposium on Cloud and Service Computing (SC2)},
+  pages={1--8},
+  year={2018},
+  organization={IEEE}
+}
+
+Straight up comparison of the 2 for performance
+Focuses on POSIX-like unikernels for functionality
+OSv again
+Containers are better than UK in most cases, memory consumption UK is 70-130MB more than Containers
+UK is 38% faster running Go application than container
+For interpreted languages, UK is worse
+Comparable performance when running bubble sort (OSv vs C)
+Unikernels by design are single threaded, but can support multi threading
+    -> multithreaded containers greatly outperform MT UK
+Comparable performance for response time, but container maximum time is 10x larger for Go application
+Python UK is 10ms faster on average than Python C response time
+
+Containers have a vastly superior memory footprint
+Container memory queried directly via docker
+Unikernel memory uses number of pages requested
+Unfair analysis
+
+
+@techreport{de2017survey,
+  title={A survey on security isolation of virtualization, containers, and unikernels},
+  author={De Lucia, Michael J},
+  year={2017},
+  institution={US Army Research Laboratory Aberdeen Proving Ground United States}
+}
+
+
+Cites:
+@article{bui2015analysis,
+  title={Analysis of docker security},
+  author={Bui, Thanh},
+  journal={arXiv preprint arXiv:1501.02967},
+  year={2015}
+}
+
+for docker offering isolation at a container level, but nothing in the kernel/privelidged ring0 layer
+Unikernels are an ``adequate" solution, but not perfect due to the lack of separation between trusted kernel and untrusted application code
+
+
+@inproceedings{manco2017my,
+  title={My VM is Lighter (and Safer) than your Container},
+  author={Manco, Filipe and Lupu, Costin and Schmidt, Florian and Mendes, Jose and Kuenzer, Simon and Sati, Sumit and Yasukata, Kenichi and Raiciu, Costin and Huici, Felipe},
+  booktitle={Proceedings of the 26th Symposium on Operating Systems Principles},
+  pages={218--233},
+  year={2017}
+}
+
+Security issues in that containers use Kernel Syscall APIs <- and these have vulnerabilities
+Number of Syscalls are constantly increasing <- is it ever possible to secure containers?
+Containers can execute a forkbomb to exhaust system resources to DoS all other containers on that host
+Goal is to make virtualisation faster
+Linearly show that VM image size increases boot time by injecting binary objects into uncompressed image
+Produce a system to replace Xen
+Compare their system to 3 unikernels and Docker
+Unikernels on their system outperform docker <- this leads way to show a good hypervisor makes a big difference
+Containers share kernel so memory usage stays low
+Their results show that Unikernel process is roughly same as Docker
+Containers slightly (fraction of a percentage) outpeform unikernels, but both are orders of magnitude better than a full VM
+
+
+@inproceedings{xavier2016time,
+  title={Time provisioning evaluation of kvm, docker and unikernels in a cloud platform},
+  author={Xavier, Bruno and Ferreto, Tiago and Jersak, Luis},
+  booktitle={2016 16th IEEE/ACM International Symposium on Cluster, Cloud and Grid Computing (CCGrid)},
+  pages={277--280},
+  year={2016},
+  organization={IEEE}
+}
+
+Docker vs OSv
+Investigation of provision time under parallel conditions
+
+Startup and instance creation times
+Docker significantly faster than OSv on KVM
+Conclude that OSv is better than Docker when provisioning processes on OpenStack
+OSv significantly faster overall (>9s) than Docker when starting processes
+
+@inproceedings{ueda2010performance,
+  title={Performance variations of two open-source cloud platforms},
+  author={Ueda, Yohei and Nakatani, Toshio},
+  booktitle={IEEE International Symposium on Workload Characterization (IISWC'10)},
+  pages={1--10},
+  year={2010},
+  organization={IEEE}
+}
+
+AND 
+
+@inproceedings{mao2012performance,
+  title={A performance study on the vm startup time in the cloud},
+  author={Mao, Ming and Humphrey, Marty},
+  booktitle={2012 IEEE Fifth International Conference on Cloud Computing},
+  pages={423--430},
+  year={2012},
+  organization={IEEE}
+}
+
+Conclude that image size directly correlates to boot time
+
+
+@inproceedings{morabito2015hypervisors,
+  title={Hypervisors vs. lightweight virtualization: a performance comparison},
+  author={Morabito, Roberto and Kj{\"a}llman, Jimmy and Komu, Miika},
+  booktitle={2015 IEEE International Conference on Cloud Engineering},
+  pages={386--393},
+  year={2015},
+  organization={IEEE}
+}
+
+Quantify overhead caused by virtualisation
+Subsequently compare with native
+Due to portability issues, can't run all tests with OSv
+Containers do not isolate as well as hypervisors
+OSv vs Docker
+OSv on KVM
+OSv outperforms native for one experiment - noploop 
+Netperf TCP test:
+    OSv more than 26% faster than native which is comparable to docker

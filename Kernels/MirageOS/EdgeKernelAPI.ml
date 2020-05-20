@@ -4,9 +4,11 @@ let combine base extension =
   String.concat base [""; extension]
 
 let default_base =
-  combine "http://" 
+  combine "http://"
+(*    Change this line to the IP address bound to Redis     *) 
   (combine "192.168.0.37"
-    (combine ":"
+     (combine ":"
+(*    Change this line to the Port bound to Redis     *) 
        (combine (string_of_int 7379)
           ("/")
        )
@@ -59,7 +61,7 @@ let get_set_option body =
   get_val_option body "set"
 
 
-let edgekernel_communication res ctx command =
+let get res ctx command =
   let ctx = Cohttp_mirage.Client.ctx res ctx in
   Cohttp_mirage.Client.get ~ctx (Uri.of_string command)
 

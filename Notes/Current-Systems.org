@@ -1,0 +1,256 @@
+* Notes on Current Systems
+** Edge
+*** Done
+@inproceedings{baresi2017empowering,
+  title={Empowering low-latency applications through a serverless edge computing architecture},
+  author={Baresi, Luciano and Mendon{\c{c}}a, Danilo Filgueira and Garriga, Martin},
+  booktitle={European Conference on Service-Oriented and Cloud Computing},
+  pages={196--210},
+  year={2017},
+  organization={Springer}
+}
+
+*SOLUTION TO APPLICATION LEVEL PROBLEM*
+
+Mobile Devices, Mobile Edge Computing (MEC) Servers
+MEC servers located in same geolocation a Cellular Towers
+Serverless Architecture on these Servers <- containers...security?
+Mobiles doing work such as Mobile Augmented Reality <- low latency high throughput
+
+Conventional FaaS, NoSQL storage
+Targetting Mobile Augmented Reality
+Do not look into the details behind the FaaS
+System aimed around /using/ FaaS to solve a larger problem
+Coordinating applications to the Server/system
+
+Focus on user immersion with world around them, rather than understanding habits of daily life
+
+Compare local edge, local cloud and enterprise cloud 
+Overall very good evaluation to compare and analyse results
+
+They acknowledge that they focus on latency, and that it's not necessarily a fair comparison due
+as they know that CPU is determined by memory on industry FaaS, and that is something that they didn't,
+but should explore.
+
+
+@article{nastic2017serverless,
+  title={A serverless real-time data analytics platform for edge computing},
+  author={Nastic, Stefan and Rausch, Thomas and Scekic, Ognjen and Dustdar, Schahram and Gusev, Marjan and Koteska, Bojana and Kostoska, Magdalena and Jakimovski, Boro and Ristov, Sasko and Prodan, Radu},
+  journal={IEEE Internet Computing},
+  volume={21},
+  number={4},
+  pages={64--71},
+  year={2017},
+  publisher={IEEE}
+}
+
+*THEY PRESENT A REFERENCE ARCHITECTURE*
+*DATA ANALYTICS - very applicable to what I am doing*
+
+# ##############################################################
+
+Combines Edge (local) and Cloud (global) computing
+Designed for Realtime processing of data, analytics and stream data
+High level paper which describes concepts rather than details
+No implementation details, examples, evaluation
+
+# ##############################################################
+
+They argue that any system configured on the Edge requires a good knowledge of the infrastructure
+This makes it difficult to perform data analytics on a subsequent platform
+They rightly claim that cloud and edge models mitigate the issues of hardware and infrastructure failure, 
+and application management
+
+Good arguments for use case 1
+As it is a reference architecture, there is no evaluation
+Approach to designing the system however is logical and coherent.
+They break down the architecture into a number of layers
+They distribute the work over cloud /and/ edge servers <- think Aske et al (see below)
+
+
+@inproceedings{daga2019cartel,
+  title={Cartel: A System for Collaborative Transfer Learning at the Edge},
+  author={Daga, Harshit and Nicholson, Patrick K and Gavrilovska, Ada and Lugones, Diego},
+  booktitle={Proceedings of the ACM Symposium on Cloud Computing},
+  pages={25--37},
+  year={2019}
+}
+
+*SOLUTION TO DATA MOVEMENT, Application Level - their solution enables fast learning, not general-user functionality*
+
+# ##############################################################
+
+MEC servers located in same geolocation a Cellular Towers
+Goal. Reduce dependence on data movement when compared to purely centralised
+Nodes periodically share metadata
+Distributed learning system
+Focuses on Learning Algorithms rather than data processing
+
+# ##############################################################
+
+They argue that ML is a core need to add value from data sent to edge devices
+They argue that the current systems are inefficient due to the amount of data being transferred
+     This is a very real and valid argument since it is a known issue that data transfer is becoming a major bottleneck in performance
+
+They are trying to resolve the issue of data movement when doing machine learning
+
+This is not Serverless Computing
+
+
+
+@inproceedings{hall2019execution,
+  title={An execution model for serverless functions at the edge},
+  author={Hall, Adam and Ramachandran, Umakishore},
+  booktitle={Proceedings of the International Conference on Internet of Things Design and Implementation},
+  pages={225--236},
+  year={2019}
+}
+
+*(Basically my problem - End the Current systems section with this)*
+# ###########################################################################
+WebAssembly
+Requires V8 platform to run <- OS <- Overhead
+Relies on NodeJS to embed V8 exectution engine
+WebAssembly does suffer performance loss compared to native
+Hardware Targetting <- WebAssembly HW Agnostic and so loses benefits from targetting HW
+# ###########################################################################
+
+V8 is the JS engine that powers chrome
+Provides runtime environment that JS executes in
+V8 Context -> object that can run JS code
+    Effectively a container runtime
+V8 Isolates ensure memory limits to executing code and also run on separate threads
+Isolates can contain 1 or more Contexts
+Web assembly is good, however running in execution engine slows performance
+Unikernels do not require execution engine/require hypervisor. This change enables faster performance whilst providing same capablities of WASM
+
+
+@inproceedings{glikson2017deviceless,
+  title={Deviceless edge computing: extending serverless computing to the edge of the network},
+  author={Glikson, Alex and Nastic, Stefan and Dustdar, Schahram},
+  booktitle={Proceedings of the 10th ACM International Systems and Storage Conference},
+  pages={1--1},
+  year={2017}}
+
+*Reference Architecture*
+
+Security in the Edge
+Public facing
+No firewalls
+Greater probability of network failure
+Gives the option of running the work locally on Edge server or execute work on cloud server
+
+Centralised code storage <- defeats the point of small sized unikernels, additionally, more data transfer which we want to mitigate
+No pre-emptive creation of containers, valuing low latency over elasticity, due to small and static environment <- very true and valid
+
+@inproceedings{aske2018supporting,
+  title={Supporting multi-provider serverless computing on the edge},
+  author={Aske, Austin and Zhao, Xinghui},
+  booktitle={Proceedings of the 47th International Conference on Parallel Processing Companion},
+  pages={1--6},
+  year={2018}
+}
+
+*Serverless Monitoring and Scheduling System*
+
+They are solving the problem of choosing the "/right/" serverless provider
+Objective is to create a more open FaaS standard such that user can write a single function and effieciently deploy on any platform
+
+Distributes work to the best serverless provider at the time
+Doesn't necessarily do work in on the Edge itself
+Stepping-Stone to efficiently combine edge and cloud resources <- think Nastic etal
+
+** Unikernels
+
+@inproceedings{kuo2020linux,
+  title={A Linux in unikernel clothing},
+  author={Kuo, Hsuan-Chi and Williams, Dan and Koller, Ricardo and Mohan, Sibin},
+  booktitle={Proceedings of the Fifteenth European Conference on Computer Systems},
+  pages={1--15},
+  year={2020}
+}
+
+*Gaining the benefits of Unikernels within Linux*
+
+Unikernels are good at what they do but can be too restrictive, losing the functionality and flexibility of conventional Linux Distros
+POSIX-like unikernels do exist, like OSv and HermiTux, but they do not link the application with a libarary OS, this makes deployment easy, but loses
+benefits of specialisation from Language Based Unikernels
+
+Language based unikernels are very small and secure, this allows for optimisations, but do not adhere to POSIX functionality
+Rightly claim that language restrictions limit how well it can be adopted
+
+Lupine is kernel binary that dynamically loads the application code from rootfs
+They configure the Kernel image based around user-defined application specific requirements
+
+They reduce the number of Kernel configuration options to a significantly reduced subset
+
+They only compare with POSIX-like Unikernels, I want to explore performance with Language based to due the optimisations they claim at start
+
+
+@inproceedings{kivity2014osv,
+  title={OSv—optimizing the operating system for virtual machines},
+  author={Kivity, Avi and Laor, Dor and Costa, Glauber and Enberg, Pekka and Har’El, Nadav and Marti, Don and Zolotarov, Vlad},
+  booktitle={2014 $\{$USENIX$\}$ Annual Technical Conference ($\{$USENIX$\}$$\{$ATC$\}$ 14)},
+  pages={61--72},
+  year={2014}
+}
+
+*Design of a Unikernel with Linux-like functionality*
+
+Hypervisors offer isolation techniques which are duplicated in OS <- wastage
+Single address space
+Making all system calls as function calls reduces overhead
+Runs on most hypervisors, but not Solo5
+
+** Generic Cloud
+*** Done 
+*** Todo
+@inproceedings{mohanty2018evaluation,
+  title={An Evaluation of Open Source Serverless Computing Frameworks.},
+  author={Mohanty, Sunil Kumar and Premsankar, Gopika and Di Francesco, Mario and others},
+  booktitle={CloudCom},
+  pages={115--120},
+  year={2018}
+}
+
+All use Docker
+Most use Container Orchestration but OpenWhisk doesn't need it
+Fission and Kubeless use Kubernetes
+OpenFaaS uses Docker & Kubernetes
+    Watchdog: webserver as entry point for function calls
+    API gateway gathers statistics
+
+
+@inproceedings{lynn2017preliminary,
+  title={A preliminary review of enterprise serverless cloud computing (function-as-a-service) platforms},
+  author={Lynn, Theo and Rosati, Pierangelo and Lejeune, Arnaud and Emeakaroha, Vincent},
+  booktitle={2017 IEEE International Conference on Cloud Computing Technology and Science (CloudCom)},
+  pages={162--169},
+  year={2017},
+  organization={IEEE}
+}
+
+Again think wang-et-al 
+Authentication
+Some platforms authentication is unknown
+Most use IAM roles
+Most platforms limit function duration and memory
+
+
+@inproceedings{lee2018evaluation,
+  title={Evaluation of production serverless computing environments},
+  author={Lee, Hyungro and Satyam, Kumar and Fox, Geoffrey},
+  booktitle={2018 IEEE 11th International Conference on Cloud Computing (CLOUD)},
+  pages={442--450},
+  year={2018},
+  organization={IEEE}
+}
+
+Evaluation of current systems 
+Think Wang-et-al
+Language support, cpu throughput, concurrency, memory, I/O etc.
+Results show that hardware available is significantly more powerful than what can be found on edge devices
+
+
+
+
