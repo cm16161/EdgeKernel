@@ -1,0 +1,8 @@
+{
+    "name" : "TEMPLATE.hvt",
+    "directory" : "/PATH/TO/UNIKERNEL",
+    "queue" : ["TEMPLATE_TRIGGER"],
+    "max_instances" : 10,
+    "scale_threshold" : 10,
+    "ofile" : "TEMPLATE.output"
+}

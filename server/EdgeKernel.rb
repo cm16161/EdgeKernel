@@ -116,7 +116,7 @@ end
 
 
 def generate_tap_list()
-  for i in 2..11 do
+  for i in 2..51 do
     tapN = "tap1000".concat(i.to_s)
     ipN = "10.0.0.".concat(i.to_s).concat("/24")
     $tap_interfaces.append([tapN, ipN, true])
@@ -132,7 +132,7 @@ def execute_kernel(kernel, part_count, tap_index)
   end
   ofile = $base_dir + "/output/" + $ofiles[kernel] + ".part."+part_count
 
-  puts "Executing"
+  # puts "Executing"
   
   PTY.spawn( command ) do |stdout, stdin, pid|
     begin
@@ -194,6 +194,8 @@ end
 
 def server()
   loop do
+    val =  `ps -o rss= -p #{$$}`.to_i
+    puts val
     channels = establish_channels()
     for c in channels do
       queue_name = c[1]
@@ -205,19 +207,19 @@ def server()
         else
           queue_count = c[0].length
           if $active_kernels[u] > queue_count/$scale_thresholds[u] then
-            puts "wait to finish before creating new"
+            # puts "wait to finish before creating new"
             next
           else
             if $active_kernels[u] >= $kernel_limit[u] then
-              "Limit Met, allow existing to terminate"
+              # "Limit Met, allow existing to terminate"
               next
-            elsif $grace_period[u] + 1 > Time.now.to_i then
-              puts "Still within grace-period, please wait"
+            elsif $grace_period[u] + 0 > Time.now.to_i then
+              # puts "Still within grace-period, please wait"
               next
             else
               tap_index = get_tap_device()
               if tap_index == -1 then
-                puts "No Tap Device available"
+                # puts "No Tap Device available"
                 next
               end
               $mutex.synchronize do
@@ -233,11 +235,11 @@ def server()
               kernel = u
               $has_output[kernel] = true
 
-              puts "SPAWNING " + kernel
+              # puts "SPAWNING " + kernel
               Thread.new(kernel, tap_index) {|kernel, tp|
                 execute_kernel(kernel, $active_kernels[kernel].to_s, tp)
                 $mutex.synchronize do
-                  puts "Finished"
+                  # puts "Finished"
                   $active_kernels[kernel] -= 1
                   $grace_period[kernel] = 0
                   $tap_interfaces[tp][2] = true
