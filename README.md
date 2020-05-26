@@ -14,3 +14,13 @@ This needs to be configured to use your networking device. For PC's this will ty
 Once you know what your private IP address is, configure `Line 12` in the `server/EdgeKernel.rb` so that EdgeKernel knows where to access Redis. 
 
 Additionally, this change is required on `Line 9` on in the `Kernels/MirageOS/EdgeKernelAPI.ml` file.
+
+
+EdgeKernel can be found in the `server/` directory.
+Run EdgeKernel with `sudo ruby EdgeKernel.rb`
+
+# Videos
+
+A video presentation of EdgeKernel can be found here: 
+A technical demonstration can be found here: [https://youtu.be/P9SZiQzDopU](https://youtu.be/P9SZiQzDopU)
+
