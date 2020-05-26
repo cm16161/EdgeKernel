@@ -12,7 +12,9 @@ module Client (T: Mirage_time.S) (C: Mirage_console.S) (RES: Resolver_lwt.S) (CO
     match value with
       Some p -> C.log c (sprintf "%s" p) >>= fun() ->
                 let world = EdgeKernelAPI.generate_default_set "hello" ["world"] in
-                EdgeKernelAPI.get res ctx world >>= fun( _res,_body) ->
+                let incr = EdgeKernelAPI.generate_default_incr "hello-world-count" in
+                EdgeKernelAPI.get res ctx world >>= fun( _res,_body ) ->
+                EdgeKernelAPI.get res ctx incr >>= fun( __res,__body ) ->
                 C.log c (sprintf "")
     | None ->   C.log c (sprintf "")
               

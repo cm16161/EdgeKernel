@@ -12,6 +12,7 @@ sudo apt-get install -y libevent-dev ocaml redis libseccomp-dev ruby qemu-kvm li
 sudo gem install json
 sudo gem install redis
 sudo gem install redis-queue
+sudo gem install usagewatch_ext
 
 git submodule update --init
 cd webdis
