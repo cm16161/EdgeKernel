@@ -22,5 +22,6 @@ Run EdgeKernel with `sudo ruby EdgeKernel.rb`
 # Videos
 
 A video presentation of EdgeKernel can be found here: [https://youtu.be/neguWBuOzgY](https://youtu.be/neguWBuOzgY)
+
 A technical demonstration can be found here: [https://youtu.be/P9SZiQzDopU](https://youtu.be/P9SZiQzDopU)
 
