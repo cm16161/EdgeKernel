@@ -6,10 +6,11 @@ require 'net/http'
 require 'pty'
 require 'usagewatch_ext'
 require 'timeout'
+require 'csv'
 
 
 def check_webdis()
-  uri = URI('http://192.168.0.37:7379/GET/hello')
+  uri = URI('http://192.168.0.31:7379/GET/hello')
   response = Net::HTTP.get_response(uri)
   if response.code != '200' then
     fork{
@@ -193,7 +194,14 @@ end
 
 
 def server()
+  start_mem = `ps -o rss= -p #{$$}`.to_i
+  n_kernels = 0
   loop do
+      active = check_webdis()
+      while !active do
+        active = check_webdis()
+      end
+    # puts Process.pid
     channels = establish_channels()
     for c in channels do
       queue_name = c[1]
@@ -205,19 +213,19 @@ def server()
         else
           queue_count = c[0].length
           if $active_kernels[u] > queue_count/$scale_thresholds[u] then
-            puts "wait to finish before creating new"
+            # puts "wait to finish before creating new"
             next
           else
             if $active_kernels[u] >= $kernel_limit[u] then
-              "Limit Met, allow existing to terminate"
+              # "Limit Met, allow existing to terminate"
               next
             elsif $grace_period[u] + 0 > Time.now.to_i then
-              puts "Still within grace-period, please wait"
+              # puts "Still within grace-period, please wait"
               next
             else
               tap_index = get_tap_device()
               if tap_index == -1 then
-                puts "No Tap Device available"
+                # puts "No Tap Device available"
                 next
               end
               $mutex.synchronize do
@@ -232,12 +240,23 @@ def server()
               # and so this line is needed to ensure the correct unikernel boots
               kernel = u
               $has_output[kernel] = true
+              n_kernels += 1
 
-              puts "SPAWNING " + kernel
+              # puts "SPAWNING " + kernel
+              val =  `ps -o rss= -p #{$$}`.to_i
+              CSV.open("/home/chetan/top-kek.csv","a") do |csv|
+                csv << [val,(val - start_mem)/n_kernels,n_kernels]
+              end
+              puts val
+              puts (val - start_mem)/n_kernels
+              puts n_kernels
               Thread.new(kernel, tap_index) {|kernel, tp|
+                # puts val
+                # puts Process.pid
+                # puts Process.pid
                 execute_kernel(kernel, $active_kernels[kernel].to_s, tp)
                 $mutex.synchronize do
-                  puts "Finished"
+                  # puts "Finished"
                   $active_kernels[kernel] -= 1
                   $grace_period[kernel] = 0
                   $tap_interfaces[tp][2] = true
@@ -254,6 +273,7 @@ def server()
 end
 
 def main()
+  puts Process.pid
   init()
   server()
 
