@@ -2,11 +2,13 @@
 
 EdgeKernel utilises [MirageOS](https://mirage.io/) UniKernels and [Solo5](https://github.com/Solo5/solo5) as a execution environment.
 
-## MirageOS Installation
+## Pre-Req
+
+### MirageOS
 
 Please follow [MirageOS Installation](https://mirage.io/wiki/install) to install opam, mirage.
 
-## Solo5 Installation
+### Solo5
 
 Please follow [Building Solo5](https://github.com/Solo5/solo5/blob/master/docs/building.md#building-solo5) to install solo5.
 
@@ -16,7 +18,7 @@ As we are using Solo5-hvt (Hardware Virtualised Tender), copy `solo5-hvt` to `/u
 sudo -u $USER  cp tenders/hvt/solo5-hvt /usr/bin/
 ```
 
-## EdgeKernel Requirements
+### Minimal Packages
 
 Install the below packages
 
@@ -39,7 +41,7 @@ gem install usagewatch_ext
 git clone https://github.com/cm16161/EdgeKernel.git
 ```
 
-### Run WebDis
+#### Run WebDis
 ```
 git submodule update --init
 cd webdis
@@ -47,7 +49,7 @@ make clean all
 nohup ./webdis& > /dev/null
 ```
 
-### Install VMTouch
+#### Install VMTouch
 ```
 cd ..
 cd vmtouch
@@ -55,7 +57,7 @@ make
 sudo -u $USER  make install
 ```
 
-## Network Setup
+### Network Setup
 
 Finally, configure the network by modifying `Line 17` and running the `network_configuration.sh` script as `root`.
 This needs to be configured to use your networking device. For PC's this will typically use the `eth0` interface and the `wlp59s0` interface for laptops. This can be found by running `ifconfig` and finding your `inet` which starts with `192.168..`.
