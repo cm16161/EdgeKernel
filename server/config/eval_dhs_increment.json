@@ -1,6 +1,6 @@
 {
     "name" : "eval_test_dhs_increment_day_count.hvt",
-    "directory" : "/home/chetan/Documents/Unikernel-Serverless/Kernels/MirageOS/evaluation_test_dhs/increment_day_count/",
+    "directory" : "Kernels/MirageOS/evaluation_test_dhs/increment_day_count/",
     "queue" : ["eval_dhs_increment_trigger"],
     "max_instances" : 10,
     "scale_threshold" : 1,

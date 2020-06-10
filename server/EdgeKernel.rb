@@ -90,7 +90,8 @@ def register_unikernels()
     binary_type = json["binary"]
     fill_queues(queue, name)
     
-    $directories[name] = dir
+    $directories[name] = (__dir__ + '/../' + dir).to_s
+    
     if limit then
       $kernel_limit[name] = limit
     end
@@ -125,6 +126,7 @@ def generate_tap_list()
 end
 
 def execute_kernel(kernel, part_count, tap_index)
+  # puts $directories[kernel]
   Dir.chdir($directories[kernel])
   if $binary_type[kernel].eql? "bash" then
     command = "./"+ kernel
@@ -242,14 +244,14 @@ def server()
               $has_output[kernel] = true
               n_kernels += 1
 
-              # puts "SPAWNING " + kernel
+              puts "SPAWNING " + kernel
               val =  `ps -o rss= -p #{$$}`.to_i
               CSV.open("/home/chetan/top-kek.csv","a") do |csv|
                 csv << [val,(val - start_mem)/n_kernels,n_kernels]
               end
-              puts val
-              puts (val - start_mem)/n_kernels
-              puts n_kernels
+              # puts val
+              # puts (val - start_mem)/n_kernels
+              # puts n_kernels
               Thread.new(kernel, tap_index) {|kernel, tp|
                 # puts val
                 # puts Process.pid
@@ -273,9 +275,9 @@ def server()
 end
 
 def main()
-  puts Process.pid
   init()
   server()
 
 end
+
 main()

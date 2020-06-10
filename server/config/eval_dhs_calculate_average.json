@@ -1,6 +1,6 @@
 {
     "name" : "eval_test_dhs_calculate_averages.hvt",
-    "directory" : "/home/chetan/Documents/Unikernel-Serverless/Kernels/MirageOS/evaluation_test_dhs/calculate_averages/",
+    "directory" : "Kernels/MirageOS/evaluation_test_dhs/calculate_averages/",
     "queue" : ["eval_test_dhs_new_value"],
     "max_instances" : 10,
     "scale_threshold" : 1,

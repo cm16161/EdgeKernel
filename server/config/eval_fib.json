@@ -1,6 +1,6 @@
 {
     "name" : "eval_test_fib.hvt",
-    "directory" : "/home/chetan/Documents/Unikernel-Serverless/Kernels/MirageOS/evaluation_test_fibonacci/",
+    "directory" : "Kernels/MirageOS/evaluation_test_fibonacci/",
     "queue" : ["eval_fib_trigger"],
     "max_instances" : 100,
     "scale_threshold" : 1,

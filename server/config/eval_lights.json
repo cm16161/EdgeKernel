@@ -1,6 +1,6 @@
 {
     "name" : "eval_test_lights.hvt",
-    "directory" : "/home/chetan/Documents/Unikernel-Serverless/Kernels/MirageOS/evaluation_test_lights/",
+    "directory" : "Kernels/MirageOS/evaluation_test_lights/",
     "queue" : ["eval_lights_input"],
     "max_instances" : 10,
     "scale_threshold" : 1,

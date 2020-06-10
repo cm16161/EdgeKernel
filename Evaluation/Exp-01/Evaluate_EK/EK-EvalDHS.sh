@@ -1,22 +1,26 @@
 #!/bin/bash
 
-function echo_to_file(){
-    echo $1 >> Times/EK/Eval-FDC
+
+function magic(){
+    redis-cli set consume_all_count 0 > /dev/null
+    ts=$(date +%s%N)
+    list=$(seq -s ' ' $(($1 * 1)))
+    redis-cli lpush $2 $list > /dev/null
+
+    let fin=$(redis-cli llen $2)
+    while [ $fin -ne 0 ]
+    do
+	let fin=$(redis-cli llen $2)
+    done
+    let finished=$((($(date +%s%N) - $ts)))
+    echo "$(($finished/1000000)) ms"
+    sleep 1
 }
 
-cd ../../server
-
-for j in {1..10}
+for i in {1..10}
 do
-    for i in {1..10}
-    do
-	# echo "Starting Run $j:$i" 
-	redis-cli lpush eval_test_dhs_new_value 10.0 >/dev/null
-	ruby server.rb # >> ../Times/EK/Eval-DHS.txt
-	# ./EK-EvalA.sh
-	# echo_to_file ""
-	# echo_to_file "#################"
-	# echo_to_file ""
-    
-    done
+    magic 1 eval_test_dhs_new_value
 done
+
+echo "Finished"
+
