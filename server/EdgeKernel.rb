@@ -9,7 +9,7 @@ require 'timeout'
 require 'csv'
 require 'socket'
 def check_webdis
-  # ip = Socket.ip_address_list.detect(&:ipv4_private?)&.ip_address
+  ip = Socket.ip_address_list.detect(&:ipv4_private?)&.ip_address
   uri = 'http://' + ip.to_s + ':7379/GET/hello'
   uri = URI(uri)
   response = Net::HTTP.get_response(uri)
