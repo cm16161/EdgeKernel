@@ -1,3 +1,4 @@
+# coding: utf-8
 require 'rubygems'
 require 'redis'
 require 'json'
@@ -7,10 +8,11 @@ require 'pty'
 require 'usagewatch_ext'
 require 'timeout'
 require 'csv'
-
-
+require 'socket'
 def check_webdis()
-  uri = URI('http://192.168.0.31:7379/GET/hello')
+  ip = Socket.ip_address_list.detect(&:ipv4_private?)&.ip_address
+  uri = "http://" + ip.to_s + ":7379/GET/hello"
+  uri = URI(uri)
   response = Net::HTTP.get_response(uri)
   if response.code != '200' then
     fork{
@@ -126,7 +128,6 @@ def generate_tap_list()
 end
 
 def execute_kernel(kernel, part_count, tap_index)
-  # puts $directories[kernel]
   Dir.chdir($directories[kernel])
   if $binary_type[kernel].eql? "bash" then
     command = "./"+ kernel
@@ -135,7 +136,7 @@ def execute_kernel(kernel, part_count, tap_index)
   end
   ofile = $base_dir + "/output/" + $ofiles[kernel] + ".part."+part_count
 
-  # puts "Executing"
+  puts "Executing"
   
   PTY.spawn( command ) do |stdout, stdin, pid|
     begin
@@ -203,7 +204,6 @@ def server()
       while !active do
         active = check_webdis()
       end
-    # puts Process.pid
     channels = establish_channels()
     for c in channels do
       queue_name = c[1]
@@ -215,19 +215,19 @@ def server()
         else
           queue_count = c[0].length
           if $active_kernels[u] > queue_count/$scale_thresholds[u] then
-            # puts "wait to finish before creating new"
+            puts "wait to finish before creating new"
             next
           else
             if $active_kernels[u] >= $kernel_limit[u] then
-              # "Limit Met, allow existing to terminate"
+              "Limit Met, allow existing to terminate"
               next
             elsif $grace_period[u] + 0 > Time.now.to_i then
-              # puts "Still within grace-period, please wait"
+              puts "Still within grace-period, please wait"
               next
             else
               tap_index = get_tap_device()
               if tap_index == -1 then
-                # puts "No Tap Device available"
+                puts "No Tap Device available"
                 next
               end
               $mutex.synchronize do
@@ -245,20 +245,10 @@ def server()
               n_kernels += 1
 
               puts "SPAWNING " + kernel
-              val =  `ps -o rss= -p #{$$}`.to_i
-              CSV.open("/home/chetan/top-kek.csv","a") do |csv|
-                csv << [val,(val - start_mem)/n_kernels,n_kernels]
-              end
-              # puts val
-              # puts (val - start_mem)/n_kernels
-              # puts n_kernels
               Thread.new(kernel, tap_index) {|kernel, tp|
-                # puts val
-                # puts Process.pid
-                # puts Process.pid
                 execute_kernel(kernel, $active_kernels[kernel].to_s, tp)
                 $mutex.synchronize do
-                  # puts "Finished"
+                  puts "Finished"
                   $active_kernels[kernel] -= 1
                   $grace_period[kernel] = 0
                   $tap_interfaces[tp][2] = true
