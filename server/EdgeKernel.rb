@@ -15,9 +15,9 @@ def check_webdis
   response = Net::HTTP.get_response(uri)
   if response.code != '200'
     fork { exec('echo error;cd ../webdis; ./webdis') }
-    return false
+    check_webdis
   end
-  true
+  return
 end
 
 def load_kernels_to_memory
@@ -195,8 +195,7 @@ def get_tap_device
 end
 
 def init
-  active = check_webdis
-  until active do active = check_webdis end
+  check_webdis
   load_kernels_to_memory
   generate_tap_list
   register_unikernels
@@ -224,68 +223,112 @@ def terminate_on(c, target ,u, ts)
   end
 end
 
-def server
-  start_mem = `ps -o rss= -p #{$$}`.to_i
-  n_kernels = 0
-  loop do
-    active = check_webdis
-    until active do
-      active = check_webdis
+def update_state(u, tap_index)
+  $mutex.synchronize do
+  $active_kernels[u] += 1
+  $grace_period[u] = Time.now.to_i
+  $tap_interfaces[tap_index][2] = false
+  end
+end
+
+def begin_execution(u, tap_index)
+  begin_execution(u, tap_index)
+  # When starting a new thread, the next iteration of the loop
+  # executes and so this line is needed to ensure the correct
+  # unikernel boots
+  kernel = u
+  $has_output[kernel] = true
+
+  puts 'SPAWNING ' + kernel
+  Thread.new(kernel, tap_index) { |kernel, tp|
+    execute_kernel(kernel, $active_kernels[kernel].to_s, tp)
+    $mutex.synchronize do
+      puts 'Finished'
+      $active_kernels[kernel] -= 1
+      $grace_period[kernel] = 0
+      $tap_interfaces[tp][2] = true
     end
+  }
+end
+
+def check_output(u)
+    if $has_output[u] and $active_kernels[u] == 0
+      combine_logs(u)
+    end
+end
+
+
+def check_scaling(c, u)
+  queue_count = c[0].length
+  if $active_kernels[u] > queue_count/$scale_thresholds[u] then
+    puts 'wait to finish before creating new'
+    true
+  end
+  false
+end
+
+def check_limit(u)
+  if $active_kernels[u] >= $kernel_limit[u]
+    'Limit Met, allow existing to terminate'
+    return true
+  end
+  false
+end
+
+
+def check_grace_period(u, grace_period)
+  if $grace_period[u] + grace_period > Time.now.to_i
+    puts 'Still within grace-period, please wait'
+    return true
+  end
+end
+
+def check_tap(tap_index)
+  if tap_index == -1
+    puts 'No Tap Device available'
+    return true
+  end
+  false
+end
+
+def monitor_queue(c, u)
+  if c[0].empty?
+    check_output(u)
+  end
+
+  if check_scaling(c, u)
+    return
+  end
+
+  if check_limit(u)
+    return
+  end
+
+  if check_grace_period(u, 1)
+    return
+  end
+  tap_index = get_tap_device
+
+  if check_tap(tap_index)
+    return
+  end
+  update_state(u, tap_index)
+  begin_execution(u, tap_index)
+end
+
+def monitor_channel(c)
+  queue_name = c[1]
+  for u in $queues[queue_name] do
+    monitor_queue(c, u)
+  end
+end
+
+def server
+  loop do
+    check_webdis
     channels = establish_channels
     for c in channels do
-      queue_name = c[1]
-      for u in $queues[queue_name] do
-        if c[0].empty? then
-          if $has_output[u] and $active_kernels[u] == 0 then
-            combine_logs(u)
-          end
-        else
-          queue_count = c[0].length
-          if $active_kernels[u] > queue_count/$scale_thresholds[u] then
-            puts 'wait to finish before creating new'
-            next
-          else
-            if $active_kernels[u] >= $kernel_limit[u] then
-              'Limit Met, allow existing to terminate'
-              next
-            elsif $grace_period[u] + 0 > Time.now.to_i then
-              puts 'Still within grace-period, please wait'
-              next
-            else
-              tap_index = get_tap_device()
-              if tap_index == -1 then
-                puts 'No Tap Device available'
-                next
-              end
-              $mutex.synchronize do
-                $active_kernels[u] += 1
-                $grace_period[u] = Time.now.to_i
-                $tap_interfaces[tap_index][2] = false
-
-              end
-
-              # When starting a new thread, the next iteration of the loop
-              # executes and so this line is needed to ensure the correct
-              # unikernel boots
-              kernel = u
-              $has_output[kernel] = true
-              n_kernels += 1
-
-              puts 'SPAWNING ' + kernel
-              Thread.new(kernel, tap_index) { |kernel, tp|
-                execute_kernel(kernel, $active_kernels[kernel].to_s, tp)
-                $mutex.synchronize do
-                  puts 'Finished'
-                  $active_kernels[kernel] -= 1
-                  $grace_period[kernel] = 0
-                  $tap_interfaces[tp][2] = true
-                end
-              }
-            end
-          end
-        end
-      end
+      monitor_channel(c)
     end
   end
 end
