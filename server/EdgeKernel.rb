@@ -232,7 +232,7 @@ def update_state(u, tap_index)
 end
 
 def begin_execution(u, tap_index)
-  begin_execution(u, tap_index)
+
   # When starting a new thread, the next iteration of the loop
   # executes and so this line is needed to ensure the correct
   # unikernel boots
@@ -249,6 +249,7 @@ def begin_execution(u, tap_index)
       $tap_interfaces[tp][2] = true
     end
   }
+  
 end
 
 def check_output(u)
