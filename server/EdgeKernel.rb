@@ -295,6 +295,7 @@ end
 def monitor_queue(c, u)
   if c[0].empty?
     check_output(u)
+    return
   end
 
   if check_scaling(c, u)
