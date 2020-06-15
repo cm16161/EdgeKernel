@@ -1,5 +1,6 @@
 open Lwt.Infix
 open Printf
+open EdgeKernelAPI
 
 let red fmt    = sprintf ("\027[31m"^^fmt^^"\027[m")
 let green fmt  = sprintf ("\027[32m"^^fmt^^"\027[m")

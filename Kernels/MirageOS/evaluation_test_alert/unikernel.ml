@@ -1,5 +1,6 @@
 open Lwt.Infix
 open Printf
+open EdgeKernelAPI
 
 let red fmt    = sprintf ("\027[31m"^^fmt^^"\027[m")
 let green fmt  = sprintf ("\027[32m"^^fmt^^"\027[m")
@@ -28,7 +29,7 @@ module Client (T: Mirage_time.S) (C: Mirage_console.S) (RES: Resolver_lwt.S) (CO
     Cohttp_lwt.Body.to_string body >>= fun body ->
     let json = Yojson.Basic.from_string body in
     let open Yojson.Basic.Util in
-    let value = json |> member "RPOP" |> to_string in
+    let value = json |> member "rpop" |> to_string in
     if (threshold value 50.0) then
       let uri_set = EdgeKernelAPI.generate_default_set "eval_test_alert_output" ["yes"] in
       EdgeKernelAPI.get resolver const_ctx uri_set 
