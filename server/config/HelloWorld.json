@@ -1,0 +1,8 @@
+{
+    "name" : "HelloWorld.hvt",
+    "directory" : "Kernels/MirageOS/HelloWorld",
+    "queue" : ["hello_world_trigger"],
+    "max_instances" : 10,
+    "scale_threshold" : 10,
+    "ofile" : "HelloWorld.output"
+}
