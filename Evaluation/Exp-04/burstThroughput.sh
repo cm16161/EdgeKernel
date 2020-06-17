@@ -1,7 +1,5 @@
 #!/bin/bash
 
-# redis-cli set eval_test_consume_all 0
-# ts=$(date +%s%N)
 for i in {1..100}
 do
     redis-cli set consume_all_count 0 > /dev/null
@@ -22,13 +20,3 @@ do
 done
 
 echo "Finished"
-
-# # let fin=$(redis-cli get eval_test_fdc_count)
-# # while [ $fin -ne 6 ]
-# # do
-# #       let fin=$(redis-cli get eval_test_consume_all)
-# # done      
-# let finished=$((($(date +%s%N) - $ts)))
-# echo "$(($finished/1000000)) ms"
-
-   

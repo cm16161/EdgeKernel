@@ -1,0 +1,8 @@
+{
+    "name" : "eval_test_consume_all.hvt",
+    "directory" : "Kernels/MirageOS/evaluation_test_consume_all",
+    "queue" : ["eval_test_consume_all_trigger"],
+    "max_instances" : 10,
+    "scale_threshold" : 100,
+    "ofile" : "eval_consume_all.output"
+}
