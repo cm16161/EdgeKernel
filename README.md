@@ -59,12 +59,10 @@ sudo -u $USER  make install
 
 ### Network Setup
 
-Finally, configure the network by modifying `Line 17` and running the `network_configuration.sh` script as `root`.
+Finally, configure the network by modifying `Line 17` and running the `Setup/network_configuration.sh` script as `root`.
 This needs to be configured to use your networking device. For PC's this will typically use the `eth0` interface and the `wlp59s0` interface for laptops. This can be found by running `ifconfig` and finding your `inet` which starts with `192.168..`.
 
-Once you know what your private IP address is, configure `Line 12` in the `server/EdgeKernel.rb` so that EdgeKernel knows where to access Redis. 
-
-Additionally, this change is required on `Line 9` on in the `Kernels/MirageOS/EdgeKernelAPI.ml` file.
+Once you know what your private IP address is, configure `Line 9` in the `Kernels/MirageOS/EdgeKernelAPI.ml` file.
 
 ## Start EdgeKernel
 
