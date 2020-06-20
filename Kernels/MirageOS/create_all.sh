@@ -19,3 +19,4 @@ do
     mirage configure -t hvt
     mirage build
     cd ..
+done
