@@ -146,7 +146,7 @@ def establish_channels
 end
 
 def generate_tap_list
-  for i in 2..51 do
+  for i in 2..100 do
     tapN = 'tap1000'.concat(i.to_s)
     ipN = '10.0.0.'.concat(i.to_s).concat('/24')
     $tap_interfaces.append([tapN, ipN, true])
@@ -173,7 +173,7 @@ def execute_kernel(kernel, part_count, tap_index)
   puts 'Executing'
   PTY.spawn(command) do |stdout, _stdin, pid|
     begin
-      Timeout.timeout(1) {
+      Timeout.timeout(100) {
         open(ofile, 'a') do |f|
           stdout.each { |line| f.puts line }
         end
@@ -193,6 +193,31 @@ def get_tap_device
   end
   -1
 end
+
+def get_active_unikernels
+  ret = 0
+  for i in 0..($tap_interfaces.length - 1) do
+    if !$tap_interfaces[i][2]
+      ret = ret+1
+    end
+  end
+  ret
+end
+
+def unikernel_log(start)
+  now = Time.now
+  if now.to_i > start+1 then
+    active = get_active_unikernels
+    output = now.to_s + " " + active.to_s + "\n"
+    File.open(__dir__+"/active_unikernels.txt", 'a') { |f|
+      f.write(output)
+    }
+    puts output
+    return now.to_i
+  end
+  start
+end
+
 
 def init
   check_webdis
@@ -263,7 +288,7 @@ def check_scaling(c, u)
   queue_count = c[0].length
   if $active_kernels[u] > queue_count/$scale_thresholds[u] then
     puts 'wait to finish before creating new'
-    true
+    return true
   end
   false
 end
@@ -326,7 +351,9 @@ def monitor_channel(c)
 end
 
 def server
+  curr = Time.now.to_i
   loop do
+    curr = unikernel_log(curr)
     check_webdis
     channels = establish_channels
     for c in channels do
