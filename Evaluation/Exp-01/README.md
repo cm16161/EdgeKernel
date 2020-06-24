@@ -9,6 +9,16 @@ Scripts have been provided which simulate various workloads to be completed by E
 To run the EdgeKernel tests, execute each script in the directory.
 In addition to running the script, run EdgeKernel (`EdgeKernel.rb`) in a **SEPARATE** terminal
 
+In order to run the `Evaluate_EK/EK-EvalDHS.sh` script, `eval_test_dhs_current_average` and `eval_test_dhs_day_count` need to have values set in the redis queue.
+This is done by launching the `redis-cli` and using the command `set eval_test_dhs_current_average <value>` and `set eval_test_dhs_day_count <value>`, i.e. 
+```
+set eval_test_dhs_current_average 10
+set eval_test_dhs_day_count 10
+```
+
+In order to run the `Evaluate_EK/EK-EvalFib.sh` script, the variable `fib_number` needs to have a value set in the redis queue.
+This is done by launching the `redis-cli` and using the command `set fib_number <value>`, i.e. `set fib_number 10`.
+
 ### Output  ###
 
 In the terminal which runs the evaluation script, the expected output will be the time it takes to complete that workload in *ms*
