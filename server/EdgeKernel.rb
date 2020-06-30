@@ -212,7 +212,6 @@ def unikernel_log(start)
     File.open(__dir__+"/active_unikernels.txt", 'a') { |f|
       f.write(output)
     }
-    puts output
     return now.to_i
   end
   start
